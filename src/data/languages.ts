@@ -29,6 +29,13 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'rtl',
     description: 'Alfabeto hebreo.',
   },
+  niqqud: {
+    id: 'niqqud',
+    name: 'Hebreo (Nikud)',
+    nativeName: 'נִקּוּד',
+    direction: 'rtl',
+    description: 'Los signos de vocales (nikud) del hebreo, mostrados sobre un círculo punteado.',
+  },
 };
 
-export const LANGUAGE_ORDER: LanguageId[] = ['kana', 'kanji', 'cyrillic', 'hebrew'];
+export const LANGUAGE_ORDER: LanguageId[] = ['kana', 'kanji', 'cyrillic', 'hebrew', 'niqqud'];

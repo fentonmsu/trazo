@@ -5,6 +5,7 @@ const LOCALE_BY_LANGUAGE: Record<LanguageId, string> = {
   kanji: 'ja-JP',
   cyrillic: 'ru-RU',
   hebrew: 'he-IL',
+  niqqud: 'he-IL',
 };
 
 let voicesCache: SpeechSynthesisVoice[] = [];
