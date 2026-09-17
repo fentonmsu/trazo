@@ -1,5 +1,6 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import type { Stroke } from '../types/character';
+import { normalizeStrokes } from '../engine/geometry';
 
 export interface DrawingCanvasHandle {
   clear: () => void;
@@ -44,6 +45,10 @@ export const DrawingCanvas = forwardRef<DrawingCanvasHandle, DrawingCanvasProps>
     const [, forceRender] = useState(0);
 
     const scale = size / GRID;
+    const normalizedGuide = useMemo(
+      () => (guideStrokes ? normalizeStrokes(guideStrokes) : undefined),
+      [guideStrokes],
+    );
 
     const redraw = () => {
       const canvas = canvasRef.current;
@@ -52,8 +57,8 @@ export const DrawingCanvas = forwardRef<DrawingCanvasHandle, DrawingCanvasProps>
       if (!ctx) return;
       ctx.clearRect(0, 0, size, size);
 
-      if (guideStrokes) {
-        guideStrokes.forEach((stroke, idx) => {
+      if (normalizedGuide) {
+        normalizedGuide.forEach((stroke, idx) => {
           drawStroke(ctx, stroke, scale, 'rgba(120,120,140,0.35)', 3);
           if (stroke.length > 0) {
             const start = stroke[0];
@@ -78,7 +83,7 @@ export const DrawingCanvas = forwardRef<DrawingCanvasHandle, DrawingCanvasProps>
       }
     };
 
-    useEffect(redraw, [guideStrokes, size]);
+    useEffect(redraw, [normalizedGuide, size]);
 
     useImperativeHandle(ref, () => ({
       clear: () => {
