@@ -5,6 +5,20 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trazo — aprende a escribir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--
+      Noto Sans Hebrew: most system/default fonts only have GPOS mark-
+      attachment anchors for niqqud on the common letterforms, not on the
+      sofit (final) ones (מ/נ/פ/צ almost never carry a vowel point in real
+      text), so a point combined with ם/ן/ף/ץ silently fails to attach in
+      those fonts. Noto's tables cover every letterform, so it's used
+      specifically for Hebrew glyphs (see .hebrew-glyph in App.css).
+    -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="root"></div>

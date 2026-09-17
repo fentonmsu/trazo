@@ -46,3 +46,8 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
 };
 
 export const LANGUAGE_ORDER: LanguageId[] = ['kana', 'kanji', 'cyrillic', 'hebrew', 'niqqud', 'hebrewFull'];
+
+/** True for any language rendered in Hebrew script (letters, niqqud, or both). */
+export function isHebrewScript(language: LanguageId): boolean {
+  return language === 'hebrew' || language === 'niqqud' || language === 'hebrewFull';
+}

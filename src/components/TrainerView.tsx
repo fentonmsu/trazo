@@ -2,7 +2,9 @@ import { useRef, useState } from 'react';
 import type { CharacterTemplate } from '../types/character';
 import { DrawingCanvas, type DrawingCanvasHandle } from './DrawingCanvas';
 import { SpeakButton } from './SpeakButton';
+import { HebrewGlyph } from './HebrewGlyph';
 import { scoreDrawing, recognizeCharacter, type DrawingScoreResult, type RecognitionMatch } from '../engine/recognizer';
+import { isHebrewScript } from '../data/languages';
 
 interface TrainerViewProps {
   mode: 'practice' | 'recognize';
@@ -45,7 +47,11 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
     <div className="trainer">
       {mode === 'practice' && target && (
         <div className="target-card">
-          <div className="target-glyph">{target.char}</div>
+          {isHebrewScript(target.language) ? (
+            <HebrewGlyph char={target.char} className="target-glyph hebrew-glyph" />
+          ) : (
+            <div className="target-glyph">{target.char}</div>
+          )}
           <div className="target-meta">
             <div className="romanization-row">
               {target.romanization}
@@ -102,7 +108,11 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
           {matches.length === 0 && <p>Dibuja algo primero.</p>}
           {matches.map((m, i) => (
             <div key={m.template.id} className={`match-row ${i === 0 ? 'top' : ''}`}>
-              <span className="match-glyph">{m.template.char}</span>
+              {isHebrewScript(m.template.language) ? (
+                <HebrewGlyph char={m.template.char} className="match-glyph hebrew-glyph" />
+              ) : (
+                <span className="match-glyph">{m.template.char}</span>
+              )}
               <span className="match-name">{m.template.romanization}</span>
               <div className="match-bar-bg">
                 <div className="match-bar" style={{ width: `${Math.min(100, Math.max(0, m.confidence))}%` }} />
