@@ -19,8 +19,10 @@ function scoreClass(score: number | undefined) {
 }
 
 export function CharacterGrid({ characters, selectedId, progress, onSelect }: CharacterGridProps) {
+  const dir = characters[0] && isHebrewScript(characters[0].language) ? 'rtl' : 'ltr';
+
   return (
-    <div className="character-grid">
+    <div className="character-grid" dir={dir}>
       {characters.map((c) => {
         const best = progress[c.id]?.bestScore;
         return (

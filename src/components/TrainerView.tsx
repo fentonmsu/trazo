@@ -46,7 +46,7 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
   return (
     <div className="trainer">
       {mode === 'practice' && target && (
-        <div className="target-card">
+        <div className="target-card" dir={isHebrewScript(target.language) ? 'rtl' : 'ltr'}>
           {isHebrewScript(target.language) ? (
             <HebrewGlyph char={target.char} className="target-glyph hebrew-glyph" />
           ) : (
@@ -104,7 +104,7 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
       )}
 
       {matches && (
-        <div className="matches">
+        <div className="matches" dir={matches[0] && isHebrewScript(matches[0].template.language) ? 'rtl' : 'ltr'}>
           {matches.length === 0 && <p>Dibuja algo primero.</p>}
           {matches.map((m, i) => (
             <div key={m.template.id} className={`match-row ${i === 0 ? 'top' : ''}`}>
