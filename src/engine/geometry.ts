@@ -121,6 +121,14 @@ export function resampleStroke(stroke: Stroke, n: number): Stroke {
   return result;
 }
 
+/** Data-authoring helper: a tiny stroke approximating a single dot/point mark. */
+export function dotStroke(cx: number, cy: number, size = 3): Stroke {
+  return [
+    { x: cx - size, y: cy - size },
+    { x: cx + size, y: cy + size },
+  ];
+}
+
 export function strokeStartEndVector(stroke: Stroke): Point {
   const start = stroke[0];
   const end = stroke[stroke.length - 1];
