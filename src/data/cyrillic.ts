@@ -1,0 +1,430 @@
+import type { CharacterTemplate } from '../types/character';
+
+/**
+ * Hand-authored stroke-path data for the 33 uppercase Russian Cyrillic
+ * letters. Coordinates are on a normalized 0-100 grid (origin top-left,
+ * x grows right, y grows down), matching canvas coordinates. Points define
+ * topology, proportions and direction of travel per the standard Russian
+ * school printing (propisi) convention where applicable.
+ */
+export const cyrillicCharacters: CharacterTemplate[] = [
+  {
+    id: 'cyrillic-a',
+    language: 'cyrillic',
+    char: 'А',
+    romanization: 'a',
+    strokes: [
+      [{ x: 50, y: 10 }, { x: 15, y: 90 }],
+      [{ x: 50, y: 10 }, { x: 85, y: 90 }],
+      [{ x: 30, y: 60 }, { x: 70, y: 60 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-be',
+    language: 'cyrillic',
+    char: 'Б',
+    romanization: 'b',
+    strokes: [
+      [{ x: 30, y: 15 }, { x: 30, y: 85 }],
+      [{ x: 30, y: 15 }, { x: 72, y: 15 }],
+      [
+        { x: 30, y: 48 }, { x: 60, y: 50 }, { x: 72, y: 65 },
+        { x: 60, y: 80 }, { x: 30, y: 82 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-ve',
+    language: 'cyrillic',
+    char: 'В',
+    romanization: 'v',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 25, y: 85 }],
+      [
+        { x: 25, y: 15 }, { x: 55, y: 18 }, { x: 65, y: 30 },
+        { x: 55, y: 42 }, { x: 25, y: 50 },
+      ],
+      [
+        { x: 25, y: 50 }, { x: 58, y: 55 }, { x: 70, y: 70 },
+        { x: 58, y: 82 }, { x: 25, y: 85 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-ge',
+    language: 'cyrillic',
+    char: 'Г',
+    romanization: 'g',
+    strokes: [
+      [{ x: 75, y: 15 }, { x: 25, y: 15 }, { x: 25, y: 85 }],
+    ],
+    difficulty: 1,
+  },
+  {
+    id: 'cyrillic-de',
+    language: 'cyrillic',
+    char: 'Д',
+    romanization: 'd',
+    strokes: [
+      [{ x: 32, y: 20 }, { x: 68, y: 20 }, { x: 78, y: 78 }],
+      [{ x: 32, y: 20 }, { x: 22, y: 78 }],
+      [{ x: 18, y: 90 }, { x: 18, y: 78 }, { x: 82, y: 78 }, { x: 82, y: 90 }],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillic-ye',
+    language: 'cyrillic',
+    char: 'Е',
+    romanization: 'e',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 25, y: 85 }],
+      [{ x: 25, y: 15 }, { x: 65, y: 15 }],
+      [{ x: 25, y: 50 }, { x: 55, y: 50 }],
+      [{ x: 25, y: 85 }, { x: 65, y: 85 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-yo',
+    language: 'cyrillic',
+    char: 'Ё',
+    romanization: 'yo',
+    strokes: [
+      [{ x: 25, y: 25 }, { x: 25, y: 90 }],
+      [{ x: 25, y: 25 }, { x: 65, y: 25 }],
+      [{ x: 25, y: 55 }, { x: 55, y: 55 }],
+      [{ x: 25, y: 90 }, { x: 65, y: 90 }],
+      [{ x: 32, y: 5 }, { x: 34, y: 7 }],
+      [{ x: 48, y: 5 }, { x: 50, y: 7 }],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-zhe',
+    language: 'cyrillic',
+    char: 'Ж',
+    romanization: 'zh',
+    strokes: [
+      [{ x: 50, y: 15 }, { x: 50, y: 85 }],
+      [{ x: 20, y: 15 }, { x: 80, y: 85 }],
+      [{ x: 80, y: 15 }, { x: 20, y: 85 }],
+    ],
+    difficulty: 5,
+  },
+  {
+    id: 'cyrillic-ze',
+    language: 'cyrillic',
+    char: 'З',
+    romanization: 'z',
+    strokes: [
+      [
+        { x: 30, y: 18 }, { x: 55, y: 15 }, { x: 72, y: 25 }, { x: 70, y: 42 },
+        { x: 48, y: 50 }, { x: 70, y: 58 }, { x: 75, y: 75 }, { x: 55, y: 88 },
+        { x: 28, y: 82 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-i',
+    language: 'cyrillic',
+    char: 'И',
+    romanization: 'i',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 25, y: 85 }],
+      [{ x: 25, y: 85 }, { x: 75, y: 15 }],
+      [{ x: 75, y: 15 }, { x: 75, y: 85 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-i-kratkoye',
+    language: 'cyrillic',
+    char: 'Й',
+    romanization: 'y',
+    strokes: [
+      [{ x: 25, y: 22 }, { x: 25, y: 88 }],
+      [{ x: 25, y: 88 }, { x: 75, y: 22 }],
+      [{ x: 75, y: 22 }, { x: 75, y: 88 }],
+      [{ x: 38, y: 10 }, { x: 50, y: 4 }, { x: 62, y: 10 }],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-ka',
+    language: 'cyrillic',
+    char: 'К',
+    romanization: 'k',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 25, y: 85 }],
+      [{ x: 25, y: 50 }, { x: 75, y: 15 }],
+      [{ x: 25, y: 50 }, { x: 75, y: 85 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-el',
+    language: 'cyrillic',
+    char: 'Л',
+    romanization: 'l',
+    strokes: [
+      [{ x: 50, y: 15 }, { x: 20, y: 85 }, { x: 12, y: 90 }],
+      [{ x: 50, y: 15 }, { x: 80, y: 85 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-em',
+    language: 'cyrillic',
+    char: 'М',
+    romanization: 'm',
+    strokes: [
+      [{ x: 20, y: 15 }, { x: 20, y: 85 }],
+      [{ x: 20, y: 15 }, { x: 50, y: 65 }],
+      [{ x: 50, y: 65 }, { x: 80, y: 15 }],
+      [{ x: 80, y: 15 }, { x: 80, y: 85 }],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-en',
+    language: 'cyrillic',
+    char: 'Н',
+    romanization: 'n',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 25, y: 85 }],
+      [{ x: 75, y: 15 }, { x: 75, y: 85 }],
+      [{ x: 25, y: 50 }, { x: 75, y: 50 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-o',
+    language: 'cyrillic',
+    char: 'О',
+    romanization: 'o',
+    strokes: [
+      [
+        { x: 50, y: 15 }, { x: 72, y: 22 }, { x: 85, y: 42 }, { x: 85, y: 58 },
+        { x: 72, y: 78 }, { x: 50, y: 85 }, { x: 28, y: 78 }, { x: 15, y: 58 },
+        { x: 15, y: 42 }, { x: 28, y: 22 }, { x: 50, y: 15 },
+      ],
+    ],
+    difficulty: 1,
+  },
+  {
+    id: 'cyrillic-pe',
+    language: 'cyrillic',
+    char: 'П',
+    romanization: 'p',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 25, y: 85 }],
+      [{ x: 25, y: 15 }, { x: 75, y: 15 }],
+      [{ x: 75, y: 15 }, { x: 75, y: 85 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-er',
+    language: 'cyrillic',
+    char: 'Р',
+    romanization: 'r',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 25, y: 85 }],
+      [{ x: 25, y: 15 }, { x: 55, y: 18 }, { x: 68, y: 30 }, { x: 60, y: 45 }, { x: 25, y: 48 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-es',
+    language: 'cyrillic',
+    char: 'С',
+    romanization: 's',
+    strokes: [
+      [
+        { x: 75, y: 22 }, { x: 55, y: 15 }, { x: 35, y: 20 }, { x: 20, y: 35 },
+        { x: 15, y: 50 }, { x: 20, y: 65 }, { x: 35, y: 80 }, { x: 55, y: 85 },
+        { x: 75, y: 78 },
+      ],
+    ],
+    difficulty: 1,
+  },
+  {
+    id: 'cyrillic-te',
+    language: 'cyrillic',
+    char: 'Т',
+    romanization: 't',
+    strokes: [
+      [{ x: 20, y: 15 }, { x: 80, y: 15 }],
+      [{ x: 50, y: 15 }, { x: 50, y: 85 }],
+    ],
+    difficulty: 1,
+  },
+  {
+    id: 'cyrillic-u',
+    language: 'cyrillic',
+    char: 'У',
+    romanization: 'u',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 50, y: 50 }],
+      [{ x: 75, y: 15 }, { x: 50, y: 50 }, { x: 38, y: 80 }, { x: 28, y: 92 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-ef',
+    language: 'cyrillic',
+    char: 'Ф',
+    romanization: 'f',
+    strokes: [
+      [{ x: 50, y: 10 }, { x: 50, y: 90 }],
+      [
+        { x: 50, y: 25 }, { x: 72, y: 32 }, { x: 80, y: 50 }, { x: 72, y: 68 },
+        { x: 50, y: 75 }, { x: 28, y: 68 }, { x: 20, y: 50 }, { x: 28, y: 32 },
+        { x: 50, y: 25 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-kha',
+    language: 'cyrillic',
+    char: 'Х',
+    romanization: 'kh',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 75, y: 85 }],
+      [{ x: 75, y: 15 }, { x: 25, y: 85 }],
+    ],
+    difficulty: 1,
+  },
+  {
+    id: 'cyrillic-tse',
+    language: 'cyrillic',
+    char: 'Ц',
+    romanization: 'ts',
+    strokes: [
+      [{ x: 25, y: 15 }, { x: 25, y: 80 }],
+      [{ x: 75, y: 15 }, { x: 75, y: 80 }],
+      [{ x: 25, y: 80 }, { x: 75, y: 80 }],
+      [{ x: 75, y: 80 }, { x: 80, y: 92 }],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-che',
+    language: 'cyrillic',
+    char: 'Ч',
+    romanization: 'ch',
+    strokes: [
+      [{ x: 30, y: 15 }, { x: 30, y: 45 }, { x: 45, y: 58 }, { x: 65, y: 52 }, { x: 65, y: 85 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-sha',
+    language: 'cyrillic',
+    char: 'Ш',
+    romanization: 'sh',
+    strokes: [
+      [{ x: 20, y: 15 }, { x: 20, y: 80 }],
+      [{ x: 50, y: 15 }, { x: 50, y: 80 }],
+      [{ x: 80, y: 15 }, { x: 80, y: 80 }],
+      [{ x: 20, y: 80 }, { x: 80, y: 80 }],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-shcha',
+    language: 'cyrillic',
+    char: 'Щ',
+    romanization: 'shch',
+    strokes: [
+      [{ x: 20, y: 15 }, { x: 20, y: 80 }],
+      [{ x: 50, y: 15 }, { x: 50, y: 80 }],
+      [{ x: 80, y: 15 }, { x: 80, y: 80 }],
+      [{ x: 20, y: 80 }, { x: 80, y: 80 }],
+      [{ x: 80, y: 80 }, { x: 85, y: 92 }],
+    ],
+    difficulty: 5,
+  },
+  {
+    id: 'cyrillic-hard-sign',
+    language: 'cyrillic',
+    char: 'Ъ',
+    romanization: '"',
+    strokes: [
+      [{ x: 35, y: 15 }, { x: 35, y: 85 }],
+      [{ x: 35, y: 15 }, { x: 50, y: 15 }],
+      [{ x: 35, y: 50 }, { x: 58, y: 53 }, { x: 68, y: 68 }, { x: 58, y: 83 }, { x: 35, y: 85 }],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillic-yery',
+    language: 'cyrillic',
+    char: 'Ы',
+    romanization: 'y',
+    strokes: [
+      [{ x: 20, y: 15 }, { x: 20, y: 85 }],
+      [{ x: 42, y: 15 }, { x: 42, y: 50 }, { x: 60, y: 53 }, { x: 70, y: 68 }, { x: 60, y: 82 }, { x: 42, y: 85 }],
+    ],
+    difficulty: 5,
+  },
+  {
+    id: 'cyrillic-soft-sign',
+    language: 'cyrillic',
+    char: 'Ь',
+    romanization: "'",
+    strokes: [
+      [{ x: 35, y: 15 }, { x: 35, y: 85 }],
+      [{ x: 35, y: 50 }, { x: 60, y: 53 }, { x: 70, y: 68 }, { x: 60, y: 83 }, { x: 35, y: 85 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-e',
+    language: 'cyrillic',
+    char: 'Э',
+    romanization: 'e',
+    strokes: [
+      [
+        { x: 30, y: 20 }, { x: 55, y: 15 }, { x: 75, y: 25 }, { x: 82, y: 50 },
+        { x: 75, y: 75 }, { x: 55, y: 85 }, { x: 30, y: 80 },
+      ],
+      [{ x: 65, y: 50 }, { x: 40, y: 50 }],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillic-yu',
+    language: 'cyrillic',
+    char: 'Ю',
+    romanization: 'yu',
+    strokes: [
+      [{ x: 20, y: 15 }, { x: 20, y: 85 }],
+      [{ x: 20, y: 50 }, { x: 35, y: 50 }],
+      [
+        { x: 60, y: 20 }, { x: 78, y: 28 }, { x: 88, y: 50 }, { x: 78, y: 72 },
+        { x: 60, y: 80 }, { x: 42, y: 72 }, { x: 35, y: 50 }, { x: 42, y: 28 },
+        { x: 60, y: 20 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillic-ya',
+    language: 'cyrillic',
+    char: 'Я',
+    romanization: 'ya',
+    strokes: [
+      [{ x: 65, y: 15 }, { x: 65, y: 85 }],
+      [{ x: 65, y: 15 }, { x: 48, y: 18 }, { x: 38, y: 30 }, { x: 45, y: 45 }, { x: 65, y: 48 }],
+      [{ x: 45, y: 45 }, { x: 22, y: 85 }],
+    ],
+    difficulty: 4,
+  },
+];
