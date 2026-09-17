@@ -20,14 +20,15 @@
 
 .hebrew-compound-mark {
   /* left:0/right:0 + text-align:center (not a translateX transform) because
-     a lone combining mark has zero advance width, which would make a
-     transform-based centering trick center on nothing. */
+     the mark's carrier dotted-circle is much narrower than a real letter,
+     which would make a transform-based centering trick miss the middle. */
   position: absolute;
   left: 0;
   right: 0;
   text-align: center;
   font-size: 0.5em;
   line-height: 1;
+  opacity: 0.85;
   pointer-events: none;
 }
 
