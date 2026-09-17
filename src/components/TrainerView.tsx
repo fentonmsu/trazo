@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import type { CharacterTemplate } from '../types/character';
 import { DrawingCanvas, type DrawingCanvasHandle } from './DrawingCanvas';
+import { SpeakButton } from './SpeakButton';
 import { scoreDrawing, recognizeCharacter, type DrawingScoreResult, type RecognitionMatch } from '../engine/recognizer';
 
 interface TrainerViewProps {
@@ -46,7 +47,10 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
         <div className="target-card">
           <div className="target-glyph">{target.char}</div>
           <div className="target-meta">
-            <div>{target.romanization}</div>
+            <div className="romanization-row">
+              {target.romanization}
+              <SpeakButton template={target} />
+            </div>
             {target.meaning && <div className="meaning">{target.meaning}</div>}
           </div>
         </div>
@@ -104,6 +108,7 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
                 <div className="match-bar" style={{ width: `${Math.min(100, Math.max(0, m.confidence))}%` }} />
               </div>
               <span className="match-pct">{Math.round(m.confidence)}%</span>
+              <SpeakButton template={m.template} className="match-speak" />
             </div>
           ))}
         </div>

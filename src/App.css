@@ -80,15 +80,23 @@
 
 .character-tile {
   position: relative;
+  border: 1px solid var(--border);
+  background: transparent;
+  border-radius: 8px;
+  color: var(--text);
+}
+
+.character-tile-main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  border: 1px solid var(--border);
+  border: none;
   background: transparent;
-  border-radius: 8px;
   padding: 8px 4px 6px;
-  color: var(--text);
+  color: inherit;
+  font: inherit;
 }
 
 .character-tile.selected {
@@ -121,6 +129,49 @@
 .character-tile .best-score {
   font-size: 10px;
   opacity: 0.6;
+}
+
+.speak-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  color: var(--text);
+}
+
+.speak-button.tile-speak {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 11px;
+  opacity: 0.55;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.speak-button.tile-speak:hover {
+  opacity: 1;
+  background: var(--border);
+}
+
+.speak-button.match-speak {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.speak-button.match-speak:hover {
+  opacity: 1;
+}
+
+.romanization-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.romanization-row .speak-button {
+  font-size: 18px;
 }
 
 .trainer-panel {
@@ -257,7 +308,7 @@
 
 .match-row {
   display: grid;
-  grid-template-columns: 32px 60px 1fr 40px;
+  grid-template-columns: 32px 60px 1fr 40px 20px;
   align-items: center;
   gap: 8px;
 }

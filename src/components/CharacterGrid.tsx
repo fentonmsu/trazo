@@ -1,5 +1,6 @@
 import type { CharacterTemplate } from '../types/character';
 import type { ProgressMap } from '../hooks/useProgress';
+import { SpeakButton } from './SpeakButton';
 
 interface CharacterGridProps {
   characters: CharacterTemplate[];
@@ -21,16 +22,18 @@ export function CharacterGrid({ characters, selectedId, progress, onSelect }: Ch
       {characters.map((c) => {
         const best = progress[c.id]?.bestScore;
         return (
-          <button
-            key={c.id}
-            className={`character-tile ${scoreClass(best)} ${selectedId === c.id ? 'selected' : ''}`}
-            onClick={() => onSelect(c)}
-            title={c.meaning ? `${c.romanization} · ${c.meaning}` : c.romanization}
-          >
-            <span className="glyph">{c.char}</span>
-            <span className="romanization">{c.romanization}</span>
-            {best !== undefined && <span className="best-score">{best}%</span>}
-          </button>
+          <div key={c.id} className={`character-tile ${scoreClass(best)} ${selectedId === c.id ? 'selected' : ''}`}>
+            <button
+              className="character-tile-main"
+              onClick={() => onSelect(c)}
+              title={c.meaning ? `${c.romanization} · ${c.meaning}` : c.romanization}
+            >
+              <span className="glyph">{c.char}</span>
+              <span className="romanization">{c.romanization}</span>
+              {best !== undefined && <span className="best-score">{best}%</span>}
+            </button>
+            <SpeakButton template={c} className="tile-speak" />
+          </div>
         );
       })}
     </div>
