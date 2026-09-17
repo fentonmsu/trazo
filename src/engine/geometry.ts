@@ -2,7 +2,7 @@ import type { Point, Stroke } from '../types/character';
 
 export const GRID_SIZE = 100;
 
-function boundingBox(strokes: Stroke[]) {
+export function boundingBox(strokes: Stroke[]) {
   let minX = Infinity;
   let minY = Infinity;
   let maxX = -Infinity;
@@ -40,6 +40,34 @@ export function normalizeStrokes(strokes: Stroke[]): Stroke[] {
     stroke.map((p) => ({
       x: (p.x - cx) * scale + offset,
       y: (p.y - cy) * scale + offset,
+    })),
+  );
+}
+
+/**
+ * Data-authoring helper (not used at recognition time): rescales `strokes`
+ * to fit within an arbitrary target rectangle, preserving aspect ratio and
+ * centering. Used to derive a small "attached below a letter" version of a
+ * niqqud mark from its larger standalone-practice shape.
+ */
+export function fitStrokesToBox(
+  strokes: Stroke[],
+  box: { minX: number; maxX: number; minY: number; maxY: number },
+): Stroke[] {
+  const { minX, minY, maxX, maxY } = boundingBox(strokes);
+  const width = maxX - minX;
+  const height = maxY - minY;
+  const boxWidth = box.maxX - box.minX;
+  const boxHeight = box.maxY - box.minY;
+  const scale = Math.min(boxWidth / Math.max(width, 1e-6), boxHeight / Math.max(height, 1e-6));
+  const cx = (minX + maxX) / 2;
+  const cy = (minY + maxY) / 2;
+  const targetCx = (box.minX + box.maxX) / 2;
+  const targetCy = (box.minY + box.maxY) / 2;
+  return strokes.map((stroke) =>
+    stroke.map((p) => ({
+      x: (p.x - cx) * scale + targetCx,
+      y: (p.y - cy) * scale + targetCy,
     })),
   );
 }

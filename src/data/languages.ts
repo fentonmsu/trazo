@@ -36,6 +36,13 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'rtl',
     description: 'Los signos de vocales (nikud) del hebreo, mostrados sobre un círculo punteado.',
   },
+  hebrewFull: {
+    id: 'hebrewFull',
+    name: 'Hebreo (Todas las vocales)',
+    nativeName: 'עברית מנוקדת',
+    direction: 'rtl',
+    description: 'Cada letra combinada con cada nikud (א אָ אַ אֵ אֶ אִ אֹ אֻ אְ, ב בָ בַ...), como en las cartillas de lectura hebrea.',
+  },
 };
 
-export const LANGUAGE_ORDER: LanguageId[] = ['kana', 'kanji', 'cyrillic', 'hebrew', 'niqqud'];
+export const LANGUAGE_ORDER: LanguageId[] = ['kana', 'kanji', 'cyrillic', 'hebrew', 'niqqud', 'hebrewFull'];
