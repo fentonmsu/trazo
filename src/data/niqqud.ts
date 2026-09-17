@@ -12,7 +12,16 @@ import type { CharacterTemplate, Stroke } from '../types/character';
  * were its own glyph), rather than as a tiny attachment - the recognizer
  * normalizes by bounding box regardless, so this keeps proportions between
  * dots/lines meaningful after normalization.
+ *
+ * For speech, a bare vowel point on a dotted circle isn't real text a TTS
+ * voice can read, and reading the Latin romanization (e.g. "a") through a
+ * Hebrew voice mispronounces it. Instead each mark is paired with aleph
+ * (silent/glottal) as `speechOverride`, e.g. "אָ" - real Hebrew
+ * text that a he-IL voice pronounces as a clean, correctly-accented vowel.
  */
+
+const ALEF = 'א';
+const DOTTED_CIRCLE = '◌';
 
 const dotSize = 3;
 function dot(cx: number, cy: number): Stroke {
@@ -27,9 +36,10 @@ export const niqqudCharacters: CharacterTemplate[] = [
   {
     id: 'niqqud-qamats',
     language: 'niqqud',
-    char: '◌ָ',
+    char: DOTTED_CIRCLE + 'ָ',
     romanization: 'a',
     meaning: 'vocal larga "a" (kamatz)',
+    speechOverride: ALEF + 'ָ',
     strokes: [
       [
         { x: 25, y: 40 },
@@ -45,9 +55,10 @@ export const niqqudCharacters: CharacterTemplate[] = [
   {
     id: 'niqqud-patach',
     language: 'niqqud',
-    char: '◌ַ',
+    char: DOTTED_CIRCLE + 'ַ',
     romanization: 'a',
     meaning: 'vocal corta "a" (patach)',
+    speechOverride: ALEF + 'ַ',
     strokes: [
       [
         { x: 25, y: 50 },
@@ -61,9 +72,10 @@ export const niqqudCharacters: CharacterTemplate[] = [
   {
     id: 'niqqud-tzere',
     language: 'niqqud',
-    char: '◌ֵ',
+    char: DOTTED_CIRCLE + 'ֵ',
     romanization: 'e',
     meaning: 'vocal larga "e" (tzere)',
+    speechOverride: ALEF + 'ֵ',
     strokes: [dot(35, 50), dot(65, 50)],
     difficulty: 1,
   },
@@ -72,9 +84,10 @@ export const niqqudCharacters: CharacterTemplate[] = [
   {
     id: 'niqqud-segol',
     language: 'niqqud',
-    char: '◌ֶ',
+    char: DOTTED_CIRCLE + 'ֶ',
     romanization: 'e',
     meaning: 'vocal corta "e" (segol)',
+    speechOverride: ALEF + 'ֶ',
     strokes: [dot(35, 40), dot(65, 40), dot(50, 62)],
     difficulty: 2,
   },
@@ -83,9 +96,10 @@ export const niqqudCharacters: CharacterTemplate[] = [
   {
     id: 'niqqud-hiriq',
     language: 'niqqud',
-    char: '◌ִ',
+    char: DOTTED_CIRCLE + 'ִ',
     romanization: 'i',
     meaning: 'vocal "i" (hiriq)',
+    speechOverride: ALEF + 'ִ',
     strokes: [dot(50, 50)],
     difficulty: 1,
   },
@@ -94,9 +108,10 @@ export const niqqudCharacters: CharacterTemplate[] = [
   {
     id: 'niqqud-holam',
     language: 'niqqud',
-    char: '◌ֹ',
+    char: DOTTED_CIRCLE + 'ֹ',
     romanization: 'o',
     meaning: 'vocal "o" (holam)',
+    speechOverride: ALEF + 'ֹ',
     strokes: [dot(65, 30)],
     difficulty: 1,
   },
@@ -105,9 +120,10 @@ export const niqqudCharacters: CharacterTemplate[] = [
   {
     id: 'niqqud-kubutz',
     language: 'niqqud',
-    char: '◌ֻ',
+    char: DOTTED_CIRCLE + 'ֻ',
     romanization: 'u',
     meaning: 'vocal "u" (kubutz)',
+    speechOverride: ALEF + 'ֻ',
     strokes: [dot(65, 40), dot(52, 52), dot(39, 64)],
     difficulty: 2,
   },
@@ -116,9 +132,10 @@ export const niqqudCharacters: CharacterTemplate[] = [
   {
     id: 'niqqud-shva',
     language: 'niqqud',
-    char: '◌ְ',
+    char: DOTTED_CIRCLE + 'ְ',
     romanization: 'e',
     meaning: 'vocal muy breve o muda (shva)',
+    speechOverride: ALEF + 'ְ',
     strokes: [dot(50, 40), dot(50, 60)],
     difficulty: 1,
   },
