@@ -25,7 +25,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>Trazo</h1>
-        <p className="subtitle">Aprende a escribir kana, kanji, cirílico y hebreo dibujando a mano</p>
+        <p className="subtitle">Aprende a escribir kana, kanji, cirílico, hebreo y árabe dibujando a mano</p>
       </header>
 
       <nav className="language-tabs">
