@@ -13,6 +13,12 @@ import type { CharacterTemplate, Stroke } from '../types/character';
  * downward, matching canvas coordinates); only relative proportions,
  * topology, and stroke direction matter, not absolute scale - see the
  * other data files' comments for the same convention.
+ *
+ * `speechOverride` is each letter's real Arabic name (alif, baa, taa...) -
+ * the same words used when reciting the alphabet. A bare consonant with no
+ * vowel is barely pronounceable on its own (the same issue Hebrew letters
+ * have without niqqud), so an ar-SA voice reads the full letter name
+ * instead, which is real, natural Arabic text.
  */
 
 const dotSize = 3;
@@ -111,6 +117,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ا',
     romanization: 'a',
+    speechOverride: 'ألف',
     difficulty: 1,
     strokes: [
       [
@@ -124,6 +131,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ب',
     romanization: 'b',
+    speechOverride: 'باء',
     difficulty: 2,
     strokes: [BOAT_BOWL, dot(50, 78)],
   },
@@ -132,6 +140,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ت',
     romanization: 't',
+    speechOverride: 'تاء',
     difficulty: 2,
     strokes: [BOAT_BOWL, dot(42, 25), dot(58, 25)],
   },
@@ -140,6 +149,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ث',
     romanization: 'th',
+    speechOverride: 'ثاء',
     difficulty: 2,
     strokes: [BOAT_BOWL, dot(38, 22), dot(50, 14), dot(62, 22)],
   },
@@ -148,6 +158,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ج',
     romanization: 'j',
+    speechOverride: 'جيم',
     difficulty: 3,
     strokes: [JEEM_HOOK, dot(47, 62)],
   },
@@ -156,6 +167,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ح',
     romanization: 'h',
+    speechOverride: 'حاء',
     difficulty: 3,
     strokes: [JEEM_HOOK],
   },
@@ -164,6 +176,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'خ',
     romanization: 'kh',
+    speechOverride: 'خاء',
     difficulty: 3,
     strokes: [JEEM_HOOK, dot(50, 18)],
   },
@@ -172,6 +185,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'د',
     romanization: 'd',
+    speechOverride: 'دال',
     difficulty: 1,
     strokes: [DAL_HOOK],
   },
@@ -180,6 +194,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ذ',
     romanization: 'dh',
+    speechOverride: 'ذال',
     difficulty: 2,
     strokes: [DAL_HOOK, dot(50, 14)],
   },
@@ -188,6 +203,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ر',
     romanization: 'r',
+    speechOverride: 'راء',
     difficulty: 1,
     strokes: [RA_TAIL],
   },
@@ -196,6 +212,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ز',
     romanization: 'z',
+    speechOverride: 'زاي',
     difficulty: 2,
     strokes: [RA_TAIL, dot(55, 14)],
   },
@@ -204,6 +221,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'س',
     romanization: 's',
+    speechOverride: 'سين',
     difficulty: 3,
     strokes: [SEEN_TEETH],
   },
@@ -212,6 +230,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ش',
     romanization: 'sh',
+    speechOverride: 'شين',
     difficulty: 3,
     strokes: [SEEN_TEETH, dot(68, 20), dot(50, 14), dot(32, 20)],
   },
@@ -220,6 +239,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ص',
     romanization: 's',
+    speechOverride: 'صاد',
     difficulty: 4,
     strokes: [SAD_BODY],
   },
@@ -228,6 +248,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ض',
     romanization: 'd',
+    speechOverride: 'ضاد',
     difficulty: 4,
     strokes: [SAD_BODY, dot(55, 15)],
   },
@@ -236,6 +257,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ط',
     romanization: 't',
+    speechOverride: 'طاء',
     difficulty: 4,
     strokes: [
       SAD_BODY,
@@ -250,6 +272,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ظ',
     romanization: 'z',
+    speechOverride: 'ظاء',
     difficulty: 5,
     strokes: [
       SAD_BODY,
@@ -265,6 +288,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ع',
     romanization: "'",
+    speechOverride: 'عين',
     difficulty: 4,
     strokes: [AIN_HOOK],
   },
@@ -273,6 +297,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'غ',
     romanization: 'gh',
+    speechOverride: 'غين',
     difficulty: 4,
     strokes: [AIN_HOOK, dot(45, 10)],
   },
@@ -281,6 +306,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ف',
     romanization: 'f',
+    speechOverride: 'فاء',
     difficulty: 2,
     strokes: [
       loop(50, 32, 10),
@@ -297,6 +323,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ق',
     romanization: 'q',
+    speechOverride: 'قاف',
     difficulty: 3,
     strokes: [
       loop(50, 32, 10),
@@ -315,6 +342,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ك',
     romanization: 'k',
+    speechOverride: 'كاف',
     difficulty: 3,
     strokes: [
       [
@@ -338,6 +366,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ل',
     romanization: 'l',
+    speechOverride: 'لام',
     difficulty: 2,
     strokes: [
       [
@@ -354,6 +383,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'م',
     romanization: 'm',
+    speechOverride: 'ميم',
     difficulty: 2,
     strokes: [
       loop(48, 40, 8),
@@ -368,6 +398,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ن',
     romanization: 'n',
+    speechOverride: 'نون',
     difficulty: 2,
     strokes: [
       [
@@ -386,6 +417,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ه',
     romanization: 'h',
+    speechOverride: 'هاء',
     difficulty: 4,
     strokes: [
       [
@@ -407,6 +439,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'و',
     romanization: 'w',
+    speechOverride: 'واو',
     difficulty: 2,
     strokes: [
       loop(46, 35, 9),
@@ -422,6 +455,7 @@ export const arabicCharacters: CharacterTemplate[] = [
     language: 'arabic',
     char: 'ي',
     romanization: 'y',
+    speechOverride: 'ياء',
     difficulty: 3,
     strokes: [
       BOAT_BOWL,
