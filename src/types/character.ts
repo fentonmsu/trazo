@@ -6,7 +6,7 @@ export interface Point {
 /** A single stroke: an ordered list of points as the pen travels, in drawing order. */
 export type Stroke = Point[];
 
-export type LanguageId = 'kana' | 'kanji' | 'cyrillic' | 'hebrew' | 'niqqud' | 'hebrewFull';
+export type LanguageId = 'kana' | 'kanji' | 'cyrillic' | 'hebrew' | 'niqqud' | 'hebrewFull' | 'arabic';
 
 export interface LanguageInfo {
   id: LanguageId;

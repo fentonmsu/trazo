@@ -43,11 +43,23 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'rtl',
     description: 'Cada letra combinada con cada nikud (א אָ אַ אֵ אֶ אִ אֹ אֻ אְ, ב בָ בַ...), como en las cartillas de lectura hebrea.',
   },
+  arabic: {
+    id: 'arabic',
+    name: 'Árabe',
+    nativeName: 'العربية',
+    direction: 'rtl',
+    description: 'Las 28 letras del alfabeto árabe en su forma aislada.',
+  },
 };
 
-export const LANGUAGE_ORDER: LanguageId[] = ['kana', 'kanji', 'cyrillic', 'hebrew', 'niqqud', 'hebrewFull'];
+export const LANGUAGE_ORDER: LanguageId[] = ['kana', 'kanji', 'cyrillic', 'hebrew', 'niqqud', 'hebrewFull', 'arabic'];
 
 /** True for any language rendered in Hebrew script (letters, niqqud, or both). */
 export function isHebrewScript(language: LanguageId): boolean {
   return language === 'hebrew' || language === 'niqqud' || language === 'hebrewFull';
+}
+
+/** True for any language that reads right-to-left, used for grid/layout direction. */
+export function isRtl(language: LanguageId): boolean {
+  return LANGUAGES[language].direction === 'rtl';
 }

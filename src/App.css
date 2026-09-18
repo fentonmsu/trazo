@@ -10,6 +10,10 @@
   font-family: 'Noto Sans Hebrew', sans-serif;
 }
 
+.arabic-glyph {
+  font-family: 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+}
+
 /* See HebrewGlyph.tsx: positions a trailing niqqud vowel point explicitly
    instead of relying on the font to attach it, since that silently fails
    on narrow sofit letters (ם/ן/ף/ץ) in several fonts. */

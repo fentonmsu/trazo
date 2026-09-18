@@ -5,6 +5,7 @@ import { cyrillicCharacters } from './cyrillic';
 import { hebrewCharacters } from './hebrew';
 import { niqqudCharacters } from './niqqud';
 import { hebrewFullCharacters } from './hebrewFull';
+import { arabicCharacters } from './arabic';
 
 export const CHARACTERS_BY_LANGUAGE: Record<LanguageId, CharacterTemplate[]> = {
   kana: kanaCharacters,
@@ -13,6 +14,7 @@ export const CHARACTERS_BY_LANGUAGE: Record<LanguageId, CharacterTemplate[]> = {
   hebrew: hebrewCharacters,
   niqqud: niqqudCharacters,
   hebrewFull: hebrewFullCharacters,
+  arabic: arabicCharacters,
 };
 
 export function getCharactersForLanguage(language: LanguageId): CharacterTemplate[] {

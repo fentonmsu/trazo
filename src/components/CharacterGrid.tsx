@@ -2,7 +2,7 @@ import type { CharacterTemplate } from '../types/character';
 import type { ProgressMap } from '../hooks/useProgress';
 import { SpeakButton } from './SpeakButton';
 import { HebrewGlyph } from './HebrewGlyph';
-import { isHebrewScript } from '../data/languages';
+import { isHebrewScript, isRtl } from '../data/languages';
 
 interface CharacterGridProps {
   characters: CharacterTemplate[];
@@ -19,7 +19,7 @@ function scoreClass(score: number | undefined) {
 }
 
 export function CharacterGrid({ characters, selectedId, progress, onSelect }: CharacterGridProps) {
-  const dir = characters[0] && isHebrewScript(characters[0].language) ? 'rtl' : 'ltr';
+  const dir = characters[0] && isRtl(characters[0].language) ? 'rtl' : 'ltr';
 
   return (
     <div className="character-grid" dir={dir}>
@@ -35,7 +35,7 @@ export function CharacterGrid({ characters, selectedId, progress, onSelect }: Ch
               {isHebrewScript(c.language) ? (
                 <HebrewGlyph char={c.char} className="glyph hebrew-glyph" />
               ) : (
-                <span className="glyph">{c.char}</span>
+                <span className={`glyph ${c.language === 'arabic' ? 'arabic-glyph' : ''}`}>{c.char}</span>
               )}
               <span className="romanization">{c.romanization}</span>
               {best !== undefined && <span className="best-score">{best}%</span>}
