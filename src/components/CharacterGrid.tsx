@@ -1,5 +1,5 @@
 import type { CharacterTemplate } from '../types/character';
-import type { ProgressMap } from '../hooks/useProgress';
+import type { CharacterProgress } from '../hooks/useProfile';
 import { SpeakButton } from './SpeakButton';
 import { HebrewGlyph } from './HebrewGlyph';
 import { isHebrewScript, isRtl } from '../data/languages';
@@ -7,7 +7,7 @@ import { isHebrewScript, isRtl } from '../data/languages';
 interface CharacterGridProps {
   characters: CharacterTemplate[];
   selectedId: string | null;
-  progress: ProgressMap;
+  progress: Record<string, CharacterProgress>;
   onSelect: (template: CharacterTemplate) => void;
 }
 

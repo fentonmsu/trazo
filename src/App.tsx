@@ -4,16 +4,19 @@ import { LANGUAGES, LANGUAGE_ORDER } from './data/languages';
 import { getCharactersForLanguage } from './data';
 import { CharacterGrid } from './components/CharacterGrid';
 import { TrainerView } from './components/TrainerView';
-import { useProgress } from './hooks/useProgress';
+import { AuthScreen } from './components/AuthScreen';
+import { UserStatusBar } from './components/UserStatusBar';
+import { AuthProvider, useAuth } from './hooks/useAuth';
+import { useProfile } from './hooks/useProfile';
 import './App.css';
 
 type Mode = 'practice' | 'recognize';
 
-function App() {
+function TrazoApp() {
   const [language, setLanguage] = useState<LanguageId>('kana');
   const [mode, setMode] = useState<Mode>('practice');
   const [selected, setSelected] = useState<CharacterTemplate | null>(null);
-  const { progress, recordScore } = useProgress();
+  const { profile, recordCharacterScore } = useProfile();
 
   const characters = useMemo(() => getCharactersForLanguage(language), [language]);
 
@@ -24,17 +27,14 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
+        {profile && <UserStatusBar streak={profile.streak} xp={profile.xp} hearts={profile.hearts} />}
         <h1>Trazo</h1>
         <p className="subtitle">Aprende a escribir kana, kanji, cirílico, hebreo y árabe dibujando a mano</p>
       </header>
 
       <nav className="language-tabs">
         {LANGUAGE_ORDER.map((id) => (
-          <button
-            key={id}
-            className={language === id ? 'active' : ''}
-            onClick={() => setLanguage(id)}
-          >
+          <button key={id} className={language === id ? 'active' : ''} onClick={() => setLanguage(id)}>
             {LANGUAGES[id].name}
           </button>
         ))}
@@ -57,7 +57,7 @@ function App() {
             <CharacterGrid
               characters={characters}
               selectedId={selected?.id ?? null}
-              progress={progress}
+              progress={profile?.characterProgress ?? {}}
               onSelect={setSelected}
             />
           )}
@@ -68,11 +68,26 @@ function App() {
             mode={mode}
             target={mode === 'practice' ? selected : null}
             candidates={characters}
-            onScored={recordScore}
+            onScored={recordCharacterScore}
           />
         </section>
       </main>
     </div>
+  );
+}
+
+function AuthGate() {
+  const { user, loading } = useAuth();
+  if (loading) return <div className="app-loading">Cargando…</div>;
+  if (!user) return <AuthScreen />;
+  return <TrazoApp />;
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AuthGate />
+    </AuthProvider>
   );
 }
 

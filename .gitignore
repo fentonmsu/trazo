@@ -13,6 +13,10 @@ dist-ssr
 *.local
 .claude/
 
+# Local SQLite database (per-user data, never shared/committed)
+server/*.db
+server/*.db-journal
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
