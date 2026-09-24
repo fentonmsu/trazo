@@ -23,6 +23,8 @@ VOICE_BY_LANGUAGE = {
     'niqqud': 'he-IL-HilaNeural',
     'hebrewFull': 'he-IL-HilaNeural',
     'arabic': 'ar-SA-ZariyahNeural',
+    'chinese': 'zh-CN-XiaoxiaoNeural',
+    'turkish': 'tr-TR-EmelNeural',
 }
 
 ENTRIES_PATH = os.path.join(os.path.dirname(__file__), 'speech-entries.json')

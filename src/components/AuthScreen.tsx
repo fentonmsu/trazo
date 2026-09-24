@@ -31,7 +31,9 @@ export function AuthScreen() {
     <div className="auth-screen">
       <div className="auth-card">
         <h1>Trazo</h1>
-        <p className="subtitle">Aprende a escribir kana, kanji, cirílico, hebreo y árabe dibujando a mano</p>
+        <p className="subtitle">
+          Aprende a escribir kana, kanji, cirílico, hebreo, árabe, chino y turco dibujando a mano
+        </p>
 
         <div className="auth-tabs">
           <button className={mode === 'login' ? 'active' : ''} onClick={() => setMode('login')} type="button">

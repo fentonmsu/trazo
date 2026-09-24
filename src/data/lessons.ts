@@ -13,7 +13,16 @@ const LESSON_SIZE = 6;
 
 /** Languages with structured lessons. hebrewFull is a combinatorial drill
  *  tool (200+ entries), not primary learning content, so it's excluded. */
-export const LESSON_LANGUAGES: LanguageId[] = ['kana', 'kanji', 'cyrillic', 'hebrew', 'niqqud', 'arabic'];
+export const LESSON_LANGUAGES: LanguageId[] = [
+  'kana',
+  'kanji',
+  'cyrillic',
+  'hebrew',
+  'niqqud',
+  'arabic',
+  'chinese',
+  'turkish',
+];
 
 const lessonCache = new Map<LanguageId, Lesson[]>();
 

@@ -53,7 +53,9 @@ function TrazoApp() {
       <header className="app-header">
         {profile && <UserStatusBar streak={profile.streak} xp={profile.xp} hearts={profile.hearts} />}
         <h1>Trazo</h1>
-        <p className="subtitle">Aprende a escribir kana, kanji, cirílico, hebreo y árabe dibujando a mano</p>
+        <p className="subtitle">
+          Aprende a escribir kana, kanji, cirílico, hebreo, árabe, chino y turco dibujando a mano
+        </p>
       </header>
 
       <nav className="language-tabs">

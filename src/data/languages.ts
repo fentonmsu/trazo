@@ -50,9 +50,33 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'rtl',
     description: 'Las 28 letras del alfabeto árabe en su forma aislada.',
   },
+  chinese: {
+    id: 'chinese',
+    name: 'Chino (Mandarín)',
+    nativeName: '中文',
+    direction: 'ltr',
+    description: 'Caracteres básicos chinos con lectura en pinyin y audio en mandarín.',
+  },
+  turkish: {
+    id: 'turkish',
+    name: 'Turco',
+    nativeName: 'Türkçe',
+    direction: 'ltr',
+    description: 'Las 29 letras del alfabeto turco, incluidas ç, ğ, ı/İ, ö, ş, ü.',
+  },
 };
 
-export const LANGUAGE_ORDER: LanguageId[] = ['kana', 'kanji', 'cyrillic', 'hebrew', 'niqqud', 'hebrewFull', 'arabic'];
+export const LANGUAGE_ORDER: LanguageId[] = [
+  'kana',
+  'kanji',
+  'cyrillic',
+  'hebrew',
+  'niqqud',
+  'hebrewFull',
+  'arabic',
+  'chinese',
+  'turkish',
+];
 
 /** True for any language rendered in Hebrew script (letters, niqqud, or both). */
 export function isHebrewScript(language: LanguageId): boolean {
