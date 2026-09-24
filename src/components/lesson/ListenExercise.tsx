@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { CharacterTemplate } from '../../types/character';
 import { ScriptGlyph } from '../ScriptGlyph';
-import { speakCharacter } from '../../engine/speech';
+import { playCharacterAudio } from '../../engine/speech';
 
 interface ListenExerciseProps {
   prompt: CharacterTemplate;
@@ -13,7 +13,7 @@ interface ListenExerciseProps {
 export function ListenExercise({ prompt, options, onAnswer }: ListenExerciseProps) {
   const [picked, setPicked] = useState<string | null>(null);
 
-  const play = () => speakCharacter(prompt.speechOverride ?? prompt.char, prompt.language);
+  const play = () => playCharacterAudio(prompt);
 
   useEffect(() => {
     play();

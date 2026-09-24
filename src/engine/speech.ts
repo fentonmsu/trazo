@@ -1,69 +1,35 @@
-import type { LanguageId } from '../types/character';
+import type { CharacterTemplate } from '../types/character';
 
-const LOCALE_BY_LANGUAGE: Record<LanguageId, string> = {
-  kana: 'ja-JP',
-  kanji: 'ja-JP',
-  cyrillic: 'ru-RU',
-  hebrew: 'he-IL',
-  niqqud: 'he-IL',
-  hebrewFull: 'he-IL',
-  arabic: 'ar-SA',
-};
+/**
+ * Plays a pre-generated audio clip for a character instead of using the
+ * browser's Web Speech API. speechSynthesis depends on whatever TTS voices
+ * happen to be installed on the user's OS - often nothing at all for
+ * Japanese/Arabic/Hebrew - so every character ships its own MP3 (generated
+ * once via scripts/generate-audio.py) at /audio/<language>/<id>.mp3. This
+ * works identically on any device with zero setup.
+ */
 
-let voicesCache: SpeechSynthesisVoice[] = [];
-const voiceListeners = new Set<() => void>();
+const audioCache = new Map<string, HTMLAudioElement>();
 
-function refreshVoices() {
-  if (typeof window === 'undefined' || !window.speechSynthesis) return;
-  voicesCache = window.speechSynthesis.getVoices();
-  voiceListeners.forEach((listener) => listener());
-}
-
-if (typeof window !== 'undefined' && window.speechSynthesis) {
-  refreshVoices();
-  window.speechSynthesis.onvoiceschanged = refreshVoices;
+function audioPathFor(template: CharacterTemplate): string {
+  return `/audio/${template.language}/${template.id}.mp3`;
 }
 
 export function isSpeechSupported(): boolean {
-  return typeof window !== 'undefined' && 'speechSynthesis' in window;
+  return typeof window !== 'undefined' && typeof Audio !== 'undefined';
 }
 
-function findVoice(language: LanguageId): SpeechSynthesisVoice | undefined {
-  const locale = LOCALE_BY_LANGUAGE[language];
-  const langPrefix = locale.split('-')[0];
-  return (
-    voicesCache.find((v) => v.lang === locale) ??
-    voicesCache.find((v) => v.lang.toLowerCase().startsWith(langPrefix))
-  );
-}
-
-/**
- * Whether the browser/OS has a voice installed for this language's script.
- * Without one, speechSynthesis still "succeeds" but silently substitutes a
- * default voice that can't read the script at all (usually dead silence,
- * sometimes garbled noise) - callers use this to warn instead of failing
- * with no explanation.
- */
-export function hasVoiceForLanguage(language: LanguageId): boolean {
-  return findVoice(language) !== undefined;
-}
-
-/** Re-runs `listener` whenever the browser's voice list (re)loads - voices load asynchronously. */
-export function subscribeToVoices(listener: () => void): () => void {
-  voiceListeners.add(listener);
-  return () => voiceListeners.delete(listener);
-}
-
-/** Speaks a single character/glyph using the browser's TTS voice for that script's language. */
-export function speakCharacter(char: string, language: LanguageId) {
+export function playCharacterAudio(template: CharacterTemplate): void {
   if (!isSpeechSupported()) return;
-  const utterance = new SpeechSynthesisUtterance(char);
-  utterance.lang = LOCALE_BY_LANGUAGE[language];
-  utterance.rate = 0.75;
-
-  const voice = findVoice(language);
-  if (voice) utterance.voice = voice;
-
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
+  const path = audioPathFor(template);
+  let audio = audioCache.get(path);
+  if (!audio) {
+    audio = new Audio(path);
+    audioCache.set(path, audio);
+  } else {
+    audio.currentTime = 0;
+  }
+  audio.play().catch(() => {
+    // Autoplay can be blocked before any user gesture on the page - safe to ignore.
+  });
 }

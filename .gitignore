@@ -17,6 +17,9 @@ dist-ssr
 server/*.db
 server/*.db-journal
 
+# Regenerable intermediate for scripts/generate-audio.py (see scripts/export-speech-data.ts)
+scripts/speech-entries.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
