@@ -17,8 +17,9 @@ dist-ssr
 server/*.db
 server/*.db-journal
 
-# Regenerable intermediate for scripts/generate-audio.py (see scripts/export-speech-data.ts)
+# Regenerable intermediates for scripts/generate-audio.py and the stroke-fidelity audit
 scripts/speech-entries.json
+scripts/stroke-audit-entries.json
 
 # Playwright E2E test output
 test-results/

@@ -144,12 +144,12 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     char: 'ו',
     consonantSound: 'v',
     difficulty: 1,
+    // Verified against the rendered glyph (Noto Sans Hebrew): a plain
+    // vertical bar, not a hooked stroke - see hebrewLetters audit notes.
     strokes: [
       [
-        { x: 55, y: 15 },
-        { x: 48, y: 22 },
-        { x: 50, y: 50 },
-        { x: 50, y: 80 },
+        { x: 60, y: 13 },
+        { x: 60, y: 88 },
       ],
     ],
   },
@@ -212,11 +212,13 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     char: 'י',
     consonantSound: 'y',
     difficulty: 1,
+    // Verified against the rendered glyph: a small flag at the top then a
+    // vertical body, not the short upper-corner hook this had before.
     strokes: [
       [
-        { x: 58, y: 22 },
-        { x: 50, y: 30 },
-        { x: 45, y: 42 },
+        { x: 50, y: 15 },
+        { x: 63, y: 21 },
+        { x: 63, y: 87 },
       ],
     ],
   },
@@ -295,12 +297,23 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     char: 'נ',
     consonantSound: 'n',
     difficulty: 1,
+    // Verified against the rendered glyph: a short top flag, a vertical
+    // body on the right, and a hooked foot curling back left at the base -
+    // the old single curve leaned too far left through the middle.
     strokes: [
       [
-        { x: 55, y: 20 },
-        { x: 52, y: 60 },
-        { x: 45, y: 75 },
-        { x: 30, y: 78 },
+        { x: 48, y: 13 },
+        { x: 53, y: 23 },
+      ],
+      [
+        { x: 62, y: 25 },
+        { x: 65, y: 50 },
+        { x: 65, y: 77 },
+      ],
+      [
+        { x: 65, y: 77 },
+        { x: 58, y: 86 },
+        { x: 50, y: 88 },
       ],
     ],
   },
@@ -516,12 +529,19 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     char: 'ך',
     consonantSound: 'kh',
     difficulty: 2,
+    // Verified against the rendered glyph: the descender sits on the RIGHT
+    // side (the old data put it on the left at x=48, mirrored from reality).
     strokes: [
       [
-        { x: 58, y: 20 },
-        { x: 50, y: 26 },
-        { x: 48, y: 55 },
-        { x: 48, y: 95 },
+        { x: 46, y: 13 },
+        { x: 33, y: 20 },
+        { x: 50, y: 23 },
+        { x: 66, y: 23 },
+      ],
+      [
+        { x: 66, y: 23 },
+        { x: 69, y: 40 },
+        { x: 69, y: 88 },
       ],
     ],
   },
@@ -545,10 +565,12 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     char: 'ן',
     consonantSound: 'n',
     difficulty: 1,
+    // Verified against the rendered glyph: a plain vertical bar at x=57,
+    // not x=50 - the 7-unit offset was enough to miss the real stroke entirely.
     strokes: [
       [
-        { x: 50, y: 18 },
-        { x: 50, y: 95 },
+        { x: 57, y: 14 },
+        { x: 57, y: 88 },
       ],
     ],
   },
