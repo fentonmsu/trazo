@@ -39,25 +39,23 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     char: 'א',
     consonantSound: '',
     difficulty: 5,
+    // Coordinates verified against the actual rendered glyph (Noto Sans
+    // Hebrew): sampled its pixel silhouette on 2.5-unit scanlines and
+    // traced the centerline of each run. In this sans-serif face aleph is
+    // a clean X - two full diagonals crossing around (50, 46) - not a
+    // spine with two short arms as earlier hand-guessed coordinates had it.
     strokes: [
-      // Main diagonal spine, top-right to bottom-left.
+      // Main spine: top-right to bottom-left.
       [
-        { x: 75, y: 15 },
-        { x: 25, y: 85 },
+        { x: 83, y: 13 },
+        { x: 56, y: 47 },
+        { x: 29, y: 87 },
       ],
-      // Upper arm: a short flag branching off near the top, angling up-left -
-      // kept well clear of the spine so it reads as its own stroke, not a
-      // third near-parallel line.
+      // Crossing diagonal: top-left to bottom-right.
       [
-        { x: 72, y: 22 },
-        { x: 52, y: 8 },
-        { x: 32, y: 15 },
-      ],
-      // Lower arm: a short flag branching off near the bottom, angling down-right.
-      [
-        { x: 28, y: 78 },
-        { x: 48, y: 92 },
-        { x: 68, y: 85 },
+        { x: 32, y: 13 },
+        { x: 56, y: 47 },
+        { x: 84, y: 86 },
       ],
     ],
   },
