@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
 import type { CharacterTemplate } from '../../types/character';
 import { ScriptGlyph } from '../ScriptGlyph';
+import { ReplayButton } from './ReplayButton';
 
 interface MatchExerciseProps {
   pairs: CharacterTemplate[];
-  onAnswer: (correct: boolean) => void;
+  onAnswered: (correct: boolean) => void;
   onMistake: () => void;
 }
 
@@ -18,7 +19,7 @@ function shuffle<T>(items: T[]): T[] {
 }
 
 /** Tap a glyph, then its matching romanization (or vice versa). */
-export function MatchExercise({ pairs, onAnswer, onMistake }: MatchExerciseProps) {
+export function MatchExercise({ pairs, onAnswered, onMistake }: MatchExerciseProps) {
   const glyphOrder = useMemo(() => shuffle(pairs), [pairs]);
   const soundOrder = useMemo(() => shuffle(pairs), [pairs]);
   const [matched, setMatched] = useState<Set<string>>(new Set());
@@ -46,7 +47,7 @@ export function MatchExercise({ pairs, onAnswer, onMistake }: MatchExerciseProps
       setSelectedGlyph(null);
       setSelectedSound(null);
       if (next.size === pairs.length) {
-        setTimeout(() => onAnswer(true), 400);
+        setTimeout(() => onAnswered(true), 400);
       }
     } else {
       setShake(true);
@@ -65,14 +66,19 @@ export function MatchExercise({ pairs, onAnswer, onMistake }: MatchExerciseProps
       <div className="match-grid">
         <div className="match-column">
           {glyphOrder.map((item) => (
-            <button
+            <div
               key={item.id}
-              className={`match-card ${matched.has(item.id) ? 'matched' : ''} ${selectedGlyph === item.id ? (shake ? 'shake' : 'selected') : ''}`}
-              onClick={() => pickGlyph(item.id)}
-              disabled={matched.has(item.id)}
+              className={`match-card-wrap ${matched.has(item.id) ? 'matched' : ''}`}
             >
-              <ScriptGlyph template={item} className="option-glyph" />
-            </button>
+              <button
+                className={`match-card ${matched.has(item.id) ? 'matched' : ''} ${selectedGlyph === item.id ? (shake ? 'shake' : 'selected') : ''}`}
+                onClick={() => pickGlyph(item.id)}
+                disabled={matched.has(item.id)}
+              >
+                <ScriptGlyph template={item} className="option-glyph" />
+              </button>
+              <ReplayButton template={item} className="match-card-replay" />
+            </div>
           ))}
         </div>
         <div className="match-column">

@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import type { CharacterTemplate } from '../../types/character';
 import { ScriptGlyph } from '../ScriptGlyph';
+import { ReplayButton } from './ReplayButton';
 
 interface ChoiceExerciseProps {
   mode: 'choose-sound' | 'choose-char';
   prompt: CharacterTemplate;
   options: CharacterTemplate[];
-  onAnswer: (correct: boolean) => void;
+  onAnswered: (correct: boolean) => void;
 }
 
 /** "Which sound does this character make?" or "Which character makes this sound?" */
-export function ChoiceExercise({ mode, prompt, options, onAnswer }: ChoiceExerciseProps) {
+export function ChoiceExercise({ mode, prompt, options, onAnswered }: ChoiceExerciseProps) {
   const [picked, setPicked] = useState<string | null>(null);
 
   const handlePick = (option: CharacterTemplate) => {
     if (picked) return;
     setPicked(option.id);
-    const correct = option.id === prompt.id;
-    setTimeout(() => onAnswer(correct), 700);
+    onAnswered(option.id === prompt.id);
   };
 
   return (
@@ -27,11 +27,17 @@ export function ChoiceExercise({ mode, prompt, options, onAnswer }: ChoiceExerci
       </p>
 
       {mode === 'choose-sound' ? (
-        <ScriptGlyph template={prompt} className="exercise-prompt-glyph" />
+        <div className="exercise-prompt-row">
+          <ScriptGlyph template={prompt} className="exercise-prompt-glyph" />
+          <ReplayButton template={prompt} />
+        </div>
       ) : (
-        <div className="exercise-prompt-text">
-          {prompt.romanization}
-          {prompt.meaning && <span className="exercise-prompt-meaning"> · {prompt.meaning}</span>}
+        <div className="exercise-prompt-row">
+          <div className="exercise-prompt-text">
+            {prompt.romanization}
+            {prompt.meaning && <span className="exercise-prompt-meaning"> · {prompt.meaning}</span>}
+          </div>
+          <ReplayButton template={prompt} />
         </div>
       )}
 
