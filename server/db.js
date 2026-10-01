@@ -4,7 +4,12 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export const db = new DatabaseSync(path.join(__dirname, 'trazo.db'));
+// DB_PATH lets the E2E test server point at a throwaway database instead of
+// the real one (see playwright.config.ts), so running tests never touches
+// anyone's actual account data.
+const dbPath = process.env.DB_PATH ?? path.join(__dirname, 'trazo.db');
+
+export const db = new DatabaseSync(dbPath);
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (

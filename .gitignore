@@ -20,6 +20,11 @@ server/*.db-journal
 # Regenerable intermediate for scripts/generate-audio.py (see scripts/export-speech-data.ts)
 scripts/speech-entries.json
 
+# Playwright E2E test output
+test-results/
+playwright-report/
+blob-report/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

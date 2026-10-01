@@ -40,20 +40,24 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     consonantSound: '',
     difficulty: 5,
     strokes: [
+      // Main diagonal spine, top-right to bottom-left.
       [
-        { x: 72, y: 24 },
-        { x: 50, y: 50 },
-        { x: 30, y: 76 },
+        { x: 75, y: 15 },
+        { x: 25, y: 85 },
       ],
+      // Upper arm: a short flag branching off near the top, angling up-left -
+      // kept well clear of the spine so it reads as its own stroke, not a
+      // third near-parallel line.
       [
-        { x: 88, y: 18 },
-        { x: 72, y: 28 },
-        { x: 58, y: 38 },
+        { x: 72, y: 22 },
+        { x: 52, y: 8 },
+        { x: 32, y: 15 },
       ],
+      // Lower arm: a short flag branching off near the bottom, angling down-right.
       [
-        { x: 44, y: 62 },
-        { x: 30, y: 74 },
-        { x: 14, y: 86 },
+        { x: 28, y: 78 },
+        { x: 48, y: 92 },
+        { x: 68, y: 85 },
       ],
     ],
   },
