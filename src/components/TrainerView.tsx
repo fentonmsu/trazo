@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { CharacterTemplate } from '../types/character';
 import { DrawingCanvas, type DrawingCanvasHandle } from './DrawingCanvas';
 import { SpeakButton } from './SpeakButton';
@@ -24,6 +24,11 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
     setResult(null);
     setMatches(null);
   };
+
+  useEffect(() => {
+    reset();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target?.id, candidates]);
 
   const handleCheck = () => {
     const strokes = canvasRef.current?.getStrokes() ?? [];
