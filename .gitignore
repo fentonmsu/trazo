@@ -17,6 +17,11 @@ dist-ssr
 server/*.db
 server/*.db-journal
 
+# Secrets (Supabase keys, JWT secret, etc.) — never commit, set in Vercel dashboard for prod
+.env
+.env.*
+!.env.example
+
 # Regenerable intermediates for scripts/generate-audio.py and the stroke-fidelity audit
 scripts/speech-entries.json
 scripts/stroke-audit-entries.json
