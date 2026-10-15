@@ -16,9 +16,16 @@
 .auth-screen {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   padding: 16px;
+}
+
+.auth-language-row {
+  display: flex;
+  justify-content: center;
 }
 
 .auth-card {
@@ -147,6 +154,36 @@
   cursor: pointer;
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 8px;
+  background: var(--panel-bg);
+}
+
+.language-switcher select {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* See the Noto Sans Hebrew <link> comment in index.html: needed so niqqud
    attaches correctly on every letterform, including the sofit ones. */
 .hebrew-glyph {
@@ -190,6 +227,14 @@
 .app-header {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.header-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .app-header h1 {

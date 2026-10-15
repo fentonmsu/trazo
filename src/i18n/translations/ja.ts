@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const ja: Record<TranslationKey, string> = {
+  'app.subtitle': 'かな、漢字、キリル文字、ヘブライ語、アラビア語、中国語、トルコ語を手書きで練習しよう',
+  'app.loading': '読み込み中…',
+  'app.noLessons': 'この言語にはまだ構成されたレッスンがありません。「練習」か「認識」を試してください。',
+  'app.noCharacters': 'この言語にはまだ文字が読み込まれていません。',
+
+  'nav.lesson': 'レッスン',
+  'nav.practice': '練習',
+  'nav.recognize': '認識',
+
+  'settings.interfaceLanguage': '表示言語',
+
+  'auth.login': 'ログイン',
+  'auth.register': 'アカウント作成',
+  'auth.username': 'ユーザー名',
+  'auth.password': 'パスワード',
+  'auth.submitting': '少々お待ちください…',
+  'auth.enter': '入る',
+  'auth.genericError': '問題が発生しました。もう一度お試しください。',
+
+  'status.streakTitle': '連続練習日数',
+  'status.xpTitle': '経験値',
+  'status.heartsTitle': 'ライフ',
+  'status.logout': 'ログアウト',
+
+  'trainer.pickCharacter': 'リストから文字を選んで練習を始めましょう。',
+  'trainer.recognizeHint': 'このアルファベットの好きな文字を描いてください。アプリがどの文字か推測します。',
+  'trainer.undo': '一画取り消す',
+  'trainer.clear': '消去',
+  'trainer.showGuide': 'ガイドを表示',
+  'trainer.whatDidIDraw': '何を描きましたか？',
+  'trainer.drawSomethingFirst': 'まず何か描いてください。',
+  'common.check': '確認',
+  'common.listenAgain': 'もう一度聞く',
+
+  'lessonMap.noHearts': '今日のライフがなくなりました。回復するまで他のタブで自由に練習できます。',
+  'lessonMap.completePrevious': '先に前のレッスンを完了してください',
+  'lessonMap.lessonTitle': 'レッスン {index}',
+
+  'lessonRunner.exitAria': 'レッスンを終了',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} ライフがありません',
+  'lessonRunner.outOfHeartsBody': '今日のライフを使い切りました。明日またこのレッスンを続けましょう。',
+  'lessonRunner.backToMap': '戻る',
+  'lessonRunner.completed': 'レッスン完了！',
+  'lessonRunner.continue': '続ける',
+  'lessonRunner.back': '戻る',
+  'lessonRunner.next': '次へ',
+
+  'exercise.chooseSound': 'この文字はどう読みますか？',
+  'exercise.chooseChar': '正しい文字はどれですか？',
+  'exercise.listenInstruction': '聞いて正しい文字を選んでください',
+  'exercise.matchInstruction': 'それぞれの文字をその音と組み合わせてください',
+  'exercise.drawInstruction': 'この文字を描いてください',
+  'exercise.matchLabel': 'マッチング練習',
+  'exercise.correct': '✓ 正解',
+  'exercise.incorrect': '✗ 不正解',
+
+  'lang.kana': '日本語（かな）',
+  'lang.kanji': '日本語（漢字）',
+  'lang.cyrillic': 'ロシア語（キリル文字）',
+  'lang.hebrew': 'ヘブライ語',
+  'lang.niqqud': 'ヘブライ語（ニクード）',
+  'lang.hebrewFull': 'ヘブライ語（全母音）',
+  'lang.arabic': 'アラビア語',
+  'lang.chinese': '中国語（北京語）',
+  'lang.turkish': 'トルコ語',
+
+  'errors.USERNAME_TOO_SHORT': 'ユーザー名は3文字以上にしてください',
+  'errors.PASSWORD_TOO_SHORT': 'パスワードは4文字以上にしてください',
+  'errors.USERNAME_TAKEN': 'そのユーザー名はすでに使われています',
+  'errors.INVALID_CREDENTIALS': 'ユーザー名またはパスワードが違います',
+  'errors.DB_ERROR': 'データベースエラー',
+  'errors.USER_CREATE_FAILED': 'ユーザーを作成できませんでした',
+  'errors.INVALID_DATA': '無効なデータです',
+  'errors.NOT_AUTHENTICATED': '認証されていません',
+  'errors.SESSION_INVALID': 'セッションが無効か期限切れです',
+
+  'feedback.noDrawing': 'まだ何も描いていません。',
+  'feedback.missingStrokes': '不足している画数：{count}',
+  'feedback.extraStrokes': '余分な画数：{count}',
+  'feedback.directionIssue': 'この画の向きを確認してください：{strokes}',
+  'feedback.shapeIssue': 'この画の形が合っていません：{strokes}',
+  'feedback.excellent': '素晴らしい！とても正確な画です。',
+  'feedback.goodEffort': 'いい調子です、練習を続けましょう。',
+};
+
+export default ja;

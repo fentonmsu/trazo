@@ -5,6 +5,7 @@ import { SpeakButton } from './SpeakButton';
 import { HebrewGlyph } from './HebrewGlyph';
 import { scoreDrawing, recognizeCharacter, type DrawingScoreResult, type RecognitionMatch } from '../engine/recognizer';
 import { isHebrewScript, isRtl } from '../data/languages';
+import { useI18n } from '../i18n/I18nContext';
 
 interface TrainerViewProps {
   mode: 'practice' | 'recognize';
@@ -14,6 +15,7 @@ interface TrainerViewProps {
 }
 
 export function TrainerView({ mode, target, candidates, onScored }: TrainerViewProps) {
+  const { t } = useI18n();
   const canvasRef = useRef<DrawingCanvasHandle>(null);
   const [showGuide, setShowGuide] = useState(true);
   const [result, setResult] = useState<DrawingScoreResult | null>(null);
@@ -45,7 +47,7 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
   };
 
   if (mode === 'practice' && !target) {
-    return <p className="hint">Elige un carácter de la lista para empezar a practicar.</p>;
+    return <p className="hint">{t('trainer.pickCharacter')}</p>;
   }
 
   return (
@@ -67,9 +69,7 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
         </div>
       )}
 
-      {mode === 'recognize' && (
-        <p className="hint">Dibuja cualquier carácter de este alfabeto. La app intentará adivinar cuál escribiste.</p>
-      )}
+      {mode === 'recognize' && <p className="hint">{t('trainer.recognizeHint')}</p>}
 
       <div className="canvas-wrap">
         <DrawingCanvas
@@ -84,16 +84,16 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
       </div>
 
       <div className="controls">
-        <button onClick={() => canvasRef.current?.undo()}>Deshacer trazo</button>
-        <button onClick={reset}>Borrar</button>
+        <button onClick={() => canvasRef.current?.undo()}>{t('trainer.undo')}</button>
+        <button onClick={reset}>{t('trainer.clear')}</button>
         {mode === 'practice' && (
           <label className="guide-toggle">
             <input type="checkbox" checked={showGuide} onChange={(e) => setShowGuide(e.target.checked)} />
-            Mostrar guía
+            {t('trainer.showGuide')}
           </label>
         )}
         <button className="primary" onClick={handleCheck}>
-          {mode === 'practice' ? 'Comprobar' : '¿Qué dibujé?'}
+          {mode === 'practice' ? t('common.check') : t('trainer.whatDidIDraw')}
         </button>
       </div>
 
@@ -102,7 +102,7 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
           <div className="score">{result.score}%</div>
           <ul>
             {result.feedback.map((f, i) => (
-              <li key={i}>{f}</li>
+              <li key={i}>{t(f.key, f.vars)}</li>
             ))}
           </ul>
         </div>
@@ -110,7 +110,7 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
 
       {matches && (
         <div className="matches" dir={matches[0] && isRtl(matches[0].template.language) ? 'rtl' : 'ltr'}>
-          {matches.length === 0 && <p>Dibuja algo primero.</p>}
+          {matches.length === 0 && <p>{t('trainer.drawSomethingFirst')}</p>}
           {matches.map((m, i) => (
             <div key={m.template.id} className={`match-row ${i === 0 ? 'top' : ''}`}>
               {isHebrewScript(m.template.language) ? (

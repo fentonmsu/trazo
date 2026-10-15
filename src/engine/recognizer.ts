@@ -91,12 +91,18 @@ function costToScore(cost: number): number {
   return Math.max(0, Math.min(1, 1 - cost / MAX_ACCEPTABLE_DIST));
 }
 
+/** A feedback line as a translation key + the values to interpolate into it, so the UI can render it in the chosen interface language instead of baked-in Spanish. */
+export interface FeedbackItem {
+  key: 'feedback.noDrawing' | 'feedback.missingStrokes' | 'feedback.extraStrokes' | 'feedback.directionIssue' | 'feedback.shapeIssue' | 'feedback.excellent' | 'feedback.goodEffort';
+  vars?: Record<string, string | number>;
+}
+
 export interface DrawingScoreResult {
   /** 0-100 overall score */
   score: number;
   expectedStrokeCount: number;
   actualStrokeCount: number;
-  feedback: string[];
+  feedback: FeedbackItem[];
   /** One entry per template stroke, in order; null if that stroke was missing. */
   perStrokeScores: (number | null)[];
 }
@@ -112,7 +118,7 @@ export function scoreDrawing(userStrokes: Stroke[], template: CharacterTemplate)
       score: 0,
       expectedStrokeCount,
       actualStrokeCount,
-      feedback: ['Todavía no dibujaste nada.'],
+      feedback: [{ key: 'feedback.noDrawing' }],
       perStrokeScores: new Array(expectedStrokeCount).fill(null),
     };
   }
@@ -151,21 +157,21 @@ export function scoreDrawing(userStrokes: Stroke[], template: CharacterTemplate)
   const finalScore = denominator > 0 ? numerator / denominator : 0;
   const score = Math.round(finalScore * 100);
 
-  const feedback: string[] = [];
+  const feedback: FeedbackItem[] = [];
   if (missingCount > 0) {
-    feedback.push(`Te faltó dibujar ${missingCount} trazo${missingCount > 1 ? 's' : ''}.`);
+    feedback.push({ key: 'feedback.missingStrokes', vars: { count: missingCount } });
   }
   if (extraCount > 0) {
-    feedback.push(`Dibujaste ${extraCount} trazo${extraCount > 1 ? 's' : ''} de más.`);
+    feedback.push({ key: 'feedback.extraStrokes', vars: { count: extraCount } });
   }
   if (directionIssues.length > 0) {
-    feedback.push(`Revisa la dirección del trazo ${directionIssues.join(', ')}.`);
+    feedback.push({ key: 'feedback.directionIssue', vars: { strokes: directionIssues.join(', ') } });
   }
   if (shapeIssues.length > 0) {
-    feedback.push(`La forma del trazo ${shapeIssues.join(', ')} no coincide bien con el modelo.`);
+    feedback.push({ key: 'feedback.shapeIssue', vars: { strokes: shapeIssues.join(', ') } });
   }
   if (feedback.length === 0) {
-    feedback.push(score >= 90 ? '¡Excelente! Trazo muy preciso.' : 'Buen intento, sigue practicando.');
+    feedback.push({ key: score >= 90 ? 'feedback.excellent' : 'feedback.goodEffort' });
   }
 
   return { score, expectedStrokeCount, actualStrokeCount, feedback, perStrokeScores };

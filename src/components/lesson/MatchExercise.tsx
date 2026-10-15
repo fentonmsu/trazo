@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import type { CharacterTemplate } from '../../types/character';
 import { ScriptGlyph } from '../ScriptGlyph';
 import { ReplayButton } from './ReplayButton';
+import { useI18n } from '../../i18n/I18nContext';
 
 interface MatchExerciseProps {
   pairs: CharacterTemplate[];
@@ -20,6 +21,7 @@ function shuffle<T>(items: T[]): T[] {
 
 /** Tap a glyph, then its matching romanization (or vice versa). */
 export function MatchExercise({ pairs, onAnswered, onMistake }: MatchExerciseProps) {
+  const { t } = useI18n();
   const glyphOrder = useMemo(() => shuffle(pairs), [pairs]);
   const soundOrder = useMemo(() => shuffle(pairs), [pairs]);
   const [matched, setMatched] = useState<Set<string>>(new Set());
@@ -62,7 +64,7 @@ export function MatchExercise({ pairs, onAnswered, onMistake }: MatchExercisePro
 
   return (
     <div className="exercise">
-      <p className="exercise-instruction">Toca cada carácter con su sonido</p>
+      <p className="exercise-instruction">{t('exercise.matchInstruction')}</p>
       <div className="match-grid">
         <div className="match-column">
           {glyphOrder.map((item) => (

@@ -34,12 +34,12 @@ export function clearSessionCookie(res) {
 
 export function requireAuth(req, res, next) {
   const token = req.cookies?.[COOKIE_NAME];
-  if (!token) return res.status(401).json({ error: 'No autenticado' });
+  if (!token) return res.status(401).json({ error: 'NOT_AUTHENTICATED' });
   try {
     const payload = jwt.verify(token, JWT_SECRET);
     req.userId = payload.userId;
     next();
   } catch {
-    res.status(401).json({ error: 'Sesión inválida o expirada' });
+    res.status(401).json({ error: 'SESSION_INVALID' });
   }
 }

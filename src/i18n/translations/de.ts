@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const de: Record<TranslationKey, string> = {
+  'app.subtitle': 'Lerne Kana, Kanji, Kyrillisch, Hebräisch, Arabisch, Chinesisch und Türkisch von Hand zu schreiben',
+  'app.loading': 'Wird geladen…',
+  'app.noLessons': 'Diese Sprache hat noch keine strukturierten Lektionen — probier "Üben" oder "Erkennen".',
+  'app.noCharacters': 'Für diese Sprache sind noch keine Zeichen geladen.',
+
+  'nav.lesson': 'Lektion',
+  'nav.practice': 'Üben',
+  'nav.recognize': 'Erkennen',
+
+  'settings.interfaceLanguage': 'Oberflächensprache',
+
+  'auth.login': 'Anmelden',
+  'auth.register': 'Konto erstellen',
+  'auth.username': 'Benutzername',
+  'auth.password': 'Passwort',
+  'auth.submitting': 'Einen Moment…',
+  'auth.enter': 'Loslegen',
+  'auth.genericError': 'Etwas ist schiefgelaufen. Bitte versuch es erneut.',
+
+  'status.streakTitle': 'Aktuelle Übungsserie in Tagen',
+  'status.xpTitle': 'Erfahrungspunkte',
+  'status.heartsTitle': 'Leben',
+  'status.logout': 'Abmelden',
+
+  'trainer.pickCharacter': 'Wähle ein Zeichen aus der Liste, um mit dem Üben zu beginnen.',
+  'trainer.recognizeHint': 'Zeichne ein beliebiges Zeichen dieses Alphabets. Die App versucht zu erraten, welches es ist.',
+  'trainer.undo': 'Strich rückgängig',
+  'trainer.clear': 'Löschen',
+  'trainer.showGuide': 'Vorlage anzeigen',
+  'trainer.whatDidIDraw': 'Was habe ich gezeichnet?',
+  'trainer.drawSomethingFirst': 'Zeichne zuerst etwas.',
+  'common.check': 'Prüfen',
+  'common.listenAgain': 'Erneut anhören',
+
+  'lessonMap.noHearts': 'Für heute keine Leben mehr übrig — du kannst in den anderen Tabs weiter frei üben, während sie sich auffüllen.',
+  'lessonMap.completePrevious': 'Schließe zuerst die vorherige Lektion ab',
+  'lessonMap.lessonTitle': 'Lektion {index}',
+
+  'lessonRunner.exitAria': 'Lektion verlassen',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} Keine Leben mehr',
+  'lessonRunner.outOfHeartsBody': 'Dir sind für heute die Leben ausgegangen. Komm morgen wieder, um diese Lektion fortzusetzen.',
+  'lessonRunner.backToMap': 'Zurück',
+  'lessonRunner.completed': 'Lektion abgeschlossen!',
+  'lessonRunner.continue': 'Weiter',
+  'lessonRunner.back': 'Zurück',
+  'lessonRunner.next': 'Weiter',
+
+  'exercise.chooseSound': 'Wie klingt dieses Zeichen?',
+  'exercise.chooseChar': 'Welches ist das richtige Zeichen?',
+  'exercise.listenInstruction': 'Hör zu und wähle das richtige Zeichen',
+  'exercise.matchInstruction': 'Ordne jedem Zeichen seinen Klang zu',
+  'exercise.drawInstruction': 'Zeichne dieses Zeichen',
+  'exercise.matchLabel': 'Zuordnungsübung',
+  'exercise.correct': '✓ Richtig',
+  'exercise.incorrect': '✗ Falsch',
+
+  'lang.kana': 'Japanisch (Kana)',
+  'lang.kanji': 'Japanisch (Kanji)',
+  'lang.cyrillic': 'Russisch (Kyrillisch)',
+  'lang.hebrew': 'Hebräisch',
+  'lang.niqqud': 'Hebräisch (Niqqud)',
+  'lang.hebrewFull': 'Hebräisch (alle Vokale)',
+  'lang.arabic': 'Arabisch',
+  'lang.chinese': 'Chinesisch (Mandarin)',
+  'lang.turkish': 'Türkisch',
+
+  'errors.USERNAME_TOO_SHORT': 'Der Benutzername muss mindestens 3 Zeichen lang sein',
+  'errors.PASSWORD_TOO_SHORT': 'Das Passwort muss mindestens 4 Zeichen lang sein',
+  'errors.USERNAME_TAKEN': 'Dieser Benutzername ist bereits vergeben',
+  'errors.INVALID_CREDENTIALS': 'Benutzername oder Passwort falsch',
+  'errors.DB_ERROR': 'Datenbankfehler',
+  'errors.USER_CREATE_FAILED': 'Der Benutzer konnte nicht erstellt werden',
+  'errors.INVALID_DATA': 'Ungültige Daten',
+  'errors.NOT_AUTHENTICATED': 'Nicht angemeldet',
+  'errors.SESSION_INVALID': 'Sitzung ungültig oder abgelaufen',
+
+  'feedback.noDrawing': 'Du hast noch nichts gezeichnet.',
+  'feedback.missingStrokes': 'Fehlende Striche: {count}',
+  'feedback.extraStrokes': 'Zusätzliche Striche: {count}',
+  'feedback.directionIssue': 'Überprüfe die Richtung von Strich: {strokes}',
+  'feedback.shapeIssue': 'Die Form passt bei Strich {strokes} nicht gut',
+  'feedback.excellent': 'Ausgezeichnet! Sehr präziser Strich.',
+  'feedback.goodEffort': 'Guter Versuch, übe weiter.',
+};
+
+export default de;

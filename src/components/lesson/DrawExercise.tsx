@@ -4,6 +4,7 @@ import { ScriptGlyph } from '../ScriptGlyph';
 import { ReplayButton } from './ReplayButton';
 import { DrawingCanvas, type DrawingCanvasHandle } from '../DrawingCanvas';
 import { scoreDrawing } from '../../engine/recognizer';
+import { useI18n } from '../../i18n/I18nContext';
 
 const PASS_THRESHOLD = 50;
 
@@ -13,6 +14,7 @@ interface DrawExerciseProps {
 }
 
 export function DrawExercise({ target, onAnswered }: DrawExerciseProps) {
+  const { t } = useI18n();
   const canvasRef = useRef<DrawingCanvasHandle>(null);
   const [score, setScore] = useState<number | null>(null);
 
@@ -25,7 +27,7 @@ export function DrawExercise({ target, onAnswered }: DrawExerciseProps) {
 
   return (
     <div className="exercise">
-      <p className="exercise-instruction">Dibuja este carácter</p>
+      <p className="exercise-instruction">{t('exercise.drawInstruction')}</p>
       <div className="draw-exercise-target">
         <ScriptGlyph template={target} className="exercise-prompt-glyph small" />
         <span>{target.romanization}</span>
@@ -38,7 +40,7 @@ export function DrawExercise({ target, onAnswered }: DrawExerciseProps) {
 
       {score === null ? (
         <button className="primary" onClick={handleCheck}>
-          Comprobar
+          {t('common.check')}
         </button>
       ) : (
         <p className={`draw-exercise-result ${score >= PASS_THRESHOLD ? 'correct' : 'wrong'}`}>{score}%</p>

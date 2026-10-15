@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const zh: Record<TranslationKey, string> = {
+  'app.subtitle': '通过手写练习学习假名、汉字、西里尔字母、希伯来语、阿拉伯语、中文和土耳其语',
+  'app.loading': '加载中…',
+  'app.noLessons': '该语言还没有结构化课程 — 请试试"练习"或"识别"。',
+  'app.noCharacters': '该语言还没有加载任何字符。',
+
+  'nav.lesson': '课程',
+  'nav.practice': '练习',
+  'nav.recognize': '识别',
+
+  'settings.interfaceLanguage': '界面语言',
+
+  'auth.login': '登录',
+  'auth.register': '创建账户',
+  'auth.username': '用户名',
+  'auth.password': '密码',
+  'auth.submitting': '请稍候…',
+  'auth.enter': '进入',
+  'auth.genericError': '出了点问题，请再试一次。',
+
+  'status.streakTitle': '连续练习天数',
+  'status.xpTitle': '经验值',
+  'status.heartsTitle': '生命值',
+  'status.logout': '退出',
+
+  'trainer.pickCharacter': '从列表中选择一个字符开始练习。',
+  'trainer.recognizeHint': '画出这个字母表中的任意字符，应用会尝试猜出你写的是哪个。',
+  'trainer.undo': '撤销笔画',
+  'trainer.clear': '清除',
+  'trainer.showGuide': '显示引导',
+  'trainer.whatDidIDraw': '我画的是什么？',
+  'trainer.drawSomethingFirst': '请先画点什么。',
+  'common.check': '检查',
+  'common.listenAgain': '再听一次',
+
+  'lessonMap.noHearts': '今天的生命值用完了 — 你仍可以在其他标签页自由练习，等待生命值恢复。',
+  'lessonMap.completePrevious': '请先完成上一课',
+  'lessonMap.lessonTitle': '第 {index} 课',
+
+  'lessonRunner.exitAria': '退出课程',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} 生命值用完了',
+  'lessonRunner.outOfHeartsBody': '今天的生命值用完了，明天再来继续这节课吧。',
+  'lessonRunner.backToMap': '返回',
+  'lessonRunner.completed': '课程完成！',
+  'lessonRunner.continue': '继续',
+  'lessonRunner.back': '上一个',
+  'lessonRunner.next': '下一个',
+
+  'exercise.chooseSound': '这个字符怎么读？',
+  'exercise.chooseChar': '哪个是正确的字符？',
+  'exercise.listenInstruction': '听音频并选择正确的字符',
+  'exercise.matchInstruction': '将每个字符与它的读音配对',
+  'exercise.drawInstruction': '画出这个字符',
+  'exercise.matchLabel': '配对练习',
+  'exercise.correct': '✓ 正确',
+  'exercise.incorrect': '✗ 错误',
+
+  'lang.kana': '日语（假名）',
+  'lang.kanji': '日语（汉字）',
+  'lang.cyrillic': '俄语（西里尔字母）',
+  'lang.hebrew': '希伯来语',
+  'lang.niqqud': '希伯来语（元音符号）',
+  'lang.hebrewFull': '希伯来语（全部元音）',
+  'lang.arabic': '阿拉伯语',
+  'lang.chinese': '中文（普通话）',
+  'lang.turkish': '土耳其语',
+
+  'errors.USERNAME_TOO_SHORT': '用户名至少需要3个字符',
+  'errors.PASSWORD_TOO_SHORT': '密码至少需要4个字符',
+  'errors.USERNAME_TAKEN': '该用户名已被使用',
+  'errors.INVALID_CREDENTIALS': '用户名或密码错误',
+  'errors.DB_ERROR': '数据库错误',
+  'errors.USER_CREATE_FAILED': '无法创建用户',
+  'errors.INVALID_DATA': '数据无效',
+  'errors.NOT_AUTHENTICATED': '未登录',
+  'errors.SESSION_INVALID': '会话无效或已过期',
+
+  'feedback.noDrawing': '你还没有画任何内容。',
+  'feedback.missingStrokes': '缺少笔画：{count}',
+  'feedback.extraStrokes': '多余笔画：{count}',
+  'feedback.directionIssue': '请检查笔画方向：{strokes}',
+  'feedback.shapeIssue': '笔画形状不太吻合：{strokes}',
+  'feedback.excellent': '太棒了！笔画非常准确。',
+  'feedback.goodEffort': '不错的尝试，继续练习吧。',
+};
+
+export default zh;

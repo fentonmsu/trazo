@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { CharacterTemplate } from '../../types/character';
 import { ScriptGlyph } from '../ScriptGlyph';
 import { ReplayButton } from './ReplayButton';
+import { useI18n } from '../../i18n/I18nContext';
 
 interface ChoiceExerciseProps {
   mode: 'choose-sound' | 'choose-char';
@@ -12,6 +13,7 @@ interface ChoiceExerciseProps {
 
 /** "Which sound does this character make?" or "Which character makes this sound?" */
 export function ChoiceExercise({ mode, prompt, options, onAnswered }: ChoiceExerciseProps) {
+  const { t } = useI18n();
   const [picked, setPicked] = useState<string | null>(null);
 
   const handlePick = (option: CharacterTemplate) => {
@@ -23,7 +25,7 @@ export function ChoiceExercise({ mode, prompt, options, onAnswered }: ChoiceExer
   return (
     <div className="exercise">
       <p className="exercise-instruction">
-        {mode === 'choose-sound' ? '¿Cómo suena este carácter?' : '¿Cuál es el carácter correcto?'}
+        {mode === 'choose-sound' ? t('exercise.chooseSound') : t('exercise.chooseChar')}
       </p>
 
       {mode === 'choose-sound' ? (

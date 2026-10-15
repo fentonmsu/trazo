@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const tr: Record<TranslationKey, string> = {
+  'app.subtitle': 'Kana, kanji, Kiril, İbrani, Arap, Çin ve Türk alfabelerini elle yazmayı öğren',
+  'app.loading': 'Yükleniyor…',
+  'app.noLessons': 'Bu dilde henüz yapılandırılmış dersler yok — "Alıştırma" veya "Tanıma" sekmesini dene.',
+  'app.noCharacters': 'Bu dil için henüz yüklenmiş karakter yok.',
+
+  'nav.lesson': 'Ders',
+  'nav.practice': 'Alıştırma',
+  'nav.recognize': 'Tanıma',
+
+  'settings.interfaceLanguage': 'Arayüz dili',
+
+  'auth.login': 'Giriş yap',
+  'auth.register': 'Hesap oluştur',
+  'auth.username': 'Kullanıcı adı',
+  'auth.password': 'Şifre',
+  'auth.submitting': 'Bir saniye…',
+  'auth.enter': 'Gir',
+  'auth.genericError': 'Bir şeyler yanlış gitti. Tekrar dene.',
+
+  'status.streakTitle': 'Üst üste alıştırma yapılan gün serisi',
+  'status.xpTitle': 'Deneyim puanı',
+  'status.heartsTitle': 'Can',
+  'status.logout': 'Çıkış yap',
+
+  'trainer.pickCharacter': 'Alıştırmaya başlamak için listeden bir karakter seç.',
+  'trainer.recognizeHint': 'Bu alfabeden herhangi bir karakter çiz. Uygulama hangisini yazdığını tahmin etmeye çalışacak.',
+  'trainer.undo': 'Çizgiyi geri al',
+  'trainer.clear': 'Temizle',
+  'trainer.showGuide': 'Rehberi göster',
+  'trainer.whatDidIDraw': 'Ne çizdim?',
+  'trainer.drawSomethingFirst': 'Önce bir şey çiz.',
+  'common.check': 'Kontrol et',
+  'common.listenAgain': 'Tekrar dinle',
+
+  'lessonMap.noHearts': 'Bugün için canın kalmadı — yenilenene kadar diğer sekmelerde serbestçe alıştırma yapmaya devam edebilirsin.',
+  'lessonMap.completePrevious': 'Önce bir önceki dersi tamamla',
+  'lessonMap.lessonTitle': 'Ders {index}',
+
+  'lessonRunner.exitAria': 'Dersten çık',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} Can kalmadı',
+  'lessonRunner.outOfHeartsBody': 'Bugün için canın bitti. Bu derse devam etmek için yarın tekrar gel.',
+  'lessonRunner.backToMap': 'Geri dön',
+  'lessonRunner.completed': 'Ders tamamlandı!',
+  'lessonRunner.continue': 'Devam et',
+  'lessonRunner.back': 'Geri',
+  'lessonRunner.next': 'İleri',
+
+  'exercise.chooseSound': 'Bu karakter nasıl okunur?',
+  'exercise.chooseChar': 'Doğru karakter hangisi?',
+  'exercise.listenInstruction': 'Dinle ve doğru karakteri seç',
+  'exercise.matchInstruction': 'Her karakteri sesiyle eşleştir',
+  'exercise.drawInstruction': 'Bu karakteri çiz',
+  'exercise.matchLabel': 'Eşleştirme alıştırması',
+  'exercise.correct': '✓ Doğru',
+  'exercise.incorrect': '✗ Yanlış',
+
+  'lang.kana': 'Japonca (Kana)',
+  'lang.kanji': 'Japonca (Kanji)',
+  'lang.cyrillic': 'Rusça (Kiril)',
+  'lang.hebrew': 'İbranice',
+  'lang.niqqud': 'İbranice (Nikud)',
+  'lang.hebrewFull': 'İbranice (tüm sesli harfler)',
+  'lang.arabic': 'Arapça',
+  'lang.chinese': 'Çince (Mandarin)',
+  'lang.turkish': 'Türkçe',
+
+  'errors.USERNAME_TOO_SHORT': 'Kullanıcı adı en az 3 karakter olmalı',
+  'errors.PASSWORD_TOO_SHORT': 'Şifre en az 4 karakter olmalı',
+  'errors.USERNAME_TAKEN': 'Bu kullanıcı adı zaten alınmış',
+  'errors.INVALID_CREDENTIALS': 'Kullanıcı adı veya şifre yanlış',
+  'errors.DB_ERROR': 'Veritabanı hatası',
+  'errors.USER_CREATE_FAILED': 'Kullanıcı oluşturulamadı',
+  'errors.INVALID_DATA': 'Geçersiz veri',
+  'errors.NOT_AUTHENTICATED': 'Oturum açılmamış',
+  'errors.SESSION_INVALID': 'Oturum geçersiz veya süresi dolmuş',
+
+  'feedback.noDrawing': 'Henüz bir şey çizmedin.',
+  'feedback.missingStrokes': 'Eksik çizgiler: {count}',
+  'feedback.extraStrokes': 'Fazladan çizgiler: {count}',
+  'feedback.directionIssue': 'Şu çizginin yönünü kontrol et: {strokes}',
+  'feedback.shapeIssue': 'Şekil şu çizgide pek uyuşmuyor: {strokes}',
+  'feedback.excellent': 'Mükemmel! Çok hassas bir çizgi.',
+  'feedback.goodEffort': 'İyi deneme, pratik yapmaya devam et.',
+};
+
+export default tr;

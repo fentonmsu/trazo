@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const nl: Record<TranslationKey, string> = {
+  'app.subtitle': 'Leer kana, kanji, cyrillisch, Hebreeuws, Arabisch, Chinees en Turks met de hand te schrijven',
+  'app.loading': 'Laden…',
+  'app.noLessons': 'Deze taal heeft nog geen gestructureerde lessen — probeer "Oefenen" of "Herkennen".',
+  'app.noCharacters': 'Er zijn nog geen tekens geladen voor deze taal.',
+
+  'nav.lesson': 'Les',
+  'nav.practice': 'Oefenen',
+  'nav.recognize': 'Herkennen',
+
+  'settings.interfaceLanguage': 'Taal van de interface',
+
+  'auth.login': 'Inloggen',
+  'auth.register': 'Account aanmaken',
+  'auth.username': 'Gebruikersnaam',
+  'auth.password': 'Wachtwoord',
+  'auth.submitting': 'Even geduld…',
+  'auth.enter': 'Start',
+  'auth.genericError': 'Er ging iets mis. Probeer het opnieuw.',
+
+  'status.streakTitle': 'Huidige reeks oefendagen',
+  'status.xpTitle': 'Ervaringspunten',
+  'status.heartsTitle': 'Levens',
+  'status.logout': 'Uitloggen',
+
+  'trainer.pickCharacter': 'Kies een teken uit de lijst om te beginnen met oefenen.',
+  'trainer.recognizeHint': 'Teken een willekeurig teken uit dit alfabet. De app probeert te raden welk teken je schreef.',
+  'trainer.undo': 'Streek ongedaan maken',
+  'trainer.clear': 'Wissen',
+  'trainer.showGuide': 'Gids tonen',
+  'trainer.whatDidIDraw': 'Wat heb ik getekend?',
+  'trainer.drawSomethingFirst': 'Teken eerst iets.',
+  'common.check': 'Controleren',
+  'common.listenAgain': 'Opnieuw beluisteren',
+
+  'lessonMap.noHearts': 'Geen levens meer voor vandaag — je kunt vrij blijven oefenen op de andere tabbladen terwijl ze bijvullen.',
+  'lessonMap.completePrevious': 'Rond eerst de vorige les af',
+  'lessonMap.lessonTitle': 'Les {index}',
+
+  'lessonRunner.exitAria': 'Les verlaten',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} Geen levens meer',
+  'lessonRunner.outOfHeartsBody': 'Je levens voor vandaag zijn op. Kom morgen terug om verder te gaan met deze les.',
+  'lessonRunner.backToMap': 'Terug',
+  'lessonRunner.completed': 'Les voltooid!',
+  'lessonRunner.continue': 'Doorgaan',
+  'lessonRunner.back': 'Terug',
+  'lessonRunner.next': 'Volgende',
+
+  'exercise.chooseSound': 'Hoe klinkt dit teken?',
+  'exercise.chooseChar': 'Wat is het juiste teken?',
+  'exercise.listenInstruction': 'Luister en kies het juiste teken',
+  'exercise.matchInstruction': 'Koppel elk teken aan zijn klank',
+  'exercise.drawInstruction': 'Teken dit teken',
+  'exercise.matchLabel': 'Koppeloefening',
+  'exercise.correct': '✓ Juist',
+  'exercise.incorrect': '✗ Onjuist',
+
+  'lang.kana': 'Japans (Kana)',
+  'lang.kanji': 'Japans (Kanji)',
+  'lang.cyrillic': 'Russisch (Cyrillisch)',
+  'lang.hebrew': 'Hebreeuws',
+  'lang.niqqud': 'Hebreeuws (Niqqoed)',
+  'lang.hebrewFull': 'Hebreeuws (alle klinkers)',
+  'lang.arabic': 'Arabisch',
+  'lang.chinese': 'Chinees (Mandarijn)',
+  'lang.turkish': 'Turks',
+
+  'errors.USERNAME_TOO_SHORT': 'Gebruikersnaam moet minstens 3 tekens lang zijn',
+  'errors.PASSWORD_TOO_SHORT': 'Wachtwoord moet minstens 4 tekens lang zijn',
+  'errors.USERNAME_TAKEN': 'Deze gebruikersnaam bestaat al',
+  'errors.INVALID_CREDENTIALS': 'Onjuiste gebruikersnaam of wachtwoord',
+  'errors.DB_ERROR': 'Databasefout',
+  'errors.USER_CREATE_FAILED': 'Kon de gebruiker niet aanmaken',
+  'errors.INVALID_DATA': 'Ongeldige gegevens',
+  'errors.NOT_AUTHENTICATED': 'Niet ingelogd',
+  'errors.SESSION_INVALID': 'Sessie ongeldig of verlopen',
+
+  'feedback.noDrawing': 'Je hebt nog niets getekend.',
+  'feedback.missingStrokes': 'Ontbrekende strepen: {count}',
+  'feedback.extraStrokes': 'Extra strepen: {count}',
+  'feedback.directionIssue': 'Controleer de richting van streek: {strokes}',
+  'feedback.shapeIssue': 'Vorm komt niet goed overeen bij streek: {strokes}',
+  'feedback.excellent': 'Uitstekend! Zeer nauwkeurige streek.',
+  'feedback.goodEffort': 'Goede poging, blijf oefenen.',
+};
+
+export default nl;

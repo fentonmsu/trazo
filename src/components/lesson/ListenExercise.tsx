@@ -3,6 +3,7 @@ import type { CharacterTemplate } from '../../types/character';
 import { ScriptGlyph } from '../ScriptGlyph';
 import { playCharacterAudio } from '../../engine/speech';
 import { ReplayButton } from './ReplayButton';
+import { useI18n } from '../../i18n/I18nContext';
 
 interface ListenExerciseProps {
   prompt: CharacterTemplate;
@@ -12,6 +13,7 @@ interface ListenExerciseProps {
 
 /** "Listen to the sound, then pick the character that makes it." */
 export function ListenExercise({ prompt, options, onAnswered }: ListenExerciseProps) {
+  const { t } = useI18n();
   const [picked, setPicked] = useState<string | null>(null);
 
   useEffect(() => {
@@ -27,9 +29,9 @@ export function ListenExercise({ prompt, options, onAnswered }: ListenExercisePr
 
   return (
     <div className="exercise">
-      <p className="exercise-instruction">Escucha y elige el carácter correcto</p>
+      <p className="exercise-instruction">{t('exercise.listenInstruction')}</p>
 
-      <ReplayButton template={prompt} className="listen-replay" label="Escuchar de nuevo" />
+      <ReplayButton template={prompt} className="listen-replay" label={t('common.listenAgain')} />
 
       <div className="exercise-options">
         {options.map((option) => {

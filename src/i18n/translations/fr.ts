@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const fr: Record<TranslationKey, string> = {
+  'app.subtitle': "Apprends à écrire le kana, le kanji, le cyrillique, l'hébreu, l'arabe, le chinois et le turc à la main",
+  'app.loading': 'Chargement…',
+  'app.noLessons': 'Cette langue n’a pas encore de leçons structurées — essaie "Pratiquer" ou "Reconnaître".',
+  'app.noCharacters': 'Aucun caractère n’est encore chargé pour cette langue.',
+
+  'nav.lesson': 'Leçon',
+  'nav.practice': 'Pratiquer',
+  'nav.recognize': 'Reconnaître',
+
+  'settings.interfaceLanguage': "Langue de l'interface",
+
+  'auth.login': 'Se connecter',
+  'auth.register': 'Créer un compte',
+  'auth.username': 'Nom d’utilisateur',
+  'auth.password': 'Mot de passe',
+  'auth.submitting': 'Un instant…',
+  'auth.enter': 'Entrer',
+  'auth.genericError': "Une erreur s'est produite. Réessaie.",
+
+  'status.streakTitle': 'Série de jours de pratique consécutifs',
+  'status.xpTitle': "Points d'expérience",
+  'status.heartsTitle': 'Vies',
+  'status.logout': 'Déconnexion',
+
+  'trainer.pickCharacter': 'Choisis un caractère dans la liste pour commencer à pratiquer.',
+  'trainer.recognizeHint': "Dessine n'importe quel caractère de cet alphabet. L'appli essaiera de deviner lequel tu as écrit.",
+  'trainer.undo': 'Annuler le trait',
+  'trainer.clear': 'Effacer',
+  'trainer.showGuide': 'Afficher le guide',
+  'trainer.whatDidIDraw': "Qu'ai-je dessiné ?",
+  'trainer.drawSomethingFirst': "Dessine d'abord quelque chose.",
+  'common.check': 'Vérifier',
+  'common.listenAgain': 'Réécouter',
+
+  'lessonMap.noHearts': "Plus de vies pour aujourd'hui — tu peux continuer à pratiquer librement dans les autres onglets en attendant qu'elles se rechargent.",
+  'lessonMap.completePrevious': "Termine d'abord la leçon précédente",
+  'lessonMap.lessonTitle': 'Leçon {index}',
+
+  'lessonRunner.exitAria': 'Quitter la leçon',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} Plus de vies',
+  'lessonRunner.outOfHeartsBody': "Tu n'as plus de vies pour aujourd'hui. Reviens demain pour continuer cette leçon.",
+  'lessonRunner.backToMap': 'Retour',
+  'lessonRunner.completed': 'Leçon terminée !',
+  'lessonRunner.continue': 'Continuer',
+  'lessonRunner.back': 'Précédent',
+  'lessonRunner.next': 'Suivant',
+
+  'exercise.chooseSound': 'Comment se prononce ce caractère ?',
+  'exercise.chooseChar': 'Quel est le bon caractère ?',
+  'exercise.listenInstruction': 'Écoute et choisis le bon caractère',
+  'exercise.matchInstruction': 'Associe chaque caractère à son son',
+  'exercise.drawInstruction': 'Dessine ce caractère',
+  'exercise.matchLabel': "Exercice d'association",
+  'exercise.correct': '✓ Correct',
+  'exercise.incorrect': '✗ Incorrect',
+
+  'lang.kana': 'Japonais (Kana)',
+  'lang.kanji': 'Japonais (Kanji)',
+  'lang.cyrillic': 'Russe (cyrillique)',
+  'lang.hebrew': 'Hébreu',
+  'lang.niqqud': 'Hébreu (Niqqoud)',
+  'lang.hebrewFull': 'Hébreu (toutes les voyelles)',
+  'lang.arabic': 'Arabe',
+  'lang.chinese': 'Chinois (mandarin)',
+  'lang.turkish': 'Turc',
+
+  'errors.USERNAME_TOO_SHORT': "Le nom d'utilisateur doit contenir au moins 3 caractères",
+  'errors.PASSWORD_TOO_SHORT': 'Le mot de passe doit contenir au moins 4 caractères',
+  'errors.USERNAME_TAKEN': "Ce nom d'utilisateur existe déjà",
+  'errors.INVALID_CREDENTIALS': "Nom d'utilisateur ou mot de passe incorrect",
+  'errors.DB_ERROR': 'Erreur de base de données',
+  'errors.USER_CREATE_FAILED': "Impossible de créer l'utilisateur",
+  'errors.INVALID_DATA': 'Données invalides',
+  'errors.NOT_AUTHENTICATED': 'Non authentifié',
+  'errors.SESSION_INVALID': 'Session invalide ou expirée',
+
+  'feedback.noDrawing': "Tu n'as encore rien dessiné.",
+  'feedback.missingStrokes': 'Traits manquants : {count}',
+  'feedback.extraStrokes': 'Traits en trop : {count}',
+  'feedback.directionIssue': 'Vérifie la direction du trait : {strokes}',
+  'feedback.shapeIssue': 'La forme ne correspond pas bien au trait : {strokes}',
+  'feedback.excellent': 'Excellent ! Trait très précis.',
+  'feedback.goodEffort': 'Bon essai, continue à t’entraîner.',
+};
+
+export default fr;

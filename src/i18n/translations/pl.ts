@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const pl: Record<TranslationKey, string> = {
+  'app.subtitle': 'Naucz się pisać odręcznie kaną, kanji, cyrylicą, po hebrajsku, arabsku, chińsku i turecku',
+  'app.loading': 'Wczytywanie…',
+  'app.noLessons': 'Ten język nie ma jeszcze ustrukturyzowanych lekcji — spróbuj "Ćwicz" lub "Rozpoznawaj".',
+  'app.noCharacters': 'Dla tego języka nie wczytano jeszcze żadnych znaków.',
+
+  'nav.lesson': 'Lekcja',
+  'nav.practice': 'Ćwicz',
+  'nav.recognize': 'Rozpoznawaj',
+
+  'settings.interfaceLanguage': 'Język interfejsu',
+
+  'auth.login': 'Zaloguj się',
+  'auth.register': 'Utwórz konto',
+  'auth.username': 'Nazwa użytkownika',
+  'auth.password': 'Hasło',
+  'auth.submitting': 'Chwileczkę…',
+  'auth.enter': 'Wejdź',
+  'auth.genericError': 'Coś poszło nie tak. Spróbuj ponownie.',
+
+  'status.streakTitle': 'Seria kolejnych dni ćwiczeń',
+  'status.xpTitle': 'Punkty doświadczenia',
+  'status.heartsTitle': 'Życia',
+  'status.logout': 'Wyloguj się',
+
+  'trainer.pickCharacter': 'Wybierz znak z listy, aby zacząć ćwiczyć.',
+  'trainer.recognizeHint': 'Narysuj dowolny znak z tego alfabetu. Aplikacja spróbuje odgadnąć, który to był.',
+  'trainer.undo': 'Cofnij kreskę',
+  'trainer.clear': 'Wyczyść',
+  'trainer.showGuide': 'Pokaż wzór',
+  'trainer.whatDidIDraw': 'Co narysowałem/am?',
+  'trainer.drawSomethingFirst': 'Najpierw coś narysuj.',
+  'common.check': 'Sprawdź',
+  'common.listenAgain': 'Odtwórz ponownie',
+
+  'lessonMap.noHearts': 'Skończyły się dzisiejsze życia — możesz dalej swobodnie ćwiczyć na innych kartach, aż się odnowią.',
+  'lessonMap.completePrevious': 'Najpierw ukończ poprzednią lekcję',
+  'lessonMap.lessonTitle': 'Lekcja {index}',
+
+  'lessonRunner.exitAria': 'Wyjdź z lekcji',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} Brak żyć',
+  'lessonRunner.outOfHeartsBody': 'Skończyły Ci się dzisiejsze życia. Wróć jutro, aby kontynuować tę lekcję.',
+  'lessonRunner.backToMap': 'Wróć',
+  'lessonRunner.completed': 'Lekcja ukończona!',
+  'lessonRunner.continue': 'Kontynuuj',
+  'lessonRunner.back': 'Wstecz',
+  'lessonRunner.next': 'Dalej',
+
+  'exercise.chooseSound': 'Jak brzmi ten znak?',
+  'exercise.chooseChar': 'Który znak jest poprawny?',
+  'exercise.listenInstruction': 'Posłuchaj i wybierz poprawny znak',
+  'exercise.matchInstruction': 'Dopasuj każdy znak do jego brzmienia',
+  'exercise.drawInstruction': 'Narysuj ten znak',
+  'exercise.matchLabel': 'Ćwiczenie na dopasowywanie',
+  'exercise.correct': '✓ Poprawnie',
+  'exercise.incorrect': '✗ Niepoprawnie',
+
+  'lang.kana': 'Japoński (kana)',
+  'lang.kanji': 'Japoński (kanji)',
+  'lang.cyrillic': 'Rosyjski (cyrylica)',
+  'lang.hebrew': 'Hebrajski',
+  'lang.niqqud': 'Hebrajski (nikud)',
+  'lang.hebrewFull': 'Hebrajski (wszystkie samogłoski)',
+  'lang.arabic': 'Arabski',
+  'lang.chinese': 'Chiński (mandaryński)',
+  'lang.turkish': 'Turecki',
+
+  'errors.USERNAME_TOO_SHORT': 'Nazwa użytkownika musi mieć co najmniej 3 znaki',
+  'errors.PASSWORD_TOO_SHORT': 'Hasło musi mieć co najmniej 4 znaki',
+  'errors.USERNAME_TAKEN': 'Ta nazwa użytkownika jest już zajęta',
+  'errors.INVALID_CREDENTIALS': 'Nieprawidłowa nazwa użytkownika lub hasło',
+  'errors.DB_ERROR': 'Błąd bazy danych',
+  'errors.USER_CREATE_FAILED': 'Nie udało się utworzyć użytkownika',
+  'errors.INVALID_DATA': 'Nieprawidłowe dane',
+  'errors.NOT_AUTHENTICATED': 'Niezalogowany',
+  'errors.SESSION_INVALID': 'Sesja nieprawidłowa lub wygasła',
+
+  'feedback.noDrawing': 'Jeszcze nic nie narysowałeś/aś.',
+  'feedback.missingStrokes': 'Brakujące kreski: {count}',
+  'feedback.extraStrokes': 'Dodatkowe kreski: {count}',
+  'feedback.directionIssue': 'Sprawdź kierunek kreski: {strokes}',
+  'feedback.shapeIssue': 'Kształt słabo pasuje przy kresce: {strokes}',
+  'feedback.excellent': 'Doskonale! Bardzo precyzyjna kreska.',
+  'feedback.goodEffort': 'Dobra próba, ćwicz dalej.',
+};
+
+export default pl;

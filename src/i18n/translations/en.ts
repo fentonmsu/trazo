@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const en: Record<TranslationKey, string> = {
+  'app.subtitle': 'Learn to write kana, kanji, Cyrillic, Hebrew, Arabic, Chinese and Turkish by hand',
+  'app.loading': 'Loading…',
+  'app.noLessons': 'This language doesn’t have structured lessons yet — try "Practice" or "Recognize".',
+  'app.noCharacters': 'No characters loaded for this language yet.',
+
+  'nav.lesson': 'Lesson',
+  'nav.practice': 'Practice',
+  'nav.recognize': 'Recognize',
+
+  'settings.interfaceLanguage': 'Interface language',
+
+  'auth.login': 'Log in',
+  'auth.register': 'Create account',
+  'auth.username': 'Username',
+  'auth.password': 'Password',
+  'auth.submitting': 'One moment…',
+  'auth.enter': 'Enter',
+  'auth.genericError': 'Something went wrong. Please try again.',
+
+  'status.streakTitle': 'Current practice streak',
+  'status.xpTitle': 'Experience points',
+  'status.heartsTitle': 'Lives',
+  'status.logout': 'Log out',
+
+  'trainer.pickCharacter': 'Choose a character from the list to start practicing.',
+  'trainer.recognizeHint': 'Draw any character from this alphabet. The app will try to guess which one you wrote.',
+  'trainer.undo': 'Undo stroke',
+  'trainer.clear': 'Clear',
+  'trainer.showGuide': 'Show guide',
+  'trainer.whatDidIDraw': 'What did I draw?',
+  'trainer.drawSomethingFirst': 'Draw something first.',
+  'common.check': 'Check',
+  'common.listenAgain': 'Listen again',
+
+  'lessonMap.noHearts': 'No lives left for today — you can keep practicing freely in the other tabs while they refill.',
+  'lessonMap.completePrevious': 'Complete the previous lesson first',
+  'lessonMap.lessonTitle': 'Lesson {index}',
+
+  'lessonRunner.exitAria': 'Exit lesson',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} Out of lives',
+  'lessonRunner.outOfHeartsBody': 'You ran out of lives for today. Come back tomorrow to continue this lesson.',
+  'lessonRunner.backToMap': 'Back',
+  'lessonRunner.completed': 'Lesson complete!',
+  'lessonRunner.continue': 'Continue',
+  'lessonRunner.back': 'Back',
+  'lessonRunner.next': 'Next',
+
+  'exercise.chooseSound': 'How does this character sound?',
+  'exercise.chooseChar': 'Which is the correct character?',
+  'exercise.listenInstruction': 'Listen and choose the correct character',
+  'exercise.matchInstruction': 'Match each character with its sound',
+  'exercise.drawInstruction': 'Draw this character',
+  'exercise.matchLabel': 'Matching exercise',
+  'exercise.correct': '✓ Correct',
+  'exercise.incorrect': '✗ Incorrect',
+
+  'lang.kana': 'Japanese (Kana)',
+  'lang.kanji': 'Japanese (Kanji)',
+  'lang.cyrillic': 'Russian (Cyrillic)',
+  'lang.hebrew': 'Hebrew',
+  'lang.niqqud': 'Hebrew (Niqqud)',
+  'lang.hebrewFull': 'Hebrew (All vowels)',
+  'lang.arabic': 'Arabic',
+  'lang.chinese': 'Chinese (Mandarin)',
+  'lang.turkish': 'Turkish',
+
+  'errors.USERNAME_TOO_SHORT': 'Username must be at least 3 characters',
+  'errors.PASSWORD_TOO_SHORT': 'Password must be at least 4 characters',
+  'errors.USERNAME_TAKEN': 'That username is already taken',
+  'errors.INVALID_CREDENTIALS': 'Incorrect username or password',
+  'errors.DB_ERROR': 'Database error',
+  'errors.USER_CREATE_FAILED': 'Could not create the user',
+  'errors.INVALID_DATA': 'Invalid data',
+  'errors.NOT_AUTHENTICATED': 'Not authenticated',
+  'errors.SESSION_INVALID': 'Invalid or expired session',
+
+  'feedback.noDrawing': "You haven't drawn anything yet.",
+  'feedback.missingStrokes': 'Missing strokes: {count}',
+  'feedback.extraStrokes': 'Extra strokes: {count}',
+  'feedback.directionIssue': 'Check the direction of stroke: {strokes}',
+  'feedback.shapeIssue': "Shape doesn't match well on stroke: {strokes}",
+  'feedback.excellent': 'Excellent! Very accurate stroke.',
+  'feedback.goodEffort': 'Good try, keep practicing.',
+};
+
+export default en;

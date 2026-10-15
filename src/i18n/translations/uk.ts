@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const uk: Record<TranslationKey, string> = {
+  'app.subtitle': 'Навчися писати від руки каною, кандзі, кирилицею, івритом, арабською, китайською та турецькою',
+  'app.loading': 'Завантаження…',
+  'app.noLessons': 'У цій мові ще немає структурованих уроків — спробуй «Практика» або «Розпізнавання».',
+  'app.noCharacters': 'Для цієї мови ще не завантажено символів.',
+
+  'nav.lesson': 'Урок',
+  'nav.practice': 'Практика',
+  'nav.recognize': 'Розпізнавання',
+
+  'settings.interfaceLanguage': 'Мова інтерфейсу',
+
+  'auth.login': 'Увійти',
+  'auth.register': 'Створити акаунт',
+  'auth.username': "Ім'я користувача",
+  'auth.password': 'Пароль',
+  'auth.submitting': 'Хвилинку…',
+  'auth.enter': 'Увійти',
+  'auth.genericError': 'Щось пішло не так. Спробуй ще раз.',
+
+  'status.streakTitle': 'Серія днів поспіль із практикою',
+  'status.xpTitle': 'Очки досвіду',
+  'status.heartsTitle': 'Життя',
+  'status.logout': 'Вийти',
+
+  'trainer.pickCharacter': 'Обери символ зі списку, щоб почати практику.',
+  'trainer.recognizeHint': 'Намалюй будь-який символ цього алфавіту. Застосунок спробує вгадати, який саме.',
+  'trainer.undo': 'Скасувати штрих',
+  'trainer.clear': 'Очистити',
+  'trainer.showGuide': 'Показати підказку',
+  'trainer.whatDidIDraw': 'Що я намалював(ла)?',
+  'trainer.drawSomethingFirst': 'Спочатку щось намалюй.',
+  'common.check': 'Перевірити',
+  'common.listenAgain': 'Прослухати ще раз',
+
+  'lessonMap.noHearts': 'На сьогодні життя закінчилися — можна вільно практикуватися на інших вкладках, поки вони відновлюються.',
+  'lessonMap.completePrevious': 'Спочатку заверши попередній урок',
+  'lessonMap.lessonTitle': 'Урок {index}',
+
+  'lessonRunner.exitAria': 'Вийти з уроку',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} Життя закінчилися',
+  'lessonRunner.outOfHeartsBody': 'На сьогодні життя закінчилися. Повертайся завтра, щоб продовжити цей урок.',
+  'lessonRunner.backToMap': 'Назад',
+  'lessonRunner.completed': 'Урок завершено!',
+  'lessonRunner.continue': 'Продовжити',
+  'lessonRunner.back': 'Назад',
+  'lessonRunner.next': 'Далі',
+
+  'exercise.chooseSound': 'Як звучить цей символ?',
+  'exercise.chooseChar': 'Який символ правильний?',
+  'exercise.listenInstruction': 'Прослухай і обери правильний символ',
+  'exercise.matchInstruction': 'Зістав кожен символ із його звучанням',
+  'exercise.drawInstruction': 'Намалюй цей символ',
+  'exercise.matchLabel': 'Вправа на зіставлення',
+  'exercise.correct': '✓ Правильно',
+  'exercise.incorrect': '✗ Неправильно',
+
+  'lang.kana': 'Японська (кана)',
+  'lang.kanji': 'Японська (кандзі)',
+  'lang.cyrillic': 'Російська (кирилиця)',
+  'lang.hebrew': 'Іврит',
+  'lang.niqqud': 'Іврит (огласовки)',
+  'lang.hebrewFull': 'Іврит (усі голосні)',
+  'lang.arabic': 'Арабська',
+  'lang.chinese': 'Китайська (мандаринська)',
+  'lang.turkish': 'Турецька',
+
+  'errors.USERNAME_TOO_SHORT': "Ім'я користувача має містити щонайменше 3 символи",
+  'errors.PASSWORD_TOO_SHORT': 'Пароль має містити щонайменше 4 символи',
+  'errors.USERNAME_TAKEN': "Це ім'я користувача вже зайняте",
+  'errors.INVALID_CREDENTIALS': "Неправильне ім'я користувача або пароль",
+  'errors.DB_ERROR': 'Помилка бази даних',
+  'errors.USER_CREATE_FAILED': 'Не вдалося створити користувача',
+  'errors.INVALID_DATA': 'Недійсні дані',
+  'errors.NOT_AUTHENTICATED': 'Не автентифіковано',
+  'errors.SESSION_INVALID': 'Сесія недійсна або завершилася',
+
+  'feedback.noDrawing': 'Ти ще нічого не намалював(ла).',
+  'feedback.missingStrokes': 'Бракує штрихів: {count}',
+  'feedback.extraStrokes': 'Зайві штрихи: {count}',
+  'feedback.directionIssue': 'Перевір напрямок штриха: {strokes}',
+  'feedback.shapeIssue': 'Форма погано збігається на штриху: {strokes}',
+  'feedback.excellent': 'Чудово! Дуже точний штрих.',
+  'feedback.goodEffort': 'Гарна спроба, продовжуй тренуватися.',
+};
+
+export default uk;

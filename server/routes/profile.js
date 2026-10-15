@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     supabase.from('lesson_progress').select('lesson_id, stars, completed_at').eq('user_id', req.userId),
     getState(req.userId),
   ]);
-  if (charError || lessonError) return res.status(500).json({ error: 'Error de base de datos' });
+  if (charError || lessonError) return res.status(500).json({ error: 'DB_ERROR' });
 
   const characterProgress = {};
   for (const row of characterRows) {
@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
 router.post('/character', async (req, res) => {
   const { characterId, score } = req.body ?? {};
   if (typeof characterId !== 'string' || typeof score !== 'number') {
-    return res.status(400).json({ error: 'Datos inválidos' });
+    return res.status(400).json({ error: 'INVALID_DATA' });
   }
   const { data: existing, error: lookupError } = await supabase
     .from('character_progress')
@@ -44,14 +44,14 @@ router.post('/character', async (req, res) => {
     .eq('user_id', req.userId)
     .eq('character_id', characterId)
     .maybeSingle();
-  if (lookupError) return res.status(500).json({ error: 'Error de base de datos' });
+  if (lookupError) return res.status(500).json({ error: 'DB_ERROR' });
 
   const bestScore = Math.max(existing?.best_score ?? 0, score);
   const attempts = (existing?.attempts ?? 0) + 1;
   const { error: upsertError } = await supabase
     .from('character_progress')
     .upsert({ user_id: req.userId, character_id: characterId, best_score: bestScore, attempts }, { onConflict: 'user_id,character_id' });
-  if (upsertError) return res.status(500).json({ error: 'Error de base de datos' });
+  if (upsertError) return res.status(500).json({ error: 'DB_ERROR' });
 
   const xpEarned = existing ? 1 : 3;
   const state = await recordActivity(req.userId, xpEarned);
@@ -61,7 +61,7 @@ router.post('/character', async (req, res) => {
 router.post('/lesson', async (req, res) => {
   const { lessonId, stars, xpEarned } = req.body ?? {};
   if (typeof lessonId !== 'string' || typeof stars !== 'number') {
-    return res.status(400).json({ error: 'Datos inválidos' });
+    return res.status(400).json({ error: 'INVALID_DATA' });
   }
   const { data: existing, error: lookupError } = await supabase
     .from('lesson_progress')
@@ -69,7 +69,7 @@ router.post('/lesson', async (req, res) => {
     .eq('user_id', req.userId)
     .eq('lesson_id', lessonId)
     .maybeSingle();
-  if (lookupError) return res.status(500).json({ error: 'Error de base de datos' });
+  if (lookupError) return res.status(500).json({ error: 'DB_ERROR' });
 
   const bestStars = Math.max(existing?.stars ?? 0, stars);
   const { error: upsertError } = await supabase
@@ -78,7 +78,7 @@ router.post('/lesson', async (req, res) => {
       { user_id: req.userId, lesson_id: lessonId, stars: bestStars, completed_at: new Date().toISOString() },
       { onConflict: 'user_id,lesson_id' },
     );
-  if (upsertError) return res.status(500).json({ error: 'Error de base de datos' });
+  if (upsertError) return res.status(500).json({ error: 'DB_ERROR' });
 
   const state = await recordActivity(req.userId, typeof xpEarned === 'number' ? xpEarned : 10);
   res.json({ stars: bestStars, ...stateForResponse(state) });

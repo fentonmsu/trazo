@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { ApiError } from '../api/client';
+import { useI18n } from '../i18n/I18nContext';
+import type { TranslationKey } from '../i18n/translations';
+import esDict from '../i18n/translations/es';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function AuthScreen() {
   const { login, register } = useAuth();
+  const { t } = useI18n();
   const [mode, setMode] = useState<'login' | 'register'>('login');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +26,8 @@ export function AuthScreen() {
         await register(username, password);
       }
     } catch (err) {
-      setError(err instanceof ApiError ? err.message : 'Algo salió mal. Intenta de nuevo.');
+      const code = err instanceof ApiError ? (`errors.${err.message}` as TranslationKey) : null;
+      setError(code && code in esDict ? t(code) : t('auth.genericError'));
     } finally {
       setSubmitting(false);
     }
@@ -29,24 +35,25 @@ export function AuthScreen() {
 
   return (
     <div className="auth-screen">
+      <div className="auth-language-row">
+        <LanguageSwitcher />
+      </div>
       <div className="auth-card">
         <h1>Trazo</h1>
-        <p className="subtitle">
-          Aprende a escribir kana, kanji, cirílico, hebreo, árabe, chino y turco dibujando a mano
-        </p>
+        <p className="subtitle">{t('app.subtitle')}</p>
 
         <div className="auth-tabs">
           <button className={mode === 'login' ? 'active' : ''} onClick={() => setMode('login')} type="button">
-            Iniciar sesión
+            {t('auth.login')}
           </button>
           <button className={mode === 'register' ? 'active' : ''} onClick={() => setMode('register')} type="button">
-            Crear cuenta
+            {t('auth.register')}
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="auth-form">
           <label>
-            Usuario
+            {t('auth.username')}
             <input
               type="text"
               value={username}
@@ -57,7 +64,7 @@ export function AuthScreen() {
             />
           </label>
           <label>
-            Contraseña
+            {t('auth.password')}
             <input
               type="password"
               value={password}
@@ -71,7 +78,7 @@ export function AuthScreen() {
           {error && <p className="auth-error">{error}</p>}
 
           <button type="submit" className="primary" disabled={submitting}>
-            {submitting ? 'Un momento…' : mode === 'login' ? 'Entrar' : 'Crear cuenta'}
+            {submitting ? t('auth.submitting') : mode === 'login' ? t('auth.enter') : t('auth.register')}
           </button>
         </form>
       </div>

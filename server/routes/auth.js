@@ -9,10 +9,10 @@ router.post('/register', async (req, res) => {
   const cleanUsername = typeof username === 'string' ? username.trim() : '';
 
   if (cleanUsername.length < 3) {
-    return res.status(400).json({ error: 'El usuario debe tener al menos 3 caracteres' });
+    return res.status(400).json({ error: 'USERNAME_TOO_SHORT' });
   }
   if (typeof password !== 'string' || password.length < 4) {
-    return res.status(400).json({ error: 'La contraseña debe tener al menos 4 caracteres' });
+    return res.status(400).json({ error: 'PASSWORD_TOO_SHORT' });
   }
 
   const { data: existing, error: lookupError } = await supabase
@@ -20,15 +20,15 @@ router.post('/register', async (req, res) => {
     .select('id')
     .eq('username', cleanUsername)
     .maybeSingle();
-  if (lookupError) return res.status(500).json({ error: 'Error de base de datos' });
-  if (existing) return res.status(409).json({ error: 'Ese nombre de usuario ya existe' });
+  if (lookupError) return res.status(500).json({ error: 'DB_ERROR' });
+  if (existing) return res.status(409).json({ error: 'USERNAME_TAKEN' });
 
   const { data: user, error: insertError } = await supabase
     .from('users')
     .insert({ username: cleanUsername, password_hash: hashPassword(password) })
     .select('id')
     .single();
-  if (insertError) return res.status(500).json({ error: 'No se pudo crear el usuario' });
+  if (insertError) return res.status(500).json({ error: 'USER_CREATE_FAILED' });
 
   await supabase.from('user_state').insert({ user_id: user.id });
 
@@ -43,9 +43,9 @@ router.post('/login', async (req, res) => {
     .select('*')
     .eq('username', typeof username === 'string' ? username.trim() : '')
     .maybeSingle();
-  if (error) return res.status(500).json({ error: 'Error de base de datos' });
+  if (error) return res.status(500).json({ error: 'DB_ERROR' });
   if (!user || !verifyPassword(typeof password === 'string' ? password : '', user.password_hash)) {
-    return res.status(401).json({ error: 'Usuario o contraseña incorrectos' });
+    return res.status(401).json({ error: 'INVALID_CREDENTIALS' });
   }
   setSessionCookie(res, signToken(user.id));
   res.json({ id: user.id, username: user.username });
@@ -58,7 +58,7 @@ router.post('/logout', (_req, res) => {
 
 router.get('/me', requireAuth, async (req, res) => {
   const { data: user, error } = await supabase.from('users').select('id, username').eq('id', req.userId).maybeSingle();
-  if (error || !user) return res.status(401).json({ error: 'No autenticado' });
+  if (error || !user) return res.status(401).json({ error: 'NOT_AUTHENTICATED' });
   res.json(user);
 });
 

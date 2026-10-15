@@ -1,21 +1,37 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { CharacterTemplate, LanguageId } from './types/character';
-import { LANGUAGES, LANGUAGE_ORDER } from './data/languages';
+import { LANGUAGE_ORDER } from './data/languages';
 import { getCharactersForLanguage } from './data';
 import { getLessonsForLanguage, LESSON_LANGUAGES, type Lesson } from './data/lessons';
 import { CharacterGrid } from './components/CharacterGrid';
 import { TrainerView } from './components/TrainerView';
 import { AuthScreen } from './components/AuthScreen';
 import { UserStatusBar } from './components/UserStatusBar';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { LessonMap } from './components/lesson/LessonMap';
 import { LessonRunner } from './components/lesson/LessonRunner';
 import { AuthProvider, useAuth } from './hooks/useAuth';
 import { useProfile } from './hooks/useProfile';
+import { I18nProvider, useI18n } from './i18n/I18nContext';
+import type { TranslationKey } from './i18n/translations';
 import './App.css';
 
 type Mode = 'practice' | 'recognize' | 'lesson';
 
+const LANGUAGE_NAME_KEYS: Record<LanguageId, TranslationKey> = {
+  kana: 'lang.kana',
+  kanji: 'lang.kanji',
+  cyrillic: 'lang.cyrillic',
+  hebrew: 'lang.hebrew',
+  niqqud: 'lang.niqqud',
+  hebrewFull: 'lang.hebrewFull',
+  arabic: 'lang.arabic',
+  chinese: 'lang.chinese',
+  turkish: 'lang.turkish',
+};
+
 function TrazoApp() {
+  const { t } = useI18n();
   const [language, setLanguage] = useState<LanguageId>('kana');
   const [mode, setMode] = useState<Mode>('lesson');
   const [selected, setSelected] = useState<CharacterTemplate | null>(null);
@@ -51,37 +67,38 @@ function TrazoApp() {
   return (
     <div className="app">
       <header className="app-header">
-        {profile && <UserStatusBar streak={profile.streak} xp={profile.xp} hearts={profile.hearts} />}
+        <div className="header-top-row">
+          {profile && <UserStatusBar streak={profile.streak} xp={profile.xp} hearts={profile.hearts} />}
+          <LanguageSwitcher />
+        </div>
         <h1>Trazo</h1>
-        <p className="subtitle">
-          Aprende a escribir kana, kanji, cirílico, hebreo, árabe, chino y turco dibujando a mano
-        </p>
+        <p className="subtitle">{t('app.subtitle')}</p>
       </header>
 
       <nav className="language-tabs">
         {LANGUAGE_ORDER.map((id) => (
           <button key={id} className={language === id ? 'active' : ''} onClick={() => setLanguage(id)}>
-            {LANGUAGES[id].name}
+            {t(LANGUAGE_NAME_KEYS[id])}
           </button>
         ))}
       </nav>
 
       <nav className="mode-tabs">
         <button className={mode === 'lesson' ? 'active' : ''} onClick={() => setMode('lesson')}>
-          Lección
+          {t('nav.lesson')}
         </button>
         <button className={mode === 'practice' ? 'active' : ''} onClick={() => setMode('practice')}>
-          Practicar
+          {t('nav.practice')}
         </button>
         <button className={mode === 'recognize' ? 'active' : ''} onClick={() => setMode('recognize')}>
-          Reconocer
+          {t('nav.recognize')}
         </button>
       </nav>
 
       {mode === 'lesson' ? (
         <main className="app-main lesson-main">
           {lessons.length === 0 ? (
-            <p className="hint">Este idioma todavía no tiene lecciones estructuradas — probá "Practicar" o "Reconocer".</p>
+            <p className="hint">{t('app.noLessons')}</p>
           ) : (
             <LessonMap
               lessons={lessons}
@@ -95,7 +112,7 @@ function TrazoApp() {
         <main className="app-main">
           <aside className="sidebar">
             {characters.length === 0 ? (
-              <p className="hint">Todavía no hay caracteres cargados para este idioma.</p>
+              <p className="hint">{t('app.noCharacters')}</p>
             ) : (
               <CharacterGrid
                 characters={characters}
@@ -122,16 +139,19 @@ function TrazoApp() {
 
 function AuthGate() {
   const { user, loading } = useAuth();
-  if (loading) return <div className="app-loading">Cargando…</div>;
+  const { t } = useI18n();
+  if (loading) return <div className="app-loading">{t('app.loading')}</div>;
   if (!user) return <AuthScreen />;
   return <TrazoApp />;
 }
 
 function App() {
   return (
-    <AuthProvider>
-      <AuthGate />
-    </AuthProvider>
+    <I18nProvider>
+      <AuthProvider>
+        <AuthGate />
+      </AuthProvider>
+    </I18nProvider>
   );
 }
 

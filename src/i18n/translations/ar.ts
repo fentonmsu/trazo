@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const ar: Record<TranslationKey, string> = {
+  'app.subtitle': 'تعلّم كتابة الكانا والكانجي والسيريلية والعبرية والعربية والصينية والتركية بخط اليد',
+  'app.loading': 'جارٍ التحميل…',
+  'app.noLessons': 'لا توجد بعد دروس منظّمة لهذه اللغة — جرّب "التدريب" أو "التعرّف".',
+  'app.noCharacters': 'لم تُحمَّل بعد أي رموز لهذه اللغة.',
+
+  'nav.lesson': 'الدرس',
+  'nav.practice': 'تدريب',
+  'nav.recognize': 'تعرّف',
+
+  'settings.interfaceLanguage': 'لغة الواجهة',
+
+  'auth.login': 'تسجيل الدخول',
+  'auth.register': 'إنشاء حساب',
+  'auth.username': 'اسم المستخدم',
+  'auth.password': 'كلمة المرور',
+  'auth.submitting': 'لحظة من فضلك…',
+  'auth.enter': 'دخول',
+  'auth.genericError': 'حدث خطأ ما. حاول مرة أخرى.',
+
+  'status.streakTitle': 'سلسلة أيام التدريب المتتالية',
+  'status.xpTitle': 'نقاط الخبرة',
+  'status.heartsTitle': 'الأرواح',
+  'status.logout': 'تسجيل الخروج',
+
+  'trainer.pickCharacter': 'اختر رمزًا من القائمة لتبدأ التدريب.',
+  'trainer.recognizeHint': 'ارسم أي رمز من هذه الأبجدية. سيحاول التطبيق تخمين الرمز الذي كتبته.',
+  'trainer.undo': 'تراجع عن الخط',
+  'trainer.clear': 'مسح',
+  'trainer.showGuide': 'إظهار الدليل',
+  'trainer.whatDidIDraw': 'ماذا رسمت؟',
+  'trainer.drawSomethingFirst': 'ارسم شيئًا أولاً.',
+  'common.check': 'تحقّق',
+  'common.listenAgain': 'استمع مرة أخرى',
+
+  'lessonMap.noHearts': 'لا أرواح متبقية لهذا اليوم — يمكنك الاستمرار بالتدريب الحر في علامات التبويب الأخرى بينما تتجدد.',
+  'lessonMap.completePrevious': 'أكمل الدرس السابق أولاً',
+  'lessonMap.lessonTitle': 'الدرس {index}',
+
+  'lessonRunner.exitAria': 'الخروج من الدرس',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} نفدت الأرواح',
+  'lessonRunner.outOfHeartsBody': 'نفدت أرواحك لهذا اليوم. عد غدًا لمتابعة هذا الدرس.',
+  'lessonRunner.backToMap': 'رجوع',
+  'lessonRunner.completed': 'اكتمل الدرس!',
+  'lessonRunner.continue': 'متابعة',
+  'lessonRunner.back': 'السابق',
+  'lessonRunner.next': 'التالي',
+
+  'exercise.chooseSound': 'كيف يُنطق هذا الرمز؟',
+  'exercise.chooseChar': 'ما هو الرمز الصحيح؟',
+  'exercise.listenInstruction': 'استمع واختر الرمز الصحيح',
+  'exercise.matchInstruction': 'طابق كل رمز مع نطقه',
+  'exercise.drawInstruction': 'ارسم هذا الرمز',
+  'exercise.matchLabel': 'تمرين مطابقة',
+  'exercise.correct': '✓ صحيح',
+  'exercise.incorrect': '✗ خطأ',
+
+  'lang.kana': 'اليابانية (كانا)',
+  'lang.kanji': 'اليابانية (كانجي)',
+  'lang.cyrillic': 'الروسية (سيريلية)',
+  'lang.hebrew': 'العبرية',
+  'lang.niqqud': 'العبرية (تشكيل)',
+  'lang.hebrewFull': 'العبرية (جميع الحركات)',
+  'lang.arabic': 'العربية',
+  'lang.chinese': 'الصينية (الماندرين)',
+  'lang.turkish': 'التركية',
+
+  'errors.USERNAME_TOO_SHORT': 'يجب أن يتكون اسم المستخدم من 3 أحرف على الأقل',
+  'errors.PASSWORD_TOO_SHORT': 'يجب أن تتكون كلمة المرور من 4 أحرف على الأقل',
+  'errors.USERNAME_TAKEN': 'اسم المستخدم هذا مُستخدم بالفعل',
+  'errors.INVALID_CREDENTIALS': 'اسم المستخدم أو كلمة المرور غير صحيحة',
+  'errors.DB_ERROR': 'خطأ في قاعدة البيانات',
+  'errors.USER_CREATE_FAILED': 'تعذّر إنشاء المستخدم',
+  'errors.INVALID_DATA': 'بيانات غير صالحة',
+  'errors.NOT_AUTHENTICATED': 'غير مسجَّل الدخول',
+  'errors.SESSION_INVALID': 'الجلسة غير صالحة أو منتهية الصلاحية',
+
+  'feedback.noDrawing': 'لم ترسم شيئًا بعد.',
+  'feedback.missingStrokes': 'خطوط ناقصة: {count}',
+  'feedback.extraStrokes': 'خطوط زائدة: {count}',
+  'feedback.directionIssue': 'تحقق من اتجاه الخط: {strokes}',
+  'feedback.shapeIssue': 'الشكل لا يتطابق جيدًا في الخط: {strokes}',
+  'feedback.excellent': 'ممتاز! خط دقيق جدًا.',
+  'feedback.goodEffort': 'محاولة جيدة، واصل التدريب.',
+};
+
+export default ar;

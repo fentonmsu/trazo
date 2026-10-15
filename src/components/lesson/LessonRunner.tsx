@@ -7,6 +7,7 @@ import { ListenExercise } from './ListenExercise';
 import { MatchExercise } from './MatchExercise';
 import { DrawExercise } from './DrawExercise';
 import { ReviewCard } from './ReviewCard';
+import { useI18n } from '../../i18n/I18nContext';
 
 interface LessonRunnerProps {
   lesson: Lesson;
@@ -25,6 +26,7 @@ interface HistoryEntry {
 }
 
 export function LessonRunner({ lesson, languagePool, hearts: initialHearts, onExit, onLoseHeart, onComplete }: LessonRunnerProps) {
+  const { t } = useI18n();
   const exercises = useMemo(() => {
     const lessonCharacters = languagePool.filter((c) => lesson.characterIds.includes(c.id));
     return buildLessonExercises(lessonCharacters, languagePool);
@@ -109,10 +111,10 @@ export function LessonRunner({ lesson, languagePool, hearts: initialHearts, onEx
   if (phase === 'failed') {
     return (
       <div className="lesson-end">
-        <h2>💔 Sin corazones</h2>
-        <p>Se te acabaron los corazones por hoy. Volvé mañana para seguir con esta lección.</p>
+        <h2>{t('lessonRunner.outOfHeartsTitle')}</h2>
+        <p>{t('lessonRunner.outOfHeartsBody')}</p>
         <button className="primary" onClick={onExit}>
-          Volver
+          {t('lessonRunner.backToMap')}
         </button>
       </div>
     );
@@ -122,10 +124,10 @@ export function LessonRunner({ lesson, languagePool, hearts: initialHearts, onEx
     return (
       <div className="lesson-end">
         <h2>{'⭐'.repeat(result.stars)}</h2>
-        <p>¡Lección completada!</p>
+        <p>{t('lessonRunner.completed')}</p>
         <p className="lesson-end-xp">+{result.xp} XP</p>
         <button className="primary" onClick={onExit}>
-          Continuar
+          {t('lessonRunner.continue')}
         </button>
       </div>
     );
@@ -138,7 +140,7 @@ export function LessonRunner({ lesson, languagePool, hearts: initialHearts, onEx
   return (
     <div className="lesson-runner">
       <div className="lesson-header">
-        <button className="lesson-exit" onClick={onExit} aria-label="Salir de la lección">
+        <button className="lesson-exit" onClick={onExit} aria-label={t('lessonRunner.exitAria')}>
           ✕
         </button>
         <div className="lesson-progress-bar">
@@ -169,10 +171,10 @@ export function LessonRunner({ lesson, languagePool, hearts: initialHearts, onEx
 
       <div className="lesson-nav">
         <button className="lesson-nav-button" onClick={handleAtras} disabled={!canGoBack}>
-          ← Atrás
+          ← {t('lessonRunner.back')}
         </button>
         <button className="lesson-nav-button primary" onClick={handleSiguiente} disabled={!canGoNext}>
-          Siguiente →
+          {t('lessonRunner.next')} →
         </button>
       </div>
     </div>

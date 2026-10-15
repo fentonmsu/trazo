@@ -1,5 +1,6 @@
 import type { CharacterTemplate } from '../../types/character';
 import { playCharacterAudio } from '../../engine/speech';
+import { useI18n } from '../../i18n/I18nContext';
 
 interface ReplayButtonProps {
   template: CharacterTemplate;
@@ -9,6 +10,8 @@ interface ReplayButtonProps {
 
 /** A small speaker button to (re)play a character's audio from within a lesson exercise. */
 export function ReplayButton({ template, className, label }: ReplayButtonProps) {
+  const { t } = useI18n();
+  const listenAgain = t('common.listenAgain');
   return (
     <button
       type="button"
@@ -17,8 +20,8 @@ export function ReplayButton({ template, className, label }: ReplayButtonProps) 
         e.stopPropagation();
         playCharacterAudio(template);
       }}
-      aria-label="Escuchar de nuevo"
-      title="Escuchar de nuevo"
+      aria-label={listenAgain}
+      title={listenAgain}
     >
       🔊{label ? ` ${label}` : ''}
     </button>

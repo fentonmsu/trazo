@@ -1,0 +1,89 @@
+import type { TranslationKey } from './es';
+
+const he: Record<TranslationKey, string> = {
+  'app.subtitle': 'למד לכתוב קאנה, קאנג׳י, קירילית, עברית, ערבית, סינית וטורקית בכתב יד',
+  'app.loading': 'טוען…',
+  'app.noLessons': 'לשפה הזו עדיין אין שיעורים מובנים — נסה/י "תרגול" או "זיהוי".',
+  'app.noCharacters': 'עדיין אין תווים טעונים לשפה הזו.',
+
+  'nav.lesson': 'שיעור',
+  'nav.practice': 'תרגול',
+  'nav.recognize': 'זיהוי',
+
+  'settings.interfaceLanguage': 'שפת הממשק',
+
+  'auth.login': 'התחברות',
+  'auth.register': 'יצירת חשבון',
+  'auth.username': 'שם משתמש',
+  'auth.password': 'סיסמה',
+  'auth.submitting': 'רגע אחד…',
+  'auth.enter': 'כניסה',
+  'auth.genericError': 'משהו השתבש. נסה/י שוב.',
+
+  'status.streakTitle': 'רצף ימי תרגול',
+  'status.xpTitle': 'נקודות ניסיון',
+  'status.heartsTitle': 'חיים',
+  'status.logout': 'יציאה',
+
+  'trainer.pickCharacter': 'בחר/י תו מהרשימה כדי להתחיל לתרגל.',
+  'trainer.recognizeHint': 'צייר/י תו כלשהו מהא״ב הזה. האפליקציה תנסה לנחש איזה תו כתבת.',
+  'trainer.undo': 'בטל קו',
+  'trainer.clear': 'נקה',
+  'trainer.showGuide': 'הצג מדריך',
+  'trainer.whatDidIDraw': 'מה ציירתי?',
+  'trainer.drawSomethingFirst': 'צייר/י משהו קודם.',
+  'common.check': 'בדיקה',
+  'common.listenAgain': 'השמע שוב',
+
+  'lessonMap.noHearts': 'אין יותר חיים להיום — אפשר להמשיך לתרגל בחופשיות בלשוניות האחרות עד שהם יתמלאו מחדש.',
+  'lessonMap.completePrevious': 'יש להשלים קודם את השיעור הקודם',
+  'lessonMap.lessonTitle': 'שיעור {index}',
+
+  'lessonRunner.exitAria': 'יציאה מהשיעור',
+  'lessonRunner.outOfHeartsTitle': '\u{1F494} נגמרו החיים',
+  'lessonRunner.outOfHeartsBody': 'נגמרו לך החיים להיום. חזור/י מחר כדי להמשיך בשיעור הזה.',
+  'lessonRunner.backToMap': 'חזרה',
+  'lessonRunner.completed': 'השיעור הושלם!',
+  'lessonRunner.continue': 'המשך',
+  'lessonRunner.back': 'הקודם',
+  'lessonRunner.next': 'הבא',
+
+  'exercise.chooseSound': 'איך נשמע התו הזה?',
+  'exercise.chooseChar': 'מהו התו הנכון?',
+  'exercise.listenInstruction': 'הקשב/י ובחר/י את התו הנכון',
+  'exercise.matchInstruction': 'התאם/י כל תו לצליל שלו',
+  'exercise.drawInstruction': 'צייר/י את התו הזה',
+  'exercise.matchLabel': 'תרגיל התאמה',
+  'exercise.correct': '✓ נכון',
+  'exercise.incorrect': '✗ לא נכון',
+
+  'lang.kana': 'יפנית (קאנה)',
+  'lang.kanji': 'יפנית (קאנג׳י)',
+  'lang.cyrillic': 'רוסית (קירילית)',
+  'lang.hebrew': 'עברית',
+  'lang.niqqud': 'עברית (ניקוד)',
+  'lang.hebrewFull': 'עברית (כל התנועות)',
+  'lang.arabic': 'ערבית',
+  'lang.chinese': 'סינית (מנדרינית)',
+  'lang.turkish': 'טורקית',
+
+  'errors.USERNAME_TOO_SHORT': 'שם המשתמש חייב להכיל לפחות 3 תווים',
+  'errors.PASSWORD_TOO_SHORT': 'הסיסמה חייבת להכיל לפחות 4 תווים',
+  'errors.USERNAME_TAKEN': 'שם המשתמש הזה כבר תפוס',
+  'errors.INVALID_CREDENTIALS': 'שם משתמש או סיסמה שגויים',
+  'errors.DB_ERROR': 'שגיאת מסד נתונים',
+  'errors.USER_CREATE_FAILED': 'לא ניתן היה ליצור את המשתמש',
+  'errors.INVALID_DATA': 'נתונים לא תקינים',
+  'errors.NOT_AUTHENTICATED': 'לא מחובר',
+  'errors.SESSION_INVALID': 'ההתחברות אינה תקפה או פגה',
+
+  'feedback.noDrawing': 'עדיין לא ציירת כלום.',
+  'feedback.missingStrokes': 'קווים חסרים: {count}',
+  'feedback.extraStrokes': 'קווים מיותרים: {count}',
+  'feedback.directionIssue': 'בדוק/בדקי את כיוון הקו: {strokes}',
+  'feedback.shapeIssue': 'הצורה לא תואמת היטב בקו: {strokes}',
+  'feedback.excellent': 'מצוין! קו מדויק מאוד.',
+  'feedback.goodEffort': 'ניסיון טוב, המשך/כי להתאמן.',
+};
+
+export default he;
