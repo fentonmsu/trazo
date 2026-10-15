@@ -68,6 +68,8 @@ const it: Record<TranslationKey, string> = {
   'lang.turkish': 'Turco',
   'lang.korean': 'Coreano (Hangul)',
   'lang.polish': 'Polacco',
+  'lang.french': 'Francese',
+  'lang.portuguese': 'Portoghese',
 
   'errors.USERNAME_TOO_SHORT': 'Il nome utente deve avere almeno 3 caratteri',
   'errors.PASSWORD_TOO_SHORT': 'La password deve avere almeno 4 caratteri',

@@ -78,6 +78,20 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'ltr',
     description: 'Las 32 letras del alfabeto polaco, incluidas ą, ć, ę, ł, ń, ó, ś, ź, ż.',
   },
+  french: {
+    id: 'french',
+    name: 'Francés',
+    nativeName: 'Français',
+    direction: 'ltr',
+    description: 'Las 26 letras del alfabeto francés, con el nombre real de cada letra.',
+  },
+  portuguese: {
+    id: 'portuguese',
+    name: 'Portugués',
+    nativeName: 'Português',
+    direction: 'ltr',
+    description: 'Las 26 letras del alfabeto portugués, con el nombre real de cada letra.',
+  },
 };
 
 export const LANGUAGE_ORDER: LanguageId[] = [
@@ -92,6 +106,8 @@ export const LANGUAGE_ORDER: LanguageId[] = [
   'turkish',
   'korean',
   'polish',
+  'french',
+  'portuguese',
 ];
 
 /** True for any language rendered in Hebrew script (letters, niqqud, or both). */

@@ -68,6 +68,8 @@ const uk: Record<TranslationKey, string> = {
   'lang.turkish': 'Турецька',
   'lang.korean': 'Корейська (хангиль)',
   'lang.polish': 'Польська',
+  'lang.french': 'Французька',
+  'lang.portuguese': 'Португальська',
 
   'errors.USERNAME_TOO_SHORT': "Ім'я користувача має містити щонайменше 3 символи",
   'errors.PASSWORD_TOO_SHORT': 'Пароль має містити щонайменше 4 символи',

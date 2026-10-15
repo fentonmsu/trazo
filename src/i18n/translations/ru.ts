@@ -68,6 +68,8 @@ const ru: Record<TranslationKey, string> = {
   'lang.turkish': 'Турецкий',
   'lang.korean': 'Корейский (хангыль)',
   'lang.polish': 'Польский',
+  'lang.french': 'Французский',
+  'lang.portuguese': 'Португальский',
 
   'errors.USERNAME_TOO_SHORT': 'Имя пользователя должно содержать не менее 3 символов',
   'errors.PASSWORD_TOO_SHORT': 'Пароль должен содержать не менее 4 символов',

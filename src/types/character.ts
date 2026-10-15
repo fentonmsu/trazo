@@ -17,7 +17,9 @@ export type LanguageId =
   | 'chinese'
   | 'turkish'
   | 'korean'
-  | 'polish';
+  | 'polish'
+  | 'french'
+  | 'portuguese';
 
 export interface LanguageInfo {
   id: LanguageId;
