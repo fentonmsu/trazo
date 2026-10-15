@@ -2,10 +2,12 @@ import type { CharacterTemplate, Stroke } from '../types/character';
 
 /**
  * The 27-letter Spanish alphabet (A-Z plus Ñ, the RAE's modern official
- * count - ch/ll were dropped as separate letters in 2010), plus the five
- * acute-accented vowels (Á É Í Ó Ú), Ü (used in "pingüino", "vergüenza"),
- * and the two opening punctuation marks unique to Spanish, ¡ and ¿ (used
- * at the start of exclamations/questions).
+ * count), plus the five acute-accented vowels (Á É Í Ó Ú), Ü (used in
+ * "pingüino", "vergüenza"), the two opening punctuation marks unique to
+ * Spanish (¡ ¿, used at the start of exclamations/questions), and the
+ * traditional two-letter "letters" ch/ll/rr - officially just digraphs
+ * since the RAE's 2010 reform, but still widely taught as Spanish's
+ * classic extra sounds, so included here too.
  *
  * `romanization`/`speechOverride` are each base letter's real Spanish name
  * (e.g. H = "hache", Y = "ye", W = "uve doble"), since several letters
@@ -320,7 +322,60 @@ const RAW_SPANISH_LETTERS: CharacterTemplate[] = [
     speechOverride: 'signo de apertura de interrogación',
     language: 'spanish',
     difficulty: 2,
-    strokes: [dot(50, 18), [{ x: 52, y: 35 }, { x: 40, y: 38 }, { x: 32, y: 50 }, { x: 38, y: 62 }, { x: 50, y: 65 }, { x: 50, y: 82 }]],
+    // A "?" mirrored top-to-bottom: dot on top, then a rounded hook curving
+    // left and back before dropping into a straight tail at the baseline.
+    strokes: [
+      dot(50, 15),
+      [
+        { x: 50, y: 32 }, { x: 36, y: 34 }, { x: 26, y: 44 }, { x: 27, y: 56 },
+        { x: 38, y: 64 }, { x: 51, y: 61 }, { x: 51, y: 85 },
+      ],
+    ],
+  },
+  // --- Traditional two-letter "letters" (ch, ll, rr) ---
+  // Officially digraphs since the RAE's 2010 reform, not alphabet members,
+  // but still widely taught/practiced as Spanish's classic extra sounds.
+  // Each is two compact letterforms drawn side by side in the same box.
+  {
+    id: 'spanish-ch',
+    char: 'Ch',
+    romanization: 'che',
+    language: 'spanish',
+    difficulty: 2,
+    strokes: [
+      [{ x: 42, y: 20 }, { x: 22, y: 16 }, { x: 10, y: 30 }, { x: 8, y: 50 }, { x: 10, y: 70 }, { x: 22, y: 84 }, { x: 42, y: 80 }],
+      [{ x: 58, y: 15 }, { x: 58, y: 85 }],
+      [{ x: 90, y: 15 }, { x: 90, y: 85 }],
+      [{ x: 58, y: 50 }, { x: 90, y: 50 }],
+    ],
+  },
+  {
+    id: 'spanish-ll',
+    char: 'Ll',
+    romanization: 'elle',
+    language: 'spanish',
+    difficulty: 1,
+    strokes: [
+      [{ x: 20, y: 15 }, { x: 20, y: 85 }],
+      [{ x: 20, y: 85 }, { x: 45, y: 85 }],
+      [{ x: 65, y: 15 }, { x: 65, y: 85 }],
+      [{ x: 65, y: 85 }, { x: 90, y: 85 }],
+    ],
+  },
+  {
+    id: 'spanish-rr',
+    char: 'Rr',
+    romanization: 'erre doble',
+    language: 'spanish',
+    difficulty: 3,
+    strokes: [
+      [{ x: 15, y: 15 }, { x: 15, y: 85 }],
+      [{ x: 15, y: 15 }, { x: 35, y: 15 }, { x: 42, y: 27 }, { x: 35, y: 40 }, { x: 15, y: 40 }],
+      [{ x: 25, y: 40 }, { x: 42, y: 85 }],
+      [{ x: 58, y: 15 }, { x: 58, y: 85 }],
+      [{ x: 58, y: 15 }, { x: 78, y: 15 }, { x: 85, y: 27 }, { x: 78, y: 40 }, { x: 58, y: 40 }],
+      [{ x: 68, y: 40 }, { x: 85, y: 85 }],
+    ],
   },
 ];
 
