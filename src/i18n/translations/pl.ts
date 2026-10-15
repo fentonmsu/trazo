@@ -66,6 +66,8 @@ const pl: Record<TranslationKey, string> = {
   'lang.arabic': 'Arabski',
   'lang.chinese': 'Chiński (mandaryński)',
   'lang.turkish': 'Turecki',
+  'lang.korean': 'Koreański (Hangul)',
+  'lang.polish': 'Polski',
 
   'errors.USERNAME_TOO_SHORT': 'Nazwa użytkownika musi mieć co najmniej 3 znaki',
   'errors.PASSWORD_TOO_SHORT': 'Hasło musi mieć co najmniej 4 znaki',

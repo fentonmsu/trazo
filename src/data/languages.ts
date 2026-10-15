@@ -64,6 +64,20 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'ltr',
     description: 'Las 29 letras del alfabeto turco, incluidas ç, ğ, ı/İ, ö, ş, ü.',
   },
+  korean: {
+    id: 'korean',
+    name: 'Coreano (Hangul)',
+    nativeName: '한글',
+    direction: 'ltr',
+    description: 'Los 24 jamo básicos del hangul: 14 consonantes y 10 vocales.',
+  },
+  polish: {
+    id: 'polish',
+    name: 'Polaco',
+    nativeName: 'Polski',
+    direction: 'ltr',
+    description: 'Las 32 letras del alfabeto polaco, incluidas ą, ć, ę, ł, ń, ó, ś, ź, ż.',
+  },
 };
 
 export const LANGUAGE_ORDER: LanguageId[] = [
@@ -76,6 +90,8 @@ export const LANGUAGE_ORDER: LanguageId[] = [
   'arabic',
   'chinese',
   'turkish',
+  'korean',
+  'polish',
 ];
 
 /** True for any language rendered in Hebrew script (letters, niqqud, or both). */

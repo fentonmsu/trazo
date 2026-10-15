@@ -25,6 +25,8 @@ VOICE_BY_LANGUAGE = {
     'arabic': 'ar-SA-ZariyahNeural',
     'chinese': 'zh-CN-XiaoxiaoNeural',
     'turkish': 'tr-TR-EmelNeural',
+    'korean': 'ko-KR-SunHiNeural',
+    'polish': 'pl-PL-ZofiaNeural',
 }
 
 ENTRIES_PATH = os.path.join(os.path.dirname(__file__), 'speech-entries.json')

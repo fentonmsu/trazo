@@ -8,6 +8,8 @@ import { hebrewFullCharacters } from './hebrewFull';
 import { arabicCharacters } from './arabic';
 import { chineseCharacters } from './chinese';
 import { turkishCharacters } from './turkish';
+import { koreanCharacters } from './korean';
+import { polishCharacters } from './polish';
 
 export const CHARACTERS_BY_LANGUAGE: Record<LanguageId, CharacterTemplate[]> = {
   kana: kanaCharacters,
@@ -19,6 +21,8 @@ export const CHARACTERS_BY_LANGUAGE: Record<LanguageId, CharacterTemplate[]> = {
   arabic: arabicCharacters,
   chinese: chineseCharacters,
   turkish: turkishCharacters,
+  korean: koreanCharacters,
+  polish: polishCharacters,
 };
 
 export function getCharactersForLanguage(language: LanguageId): CharacterTemplate[] {

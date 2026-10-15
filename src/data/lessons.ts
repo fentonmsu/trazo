@@ -22,6 +22,8 @@ export const LESSON_LANGUAGES: LanguageId[] = [
   'arabic',
   'chinese',
   'turkish',
+  'korean',
+  'polish',
 ];
 
 const lessonCache = new Map<LanguageId, Lesson[]>();

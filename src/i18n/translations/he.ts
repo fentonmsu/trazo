@@ -66,6 +66,8 @@ const he: Record<TranslationKey, string> = {
   'lang.arabic': 'ערבית',
   'lang.chinese': 'סינית (מנדרינית)',
   'lang.turkish': 'טורקית',
+  'lang.korean': 'קוריאנית (האנגיל)',
+  'lang.polish': 'פולנית',
 
   'errors.USERNAME_TOO_SHORT': 'שם המשתמש חייב להכיל לפחות 3 תווים',
   'errors.PASSWORD_TOO_SHORT': 'הסיסמה חייבת להכיל לפחות 4 תווים',

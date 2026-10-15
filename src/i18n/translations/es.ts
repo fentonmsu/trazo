@@ -68,6 +68,8 @@ const es = {
   'lang.arabic': 'Árabe',
   'lang.chinese': 'Chino (Mandarín)',
   'lang.turkish': 'Turco',
+  'lang.korean': 'Coreano (Hangul)',
+  'lang.polish': 'Polaco',
 
   'errors.USERNAME_TOO_SHORT': 'El usuario debe tener al menos 3 caracteres',
   'errors.PASSWORD_TOO_SHORT': 'La contraseña debe tener al menos 4 caracteres',

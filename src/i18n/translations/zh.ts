@@ -66,6 +66,8 @@ const zh: Record<TranslationKey, string> = {
   'lang.arabic': '阿拉伯语',
   'lang.chinese': '中文（普通话）',
   'lang.turkish': '土耳其语',
+  'lang.korean': '韩语（谚文）',
+  'lang.polish': '波兰语',
 
   'errors.USERNAME_TOO_SHORT': '用户名至少需要3个字符',
   'errors.PASSWORD_TOO_SHORT': '密码至少需要4个字符',

@@ -28,6 +28,8 @@ const LANGUAGE_NAME_KEYS: Record<LanguageId, TranslationKey> = {
   arabic: 'lang.arabic',
   chinese: 'lang.chinese',
   turkish: 'lang.turkish',
+  korean: 'lang.korean',
+  polish: 'lang.polish',
 };
 
 function TrazoApp() {

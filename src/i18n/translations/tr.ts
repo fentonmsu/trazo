@@ -66,6 +66,8 @@ const tr: Record<TranslationKey, string> = {
   'lang.arabic': 'Arapça',
   'lang.chinese': 'Çince (Mandarin)',
   'lang.turkish': 'Türkçe',
+  'lang.korean': 'Korece (Hangul)',
+  'lang.polish': 'Lehçe',
 
   'errors.USERNAME_TOO_SHORT': 'Kullanıcı adı en az 3 karakter olmalı',
   'errors.PASSWORD_TOO_SHORT': 'Şifre en az 4 karakter olmalı',
