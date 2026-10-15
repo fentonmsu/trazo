@@ -1,19 +1,16 @@
 import { defineConfig, devices } from '@playwright/test';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-// Dedicated port + database for E2E runs, distinct from the normal dev
-// servers (5173/4001), so `npm run test:e2e` never collides with (or
-// pollutes the data of) an app instance you already have running.
+// Dedicated port for E2E runs, distinct from the normal dev servers
+// (5173/4001), so `npm run test:e2e` never collides with an app instance
+// you already have running. The backend now talks to the real Supabase
+// project (via .env), so E2E specs use randomized usernames per run to
+// avoid colliding with each other or with real account data.
 const CLIENT_PORT = 5190;
 const SERVER_PORT = 4091;
-const TEST_DB_PATH = path.resolve(__dirname, 'server/e2e-test.db');
 
 export default defineConfig({
   testDir: './e2e',
-  fullyParallel: false, // tests share one SQLite file; avoid cross-test interference
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: 'list',
@@ -24,11 +21,11 @@ export default defineConfig({
   },
   webServer: [
     {
-      command: 'node --experimental-sqlite server/index.js',
+      command: 'node --env-file=.env server/index.js',
       url: `http://localhost:${SERVER_PORT}/api/health`,
       reuseExistingServer: false,
       timeout: 30_000,
-      env: { PORT: String(SERVER_PORT), DB_PATH: TEST_DB_PATH },
+      env: { PORT: String(SERVER_PORT) },
     },
     {
       command: `npx vite --port ${CLIENT_PORT} --strictPort`,

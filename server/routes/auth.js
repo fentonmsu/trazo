@@ -1,15 +1,10 @@
 import { Router } from 'express';
-import { db } from '../db.js';
+import { supabase } from '../db.js';
 import { hashPassword, verifyPassword, signToken, setSessionCookie, clearSessionCookie, requireAuth } from '../auth.js';
 
 const router = Router();
 
-const findUserByUsername = db.prepare('SELECT * FROM users WHERE username = ?');
-const insertUser = db.prepare('INSERT INTO users (username, password_hash) VALUES (?, ?)');
-const insertDefaultState = db.prepare('INSERT INTO user_state (user_id) VALUES (?)');
-const findUserById = db.prepare('SELECT id, username FROM users WHERE id = ?');
-
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res) => {
   const { username, password } = req.body ?? {};
   const cleanUsername = typeof username === 'string' ? username.trim() : '';
 
@@ -19,21 +14,36 @@ router.post('/register', (req, res) => {
   if (typeof password !== 'string' || password.length < 4) {
     return res.status(400).json({ error: 'La contraseña debe tener al menos 4 caracteres' });
   }
-  if (findUserByUsername.get(cleanUsername)) {
-    return res.status(409).json({ error: 'Ese nombre de usuario ya existe' });
-  }
 
-  const info = insertUser.run(cleanUsername, hashPassword(password));
-  const userId = Number(info.lastInsertRowid);
-  insertDefaultState.run(userId);
+  const { data: existing, error: lookupError } = await supabase
+    .from('users')
+    .select('id')
+    .eq('username', cleanUsername)
+    .maybeSingle();
+  if (lookupError) return res.status(500).json({ error: 'Error de base de datos' });
+  if (existing) return res.status(409).json({ error: 'Ese nombre de usuario ya existe' });
 
-  setSessionCookie(res, signToken(userId));
-  res.json({ id: userId, username: cleanUsername });
+  const { data: user, error: insertError } = await supabase
+    .from('users')
+    .insert({ username: cleanUsername, password_hash: hashPassword(password) })
+    .select('id')
+    .single();
+  if (insertError) return res.status(500).json({ error: 'No se pudo crear el usuario' });
+
+  await supabase.from('user_state').insert({ user_id: user.id });
+
+  setSessionCookie(res, signToken(user.id));
+  res.json({ id: user.id, username: cleanUsername });
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
   const { username, password } = req.body ?? {};
-  const user = findUserByUsername.get(typeof username === 'string' ? username.trim() : '');
+  const { data: user, error } = await supabase
+    .from('users')
+    .select('*')
+    .eq('username', typeof username === 'string' ? username.trim() : '')
+    .maybeSingle();
+  if (error) return res.status(500).json({ error: 'Error de base de datos' });
   if (!user || !verifyPassword(typeof password === 'string' ? password : '', user.password_hash)) {
     return res.status(401).json({ error: 'Usuario o contraseña incorrectos' });
   }
@@ -46,9 +56,9 @@ router.post('/logout', (_req, res) => {
   res.json({ ok: true });
 });
 
-router.get('/me', requireAuth, (req, res) => {
-  const user = findUserById.get(req.userId);
-  if (!user) return res.status(401).json({ error: 'No autenticado' });
+router.get('/me', requireAuth, async (req, res) => {
+  const { data: user, error } = await supabase.from('users').select('id, username').eq('id', req.userId).maybeSingle();
+  if (error || !user) return res.status(401).json({ error: 'No autenticado' });
   res.json(user);
 });
 

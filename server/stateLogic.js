@@ -1,4 +1,4 @@
-import { db } from './db.js';
+import { supabase } from './db.js';
 
 // A local calendar date (not UTC): streaks/hearts should reset at midnight
 // where the person actually is, not at UTC midnight, which could silently
@@ -15,27 +15,18 @@ function daysBetween(isoDateA, isoDateB) {
   return Math.round((Date.parse(isoDateB) - Date.parse(isoDateA)) / 86_400_000);
 }
 
-const selectState = db.prepare('SELECT * FROM user_state WHERE user_id = ?');
-const insertDefaultState = db.prepare('INSERT INTO user_state (user_id) VALUES (?)');
-const refillHearts = db.prepare('UPDATE user_state SET hearts = 5 WHERE user_id = ?');
-const upsertState = db.prepare(`
-  INSERT INTO user_state (user_id, current_streak, longest_streak, last_practice_date, total_xp, hearts)
-  VALUES (?, ?, ?, ?, ?, ?)
-  ON CONFLICT(user_id) DO UPDATE SET
-    current_streak = excluded.current_streak,
-    longest_streak = excluded.longest_streak,
-    last_practice_date = excluded.last_practice_date,
-    total_xp = excluded.total_xp
-`);
-const setHearts = db.prepare('UPDATE user_state SET hearts = ? WHERE user_id = ?');
+async function ensureState(userId) {
+  const { data: existing, error } = await supabase.from('user_state').select('*').eq('user_id', userId).maybeSingle();
+  if (error) throw error;
+  if (existing) return existing;
 
-function ensureState(userId) {
-  let state = selectState.get(userId);
-  if (!state) {
-    insertDefaultState.run(userId);
-    state = selectState.get(userId);
-  }
-  return state;
+  const { data: created, error: insertError } = await supabase
+    .from('user_state')
+    .insert({ user_id: userId })
+    .select('*')
+    .single();
+  if (insertError) throw insertError;
+  return created;
 }
 
 /**
@@ -43,15 +34,16 @@ function ensureState(userId) {
  * refill each new day; the streak reads as broken once a full day was
  * missed) without requiring an explicit activity to trigger them.
  */
-export function getState(userId) {
-  const state = ensureState(userId);
+export async function getState(userId) {
+  const state = await ensureState(userId);
   const today = todayLocal();
   if (!state.last_practice_date || state.last_practice_date === today) {
     return state;
   }
   const gap = daysBetween(state.last_practice_date, today);
   if (gap >= 1 && state.hearts < 5) {
-    refillHearts.run(userId);
+    const { error } = await supabase.from('user_state').update({ hearts: 5 }).eq('user_id', userId);
+    if (error) throw error;
     state.hearts = 5;
   }
   if (gap >= 2) {
@@ -64,8 +56,8 @@ export function getState(userId) {
 }
 
 /** Records a practice event: advances/starts/resets the streak and adds XP. */
-export function recordActivity(userId, xpEarned) {
-  const state = ensureState(userId);
+export async function recordActivity(userId, xpEarned) {
+  const state = await ensureState(userId);
   const today = todayLocal();
   let currentStreak = state.current_streak;
   if (state.last_practice_date === today) {
@@ -77,13 +69,23 @@ export function recordActivity(userId, xpEarned) {
   }
   const longestStreak = Math.max(state.longest_streak, currentStreak);
   const totalXp = state.total_xp + Math.max(0, xpEarned);
-  upsertState.run(userId, currentStreak, longestStreak, today, totalXp, state.hearts);
+  const { error } = await supabase
+    .from('user_state')
+    .update({
+      current_streak: currentStreak,
+      longest_streak: longestStreak,
+      last_practice_date: today,
+      total_xp: totalXp,
+    })
+    .eq('user_id', userId);
+  if (error) throw error;
   return getState(userId);
 }
 
-export function loseHeart(userId) {
-  const state = getState(userId);
+export async function loseHeart(userId) {
+  const state = await getState(userId);
   const hearts = Math.max(0, state.hearts - 1);
-  setHearts.run(hearts, userId);
+  const { error } = await supabase.from('user_state').update({ hearts }).eq('user_id', userId);
+  if (error) throw error;
   return hearts;
 }
