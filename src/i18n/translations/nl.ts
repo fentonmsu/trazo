@@ -72,6 +72,7 @@ const nl: Record<TranslationKey, string> = {
   'lang.portuguese': 'Portugees',
   'lang.german': 'Duits',
   'lang.vietnamese': 'Vietnamees',
+  'lang.spanish': 'Spaans',
 
   'errors.USERNAME_TOO_SHORT': 'Gebruikersnaam moet minstens 3 tekens lang zijn',
   'errors.PASSWORD_TOO_SHORT': 'Wachtwoord moet minstens 4 tekens lang zijn',

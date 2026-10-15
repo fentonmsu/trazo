@@ -72,6 +72,7 @@ const de: Record<TranslationKey, string> = {
   'lang.portuguese': 'Portugiesisch',
   'lang.german': 'Deutsch',
   'lang.vietnamese': 'Vietnamesisch',
+  'lang.spanish': 'Spanisch',
 
   'errors.USERNAME_TOO_SHORT': 'Der Benutzername muss mindestens 3 Zeichen lang sein',
   'errors.PASSWORD_TOO_SHORT': 'Das Passwort muss mindestens 4 Zeichen lang sein',

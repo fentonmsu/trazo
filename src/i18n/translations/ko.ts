@@ -72,6 +72,7 @@ const ko: Record<TranslationKey, string> = {
   'lang.portuguese': '포르투갈어',
   'lang.german': '독일어',
   'lang.vietnamese': '베트남어',
+  'lang.spanish': '스페인어',
 
   'errors.USERNAME_TOO_SHORT': '사용자 이름은 3자 이상이어야 합니다',
   'errors.PASSWORD_TOO_SHORT': '비밀번호는 4자 이상이어야 합니다',

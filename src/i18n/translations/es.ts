@@ -74,6 +74,7 @@ const es = {
   'lang.portuguese': 'Portugués',
   'lang.german': 'Alemán',
   'lang.vietnamese': 'Vietnamita',
+  'lang.spanish': 'Español',
 
   'errors.USERNAME_TOO_SHORT': 'El usuario debe tener al menos 3 caracteres',
   'errors.PASSWORD_TOO_SHORT': 'La contraseña debe tener al menos 4 caracteres',

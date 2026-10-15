@@ -14,6 +14,7 @@ import { frenchCharacters } from './french';
 import { portugueseCharacters } from './portuguese';
 import { germanCharacters } from './german';
 import { vietnameseCharacters } from './vietnamese';
+import { spanishCharacters } from './spanish';
 
 export const CHARACTERS_BY_LANGUAGE: Record<LanguageId, CharacterTemplate[]> = {
   kana: kanaCharacters,
@@ -31,6 +32,7 @@ export const CHARACTERS_BY_LANGUAGE: Record<LanguageId, CharacterTemplate[]> = {
   portuguese: portugueseCharacters,
   german: germanCharacters,
   vietnamese: vietnameseCharacters,
+  spanish: spanishCharacters,
 };
 
 export function getCharactersForLanguage(language: LanguageId): CharacterTemplate[] {

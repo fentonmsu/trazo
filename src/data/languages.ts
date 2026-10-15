@@ -106,6 +106,13 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'ltr',
     description: 'Las 29 letras del alfabeto vietnamita, incluidas ă, â, đ, ê, ô, ơ, ư.',
   },
+  spanish: {
+    id: 'spanish',
+    name: 'Español',
+    nativeName: 'Español',
+    direction: 'ltr',
+    description: 'Las 27 letras del alfabeto español (con la ñ), las vocales con tilde y los signos de apertura ¡ ¿.',
+  },
 };
 
 export const LANGUAGE_ORDER: LanguageId[] = [
@@ -124,6 +131,7 @@ export const LANGUAGE_ORDER: LanguageId[] = [
   'portuguese',
   'german',
   'vietnamese',
+  'spanish',
 ];
 
 /** True for any language rendered in Hebrew script (letters, niqqud, or both). */

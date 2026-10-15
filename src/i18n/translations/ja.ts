@@ -72,6 +72,7 @@ const ja: Record<TranslationKey, string> = {
   'lang.portuguese': 'ポルトガル語',
   'lang.german': 'ドイツ語',
   'lang.vietnamese': 'ベトナム語',
+  'lang.spanish': 'スペイン語',
 
   'errors.USERNAME_TOO_SHORT': 'ユーザー名は3文字以上にしてください',
   'errors.PASSWORD_TOO_SHORT': 'パスワードは4文字以上にしてください',

@@ -21,7 +21,8 @@ export type LanguageId =
   | 'french'
   | 'portuguese'
   | 'german'
-  | 'vietnamese';
+  | 'vietnamese'
+  | 'spanish';
 
 export interface LanguageInfo {
   id: LanguageId;
