@@ -65,19 +65,23 @@ const U_CURVE: Stroke = [
   { x: 75, y: 15 },
 ];
 
+const A_STROKES: Stroke[] = [
+  [{ x: 20, y: 85 }, { x: 50, y: 15 }],
+  [{ x: 50, y: 15 }, { x: 80, y: 85 }],
+  [{ x: 32, y: 55 }, { x: 68, y: 55 }],
+];
+
+// Til (~) - the wavy mark used in ã/õ, drawn as a single small S-curve above the letter.
+const TIL: Stroke = [
+  { x: 30, y: 2 },
+  { x: 40, y: -5 },
+  { x: 50, y: 2 },
+  { x: 60, y: -5 },
+  { x: 70, y: 2 },
+];
+
 const RAW_PORTUGUESE_LETTERS: CharacterTemplate[] = [
-  {
-    id: 'portuguese-a',
-    char: 'A',
-    romanization: 'á',
-    language: 'portuguese',
-    difficulty: 1,
-    strokes: [
-      [{ x: 20, y: 85 }, { x: 50, y: 15 }],
-      [{ x: 50, y: 15 }, { x: 80, y: 85 }],
-      [{ x: 32, y: 55 }, { x: 68, y: 55 }],
-    ],
-  },
+  { id: 'portuguese-a', char: 'A', romanization: 'á', language: 'portuguese', difficulty: 1, strokes: A_STROKES },
   {
     id: 'portuguese-b',
     char: 'B',
@@ -283,6 +287,9 @@ const RAW_PORTUGUESE_LETTERS: CharacterTemplate[] = [
     difficulty: 1,
     strokes: [[{ x: 20, y: 15 }, { x: 80, y: 15 }, { x: 20, y: 85 }, { x: 80, y: 85 }]],
   },
+  // --- Til (nasal vowels) ---
+  { id: 'portuguese-a-til', char: 'Ã', romanization: 'a til', language: 'portuguese', difficulty: 2, strokes: [...A_STROKES, TIL] },
+  { id: 'portuguese-o-til', char: 'Õ', romanization: 'o til', language: 'portuguese', difficulty: 2, strokes: [O_LOOP, TIL] },
 ];
 
 // Explicit speechOverride (= the letter's real Portuguese name) so TTS

@@ -1,14 +1,18 @@
 import type { CharacterTemplate, Stroke } from '../types/character';
 
 /**
- * The 26 letters of the French alphabet (uppercase). Unlike Turkish/Polish,
- * French doesn't treat accented letters (é, è, ç, ...) as distinct alphabet
- * members - they're orthographic marks on the same 26 base Latin letters,
- * so this is the plain A-Z set.
+ * The 26 letters of the French alphabet (uppercase), plus the accented
+ * letters formed with French's five diacritics - accent aigu (é), accent
+ * grave (è/à/ù), accent circonflexe (â/ê/î/ô/û), tréma (ë/ï) and cédille
+ * (ç). These aren't separate alphabet members (unlike Turkish/Polish's
+ * accented letters) but they're common enough in real French spelling to
+ * be worth their own practice entries.
  *
  * `romanization`/`speechOverride` are each letter's real French name (used
- * reciting the alphabet, e.g. H = "ache", G = "gé", W = "double vé"), since
- * several letters don't sound like a naive reading of the glyph.
+ * reciting the alphabet, e.g. H = "ache", G = "gé", W = "double vé") for
+ * the base letters, and "<letter> accent <nom de l'accent>" for the
+ * accented ones (e.g. é = "e accent aigu"), since several don't sound like
+ * a naive reading of the glyph.
  *
  * Coordinates are on a normalized 0-100 grid (origin top-left, y grows
  * downward) - see turkish.ts for the same convention and several of the
@@ -65,19 +69,37 @@ const U_CURVE: Stroke = [
   { x: 75, y: 15 },
 ];
 
+const A_STROKES: Stroke[] = [
+  [{ x: 20, y: 85 }, { x: 50, y: 15 }],
+  [{ x: 50, y: 15 }, { x: 80, y: 85 }],
+  [{ x: 32, y: 55 }, { x: 68, y: 55 }],
+];
+
+const E_STROKES: Stroke[] = [
+  [{ x: 25, y: 15 }, { x: 25, y: 85 }],
+  [{ x: 25, y: 15 }, { x: 75, y: 15 }],
+  [{ x: 25, y: 50 }, { x: 65, y: 50 }],
+  [{ x: 25, y: 85 }, { x: 75, y: 85 }],
+];
+
+const I_STROKES: Stroke[] = [[{ x: 50, y: 15 }, { x: 50, y: 85 }]];
+
+// Accent aigu (´) - top-right diagonal tick.
+const AIGU: Stroke = [{ x: 58, y: 6 }, { x: 70, y: -4 }];
+// Accent grave (`) - mirrored tick, top-left leaning.
+const GRAVE: Stroke = [{ x: 42, y: 6 }, { x: 30, y: -4 }];
+// Accent circonflexe (ˆ) - small upward chevron.
+const CIRCONFLEXE: Stroke = [{ x: 38, y: 2 }, { x: 50, y: -8 }, { x: 62, y: 2 }];
+// Tréma (¨) - two dots side by side.
+const TREMA: Stroke[] = [
+  [{ x: 38, y: -2 }, { x: 42, y: 2 }],
+  [{ x: 58, y: -2 }, { x: 62, y: 2 }],
+];
+// Cédille (¸) - small hook hanging off the bottom.
+const CEDILLE: Stroke = [{ x: 48, y: 87 }, { x: 53, y: 94 }, { x: 46, y: 97 }];
+
 const RAW_FRENCH_LETTERS: CharacterTemplate[] = [
-  {
-    id: 'french-a',
-    char: 'A',
-    romanization: 'a',
-    language: 'french',
-    difficulty: 1,
-    strokes: [
-      [{ x: 20, y: 85 }, { x: 50, y: 15 }],
-      [{ x: 50, y: 15 }, { x: 80, y: 85 }],
-      [{ x: 32, y: 55 }, { x: 68, y: 55 }],
-    ],
-  },
+  { id: 'french-a', char: 'A', romanization: 'a', language: 'french', difficulty: 1, strokes: A_STROKES },
   {
     id: 'french-b',
     char: 'B',
@@ -102,19 +124,7 @@ const RAW_FRENCH_LETTERS: CharacterTemplate[] = [
       [{ x: 25, y: 15 }, { x: 55, y: 15 }, { x: 75, y: 35 }, { x: 75, y: 65 }, { x: 55, y: 85 }, { x: 25, y: 85 }],
     ],
   },
-  {
-    id: 'french-e',
-    char: 'E',
-    romanization: 'e',
-    language: 'french',
-    difficulty: 1,
-    strokes: [
-      [{ x: 25, y: 15 }, { x: 25, y: 85 }],
-      [{ x: 25, y: 15 }, { x: 75, y: 15 }],
-      [{ x: 25, y: 50 }, { x: 65, y: 50 }],
-      [{ x: 25, y: 85 }, { x: 75, y: 85 }],
-    ],
-  },
+  { id: 'french-e', char: 'E', romanization: 'e', language: 'french', difficulty: 1, strokes: E_STROKES },
   {
     id: 'french-f',
     char: 'F',
@@ -140,7 +150,7 @@ const RAW_FRENCH_LETTERS: CharacterTemplate[] = [
       [{ x: 25, y: 50 }, { x: 75, y: 50 }],
     ],
   },
-  { id: 'french-i', char: 'I', romanization: 'i', language: 'french', difficulty: 1, strokes: [[{ x: 50, y: 15 }, { x: 50, y: 85 }]] },
+  { id: 'french-i', char: 'I', romanization: 'i', language: 'french', difficulty: 1, strokes: I_STROKES },
   {
     id: 'french-j',
     char: 'J',
@@ -283,6 +293,19 @@ const RAW_FRENCH_LETTERS: CharacterTemplate[] = [
     difficulty: 1,
     strokes: [[{ x: 20, y: 15 }, { x: 80, y: 15 }, { x: 20, y: 85 }, { x: 80, y: 85 }]],
   },
+  // --- Accented letters ---
+  { id: 'french-e-aigu', char: 'É', romanization: 'e accent aigu', language: 'french', difficulty: 2, strokes: [...E_STROKES, AIGU] },
+  { id: 'french-e-grave', char: 'È', romanization: 'e accent grave', language: 'french', difficulty: 2, strokes: [...E_STROKES, GRAVE] },
+  { id: 'french-a-grave', char: 'À', romanization: 'a accent grave', language: 'french', difficulty: 2, strokes: [...A_STROKES, GRAVE] },
+  { id: 'french-u-grave', char: 'Ù', romanization: 'u accent grave', language: 'french', difficulty: 2, strokes: [U_CURVE, GRAVE] },
+  { id: 'french-a-circonflexe', char: 'Â', romanization: 'a accent circonflexe', language: 'french', difficulty: 3, strokes: [...A_STROKES, CIRCONFLEXE] },
+  { id: 'french-e-circonflexe', char: 'Ê', romanization: 'e accent circonflexe', language: 'french', difficulty: 3, strokes: [...E_STROKES, CIRCONFLEXE] },
+  { id: 'french-i-circonflexe', char: 'Î', romanization: 'i accent circonflexe', language: 'french', difficulty: 2, strokes: [...I_STROKES, CIRCONFLEXE] },
+  { id: 'french-o-circonflexe', char: 'Ô', romanization: 'o accent circonflexe', language: 'french', difficulty: 3, strokes: [O_LOOP, CIRCONFLEXE] },
+  { id: 'french-u-circonflexe', char: 'Û', romanization: 'u accent circonflexe', language: 'french', difficulty: 3, strokes: [U_CURVE, CIRCONFLEXE] },
+  { id: 'french-e-trema', char: 'Ë', romanization: 'e tréma', language: 'french', difficulty: 2, strokes: [...E_STROKES, ...TREMA] },
+  { id: 'french-i-trema', char: 'Ï', romanization: 'i tréma', language: 'french', difficulty: 2, strokes: [...I_STROKES, ...TREMA] },
+  { id: 'french-c-cedille', char: 'Ç', romanization: 'c cédille', language: 'french', difficulty: 2, strokes: [C_CURVE, CEDILLE] },
 ];
 
 // Explicit speechOverride (= the letter's real French name) so TTS reads
