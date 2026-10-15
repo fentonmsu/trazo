@@ -2,9 +2,11 @@ import type { CharacterTemplate, Stroke } from '../types/character';
 
 /**
  * The 26 letters of the (modern, post-2009-reform) Portuguese alphabet,
- * which added K, W, Y to the traditional 23-letter set. Like French,
- * accented letters (á, ç, ã, ...) are orthographic marks on these same
- * base letters, not separate alphabet members, so this is the plain A-Z set.
+ * which added K, W, Y to the traditional 23-letter set, plus the nasal
+ * til vowels (Ã, Õ) and the acento circunflexo letters (Â, Ê, Ô). Like
+ * French, these aren't separate alphabet members - they're orthographic
+ * marks on the same base letters - but common enough to be worth their
+ * own practice entries.
  *
  * `romanization`/`speechOverride` are each letter's real Portuguese name
  * (e.g. H = "agá", G = "gê", W = "dáblio"), since several letters don't
@@ -71,6 +73,13 @@ const A_STROKES: Stroke[] = [
   [{ x: 32, y: 55 }, { x: 68, y: 55 }],
 ];
 
+const E_STROKES: Stroke[] = [
+  [{ x: 25, y: 15 }, { x: 25, y: 85 }],
+  [{ x: 25, y: 15 }, { x: 75, y: 15 }],
+  [{ x: 25, y: 50 }, { x: 65, y: 50 }],
+  [{ x: 25, y: 85 }, { x: 75, y: 85 }],
+];
+
 // Til (~) - the wavy mark used in ã/õ, drawn as a single small S-curve above the letter.
 const TIL: Stroke = [
   { x: 30, y: 2 },
@@ -79,6 +88,9 @@ const TIL: Stroke = [
   { x: 60, y: -5 },
   { x: 70, y: 2 },
 ];
+
+// Acento circunflexo (ˆ) - small upward chevron, used by â/ê/ô.
+const CIRCUNFLEXO: Stroke = [{ x: 38, y: 2 }, { x: 50, y: -8 }, { x: 62, y: 2 }];
 
 const RAW_PORTUGUESE_LETTERS: CharacterTemplate[] = [
   { id: 'portuguese-a', char: 'A', romanization: 'á', language: 'portuguese', difficulty: 1, strokes: A_STROKES },
@@ -106,19 +118,7 @@ const RAW_PORTUGUESE_LETTERS: CharacterTemplate[] = [
       [{ x: 25, y: 15 }, { x: 55, y: 15 }, { x: 75, y: 35 }, { x: 75, y: 65 }, { x: 55, y: 85 }, { x: 25, y: 85 }],
     ],
   },
-  {
-    id: 'portuguese-e',
-    char: 'E',
-    romanization: 'é',
-    language: 'portuguese',
-    difficulty: 1,
-    strokes: [
-      [{ x: 25, y: 15 }, { x: 25, y: 85 }],
-      [{ x: 25, y: 15 }, { x: 75, y: 15 }],
-      [{ x: 25, y: 50 }, { x: 65, y: 50 }],
-      [{ x: 25, y: 85 }, { x: 75, y: 85 }],
-    ],
-  },
+  { id: 'portuguese-e', char: 'E', romanization: 'é', language: 'portuguese', difficulty: 1, strokes: E_STROKES },
   {
     id: 'portuguese-f',
     char: 'F',
@@ -290,6 +290,10 @@ const RAW_PORTUGUESE_LETTERS: CharacterTemplate[] = [
   // --- Til (nasal vowels) ---
   { id: 'portuguese-a-til', char: 'Ã', romanization: 'a til', language: 'portuguese', difficulty: 2, strokes: [...A_STROKES, TIL] },
   { id: 'portuguese-o-til', char: 'Õ', romanization: 'o til', language: 'portuguese', difficulty: 2, strokes: [O_LOOP, TIL] },
+  // --- Acento circunflexo ---
+  { id: 'portuguese-a-circunflexo', char: 'Â', romanization: 'a circunflexo', language: 'portuguese', difficulty: 2, strokes: [...A_STROKES, CIRCUNFLEXO] },
+  { id: 'portuguese-e-circunflexo', char: 'Ê', romanization: 'e circunflexo', language: 'portuguese', difficulty: 2, strokes: [...E_STROKES, CIRCUNFLEXO] },
+  { id: 'portuguese-o-circunflexo', char: 'Ô', romanization: 'o circunflexo', language: 'portuguese', difficulty: 2, strokes: [O_LOOP, CIRCUNFLEXO] },
 ];
 
 // Explicit speechOverride (= the letter's real Portuguese name) so TTS
