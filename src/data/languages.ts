@@ -92,6 +92,20 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'ltr',
     description: 'Las 26 letras del alfabeto portugués, con el nombre real de cada letra.',
   },
+  german: {
+    id: 'german',
+    name: 'Alemán',
+    nativeName: 'Deutsch',
+    direction: 'ltr',
+    description: 'Las 26 letras del alfabeto alemán, más ä, ö, ü y la ß (Eszett).',
+  },
+  vietnamese: {
+    id: 'vietnamese',
+    name: 'Vietnamita',
+    nativeName: 'Tiếng Việt',
+    direction: 'ltr',
+    description: 'Las 29 letras del alfabeto vietnamita, incluidas ă, â, đ, ê, ô, ơ, ư.',
+  },
 };
 
 export const LANGUAGE_ORDER: LanguageId[] = [
@@ -108,6 +122,8 @@ export const LANGUAGE_ORDER: LanguageId[] = [
   'polish',
   'french',
   'portuguese',
+  'german',
+  'vietnamese',
 ];
 
 /** True for any language rendered in Hebrew script (letters, niqqud, or both). */

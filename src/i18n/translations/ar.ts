@@ -70,6 +70,8 @@ const ar: Record<TranslationKey, string> = {
   'lang.polish': 'البولندية',
   'lang.french': 'الفرنسية',
   'lang.portuguese': 'البرتغالية',
+  'lang.german': 'الألمانية',
+  'lang.vietnamese': 'الفيتنامية',
 
   'errors.USERNAME_TOO_SHORT': 'يجب أن يتكون اسم المستخدم من 3 أحرف على الأقل',
   'errors.PASSWORD_TOO_SHORT': 'يجب أن تتكون كلمة المرور من 4 أحرف على الأقل',

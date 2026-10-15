@@ -29,6 +29,8 @@ VOICE_BY_LANGUAGE = {
     'polish': 'pl-PL-ZofiaNeural',
     'french': 'fr-FR-DeniseNeural',
     'portuguese': 'pt-BR-FranciscaNeural',
+    'german': 'de-DE-KatjaNeural',
+    'vietnamese': 'vi-VN-HoaiMyNeural',
 }
 
 ENTRIES_PATH = os.path.join(os.path.dirname(__file__), 'speech-entries.json')

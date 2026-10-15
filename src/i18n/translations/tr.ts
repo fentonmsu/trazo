@@ -70,6 +70,8 @@ const tr: Record<TranslationKey, string> = {
   'lang.polish': 'Lehçe',
   'lang.french': 'Fransızca',
   'lang.portuguese': 'Portekizce',
+  'lang.german': 'Almanca',
+  'lang.vietnamese': 'Vietnamca',
 
   'errors.USERNAME_TOO_SHORT': 'Kullanıcı adı en az 3 karakter olmalı',
   'errors.PASSWORD_TOO_SHORT': 'Şifre en az 4 karakter olmalı',

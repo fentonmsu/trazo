@@ -19,7 +19,9 @@ export type LanguageId =
   | 'korean'
   | 'polish'
   | 'french'
-  | 'portuguese';
+  | 'portuguese'
+  | 'german'
+  | 'vietnamese';
 
 export interface LanguageInfo {
   id: LanguageId;
