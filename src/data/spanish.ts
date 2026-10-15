@@ -3,8 +3,9 @@ import type { CharacterTemplate, Stroke } from '../types/character';
 /**
  * The 27-letter Spanish alphabet (A-Z plus Ñ, the RAE's modern official
  * count - ch/ll were dropped as separate letters in 2010), plus the five
- * acute-accented vowels (Á É Í Ó Ú) and the two opening punctuation marks
- * unique to Spanish, ¡ and ¿ (used at the start of exclamations/questions).
+ * acute-accented vowels (Á É Í Ó Ú), Ü (used in "pingüino", "vergüenza"),
+ * and the two opening punctuation marks unique to Spanish, ¡ and ¿ (used
+ * at the start of exclamations/questions).
  *
  * `romanization`/`speechOverride` are each base letter's real Spanish name
  * (e.g. H = "hache", Y = "ye", W = "uve doble"), since several letters
@@ -99,6 +100,12 @@ const ACUTE: Stroke = [{ x: 58, y: 6 }, { x: 70, y: -4 }];
 function dot(cx: number, cy: number): Stroke {
   return [{ x: cx - 3, y: cy - 3 }, { x: cx + 3, y: cy + 3 }];
 }
+
+// Diéresis (¨) - two dots side by side, used by ü (e.g. "pingüino", "vergüenza").
+const DIERESIS: Stroke[] = [
+  [{ x: 38, y: -2 }, { x: 42, y: 2 }],
+  [{ x: 58, y: -2 }, { x: 62, y: 2 }],
+];
 
 const RAW_SPANISH_LETTERS: CharacterTemplate[] = [
   { id: 'spanish-a', char: 'A', romanization: 'a', language: 'spanish', difficulty: 1, strokes: A_STROKES },
@@ -295,6 +302,7 @@ const RAW_SPANISH_LETTERS: CharacterTemplate[] = [
   { id: 'spanish-i-tilde', char: 'Í', romanization: 'í', language: 'spanish', difficulty: 2, strokes: [...I_STROKES, ACUTE] },
   { id: 'spanish-o-tilde', char: 'Ó', romanization: 'ó', language: 'spanish', difficulty: 2, strokes: [O_LOOP, ACUTE] },
   { id: 'spanish-u-tilde', char: 'Ú', romanization: 'ú', language: 'spanish', difficulty: 2, strokes: [U_CURVE, ACUTE] },
+  { id: 'spanish-u-dieresis', char: 'Ü', romanization: 'ü', language: 'spanish', difficulty: 2, strokes: [U_CURVE, ...DIERESIS] },
   // --- Opening punctuation (unique to Spanish) ---
   {
     id: 'spanish-open-exclamation',
