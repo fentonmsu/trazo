@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { CharacterTemplate, LanguageId } from './types/character';
-import { LANGUAGE_ORDER } from './data/languages';
 import { getCharactersForLanguage } from './data';
 import { getLessonsForLanguage, LESSON_LANGUAGES, type Lesson } from './data/lessons';
 import { CharacterGrid } from './components/CharacterGrid';
@@ -8,6 +7,7 @@ import { TrainerView } from './components/TrainerView';
 import { AuthScreen } from './components/AuthScreen';
 import { UserStatusBar } from './components/UserStatusBar';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
+import { LanguageMenu } from './components/LanguageMenu';
 import { LessonMap } from './components/lesson/LessonMap';
 import { LessonRunner } from './components/lesson/LessonRunner';
 import { AuthProvider, useAuth } from './hooks/useAuth';
@@ -82,13 +82,9 @@ function TrazoApp() {
         <p className="subtitle">{t('app.subtitle')}</p>
       </header>
 
-      <nav className="language-tabs">
-        {LANGUAGE_ORDER.map((id) => (
-          <button key={id} className={language === id ? 'active' : ''} onClick={() => setLanguage(id)}>
-            {t(LANGUAGE_NAME_KEYS[id])}
-          </button>
-        ))}
-      </nav>
+      <div className="language-menu-row">
+        <LanguageMenu language={language} onSelect={setLanguage} nameKeys={LANGUAGE_NAME_KEYS} />
+      </div>
 
       <nav className="mode-tabs">
         <button className={mode === 'lesson' ? 'active' : ''} onClick={() => setMode('lesson')}>

@@ -16,6 +16,12 @@ export async function registerAndLogin(page: Page, prefix = 'e2e'): Promise<stri
   return username;
 }
 
+/** Opens the hamburger language menu and picks the entry with this exact name. */
+export async function selectLanguage(page: Page, name: string): Promise<void> {
+  await page.click('.language-menu-button');
+  await page.click(`.language-menu-panel button:has-text("${name}")`);
+}
+
 export function collectConsoleErrors(page: Page): string[] {
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LANGUAGE_ORDER, LANGUAGES } from '../src/data/languages';
 import { getCharactersForLanguage } from '../src/data';
-import { registerAndLogin, collectConsoleErrors } from './utils';
+import { registerAndLogin, selectLanguage, collectConsoleErrors } from './utils';
 
 /**
  * Data-driven over LANGUAGE_ORDER, not a hardcoded list - this file needs
@@ -21,7 +21,7 @@ test.describe('every language renders all of its characters', () => {
     test(`${info.name}: all ${expected.length} characters render a non-empty glyph`, async ({ page }) => {
       const errors = collectConsoleErrors(page);
 
-      await page.click(`button:has-text("${info.name}")`);
+      await selectLanguage(page, info.name);
       await expect(page.locator('.character-tile')).toHaveCount(expected.length);
 
       const glyphTexts = await page.locator('.character-tile .glyph').allTextContents();
@@ -63,7 +63,7 @@ test.describe('every language renders all of its characters', () => {
 
     test(`${info.name}: sampled tiles open a working practice view`, async ({ page }) => {
       const errors = collectConsoleErrors(page);
-      await page.click(`button:has-text("${info.name}")`);
+      await selectLanguage(page, info.name);
 
       for (const i of sampleIndexes) {
         const expectedChar = expected[i];
