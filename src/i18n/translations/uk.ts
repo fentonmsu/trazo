@@ -11,6 +11,7 @@ const uk: Record<TranslationKey, string> = {
   'nav.recognize': 'Розпізнавання',
 
   'settings.interfaceLanguage': 'Мова інтерфейсу',
+  'languageMenu.choose': 'Вибери мову, яку хочеш практикувати',
 
   'auth.login': 'Увійти',
   'auth.register': 'Створити акаунт',

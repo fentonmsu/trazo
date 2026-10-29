@@ -11,6 +11,7 @@ const it: Record<TranslationKey, string> = {
   'nav.recognize': 'Riconosci',
 
   'settings.interfaceLanguage': "Lingua dell'interfaccia",
+  'languageMenu.choose': 'Scegli la lingua che vuoi esercitare',
 
   'auth.login': 'Accedi',
   'auth.register': 'Crea account',

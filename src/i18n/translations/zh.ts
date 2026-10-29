@@ -11,6 +11,7 @@ const zh: Record<TranslationKey, string> = {
   'nav.recognize': '识别',
 
   'settings.interfaceLanguage': '界面语言',
+  'languageMenu.choose': '选择你要练习的语言',
 
   'auth.login': '登录',
   'auth.register': '创建账户',

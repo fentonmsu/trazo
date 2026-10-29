@@ -44,7 +44,7 @@ export function LanguageMenu({ language, onSelect, nameKeys }: LanguageMenuProps
         aria-expanded={open}
       >
         <span className="language-menu-icon" aria-hidden="true">☰</span>
-        <span className="language-menu-current">{t(nameKeys[language])}</span>
+        <span className="language-menu-current">{t('languageMenu.choose')}</span>
       </button>
       {open && (
         <div className="language-menu-panel" role="menu">

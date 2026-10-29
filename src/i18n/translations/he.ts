@@ -11,6 +11,7 @@ const he: Record<TranslationKey, string> = {
   'nav.recognize': 'זיהוי',
 
   'settings.interfaceLanguage': 'שפת הממשק',
+  'languageMenu.choose': 'בחר את השפה שברצונך לתרגל',
 
   'auth.login': 'התחברות',
   'auth.register': 'יצירת חשבון',

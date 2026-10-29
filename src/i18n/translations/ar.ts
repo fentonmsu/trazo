@@ -11,6 +11,7 @@ const ar: Record<TranslationKey, string> = {
   'nav.recognize': 'تعرّف',
 
   'settings.interfaceLanguage': 'لغة الواجهة',
+  'languageMenu.choose': 'اختر اللغة التي تريد التدرب عليها',
 
   'auth.login': 'تسجيل الدخول',
   'auth.register': 'إنشاء حساب',

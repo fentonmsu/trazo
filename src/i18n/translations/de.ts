@@ -11,6 +11,7 @@ const de: Record<TranslationKey, string> = {
   'nav.recognize': 'Erkennen',
 
   'settings.interfaceLanguage': 'Oberflächensprache',
+  'languageMenu.choose': 'Wähle die Sprache, die du üben möchtest',
 
   'auth.login': 'Anmelden',
   'auth.register': 'Konto erstellen',

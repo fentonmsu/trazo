@@ -11,6 +11,7 @@ const ja: Record<TranslationKey, string> = {
   'nav.recognize': '認識',
 
   'settings.interfaceLanguage': '表示言語',
+  'languageMenu.choose': '練習したい言語を選んでください',
 
   'auth.login': 'ログイン',
   'auth.register': 'アカウント作成',

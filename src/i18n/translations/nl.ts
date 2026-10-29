@@ -11,6 +11,7 @@ const nl: Record<TranslationKey, string> = {
   'nav.recognize': 'Herkennen',
 
   'settings.interfaceLanguage': 'Taal van de interface',
+  'languageMenu.choose': 'Kies de taal die je wilt oefenen',
 
   'auth.login': 'Inloggen',
   'auth.register': 'Account aanmaken',

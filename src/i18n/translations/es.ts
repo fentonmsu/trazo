@@ -13,6 +13,7 @@ const es = {
   'nav.recognize': 'Reconocer',
 
   'settings.interfaceLanguage': 'Idioma de la interfaz',
+  'languageMenu.choose': 'Elige tu idioma que practiques',
 
   'auth.login': 'Iniciar sesión',
   'auth.register': 'Crear cuenta',

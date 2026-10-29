@@ -11,6 +11,7 @@ const tr: Record<TranslationKey, string> = {
   'nav.recognize': 'Tanıma',
 
   'settings.interfaceLanguage': 'Arayüz dili',
+  'languageMenu.choose': 'Pratik yapmak istediğin dili seç',
 
   'auth.login': 'Giriş yap',
   'auth.register': 'Hesap oluştur',

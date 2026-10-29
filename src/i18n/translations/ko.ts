@@ -11,6 +11,7 @@ const ko: Record<TranslationKey, string> = {
   'nav.recognize': '인식',
 
   'settings.interfaceLanguage': '인터페이스 언어',
+  'languageMenu.choose': '연습하고 싶은 언어를 선택하세요',
 
   'auth.login': '로그인',
   'auth.register': '계정 만들기',

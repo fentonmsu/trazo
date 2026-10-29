@@ -11,6 +11,7 @@ const ru: Record<TranslationKey, string> = {
   'nav.recognize': 'Распознавание',
 
   'settings.interfaceLanguage': 'Язык интерфейса',
+  'languageMenu.choose': 'Выбери язык для практики',
 
   'auth.login': 'Войти',
   'auth.register': 'Создать аккаунт',
