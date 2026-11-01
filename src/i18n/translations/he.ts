@@ -35,6 +35,8 @@ const he: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': 'צייר/י משהו קודם.',
   'common.check': 'בדיקה',
   'common.listenAgain': 'השמע שוב',
+  'speak.title': 'השמע את "{romanization}"',
+  'speak.ariaLabel': 'השמע את ההגייה של {char}',
 
   'lessonMap.noHearts': 'אין יותר חיים להיום — אפשר להמשיך לתרגל בחופשיות בלשוניות האחרות עד שהם יתמלאו מחדש.',
   'lessonMap.completePrevious': 'יש להשלים קודם את השיעור הקודם',

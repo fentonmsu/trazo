@@ -35,6 +35,8 @@ const uk: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': 'Спочатку щось намалюй.',
   'common.check': 'Перевірити',
   'common.listenAgain': 'Прослухати ще раз',
+  'speak.title': 'Послухати «{romanization}»',
+  'speak.ariaLabel': 'Послухати вимову {char}',
 
   'lessonMap.noHearts': 'На сьогодні життя закінчилися — можна вільно практикуватися на інших вкладках, поки вони відновлюються.',
   'lessonMap.completePrevious': 'Спочатку заверши попередній урок',

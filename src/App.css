@@ -70,7 +70,7 @@
 }
 
 .auth-tabs button.active {
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   color: white;
 }
 
@@ -107,7 +107,7 @@
 .auth-form button.primary {
   margin-top: 4px;
   border: none;
-  background: linear-gradient(135deg, #3b82f6, #6b7280);
+  background: linear-gradient(135deg, #2563eb, #4b5563);
   color: white;
   border-radius: 8px;
   padding: 11px 0;
@@ -117,7 +117,7 @@
 }
 
 .auth-form button.primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   box-shadow: 0 4px 14px rgba(37, 99, 246, 0.3);
 }
 
@@ -276,7 +276,7 @@
 }
 
 .mode-tabs button:hover {
-  background: linear-gradient(135deg, #3b82f6, #6b7280);
+  background: linear-gradient(135deg, #2563eb, #4b5563);
   border-color: transparent;
   color: white;
   transform: translateY(-1px);
@@ -284,7 +284,7 @@
 }
 
 .mode-tabs button.active {
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   border-color: transparent;
   color: white;
 }
@@ -305,7 +305,7 @@
   align-items: center;
   gap: 8px;
   border: none;
-  background: linear-gradient(135deg, #3b82f6, #6b7280);
+  background: linear-gradient(135deg, #2563eb, #4b5563);
   color: white;
   border-radius: 999px;
   padding: 8px 16px;
@@ -316,7 +316,7 @@
 }
 
 .language-menu-button:hover {
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
 }
@@ -363,29 +363,30 @@
 }
 
 .language-menu-item:hover {
-  background: linear-gradient(135deg, #3b82f6, #6b7280);
+  background: linear-gradient(135deg, #2563eb, #4b5563);
   color: white;
 }
 
 .language-menu-item.active {
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   color: white;
 }
 
 .app-main {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
 }
 
 @media (min-width: 720px) {
   .app-main {
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 280px minmax(0, 1fr);
     align-items: start;
   }
 }
 
 .sidebar {
+  min-width: 0;
   background: var(--panel-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -465,11 +466,16 @@
 
 .speak-button.tile-speak {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 0;
+  right: 0;
+  min-width: 24px;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 11px;
   opacity: 0.55;
-  padding: 2px;
+  padding: 4px;
   border-radius: 4px;
 }
 
@@ -532,6 +538,7 @@
 }
 
 .canvas-wrap {
+  max-width: 100%;
   border: 2px dashed var(--border);
   border-radius: 12px;
   touch-action: none;
@@ -540,6 +547,8 @@
 
 .drawing-canvas {
   display: block;
+  max-width: 100%;
+  height: auto;
   touch-action: none;
   border-radius: 10px;
 }
@@ -561,14 +570,14 @@
 }
 
 .controls button.primary {
-  background: linear-gradient(135deg, #3b82f6, #6b7280);
+  background: linear-gradient(135deg, #2563eb, #4b5563);
   border-color: transparent;
   color: white;
   transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
 
 .controls button.primary:hover {
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   box-shadow: 0 4px 14px rgba(37, 99, 246, 0.3);
 }
 
@@ -752,7 +761,7 @@
 
 .lesson-progress-fill {
   height: 100%;
-  background: linear-gradient(135deg, #3b82f6, #6b7280);
+  background: linear-gradient(135deg, #2563eb, #4b5563);
   transition: width 0.3s ease;
 }
 
@@ -781,14 +790,14 @@
 }
 
 .lesson-nav-button.primary {
-  background: linear-gradient(135deg, #3b82f6, #6b7280);
+  background: linear-gradient(135deg, #2563eb, #4b5563);
   border-color: transparent;
   color: white;
   transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
 
 .lesson-nav-button.primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   box-shadow: 0 4px 14px rgba(37, 99, 246, 0.3);
 }
 
@@ -921,6 +930,7 @@
 }
 
 .exercise-option {
+  position: relative;
   border: 2px solid var(--border);
   background: var(--panel-bg);
   border-radius: 12px;
@@ -932,6 +942,29 @@
 
 .exercise-option .option-glyph {
   font-size: 32px;
+}
+
+.option-feedback-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+
+.option-feedback-icon.correct {
+  background: var(--good);
+}
+
+.option-feedback-icon.wrong {
+  background: var(--bad);
 }
 
 .exercise-option.correct {

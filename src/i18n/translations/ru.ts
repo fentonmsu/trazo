@@ -35,6 +35,8 @@ const ru: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': 'Сначала что-нибудь нарисуйте.',
   'common.check': 'Проверить',
   'common.listenAgain': 'Прослушать снова',
+  'speak.title': 'Послушать «{romanization}»',
+  'speak.ariaLabel': 'Послушать произношение {char}',
 
   'lessonMap.noHearts': 'На сегодня жизни закончились — можно свободно практиковаться на других вкладках, пока они восстанавливаются.',
   'lessonMap.completePrevious': 'Сначала завершите предыдущий урок',

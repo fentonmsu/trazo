@@ -35,6 +35,8 @@ const zh: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': '请先画点什么。',
   'common.check': '检查',
   'common.listenAgain': '再听一次',
+  'speak.title': '听"{romanization}"',
+  'speak.ariaLabel': '听{char}的发音',
 
   'lessonMap.noHearts': '今天的生命值用完了 — 你仍可以在其他标签页自由练习，等待生命值恢复。',
   'lessonMap.completePrevious': '请先完成上一课',

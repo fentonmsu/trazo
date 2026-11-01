@@ -35,6 +35,8 @@ const nl: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': 'Teken eerst iets.',
   'common.check': 'Controleren',
   'common.listenAgain': 'Opnieuw beluisteren',
+  'speak.title': '"{romanization}" beluisteren',
+  'speak.ariaLabel': 'Uitspraak van {char} beluisteren',
 
   'lessonMap.noHearts': 'Geen levens meer voor vandaag — je kunt vrij blijven oefenen op de andere tabbladen terwijl ze bijvullen.',
   'lessonMap.completePrevious': 'Rond eerst de vorige les af',

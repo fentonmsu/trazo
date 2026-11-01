@@ -35,6 +35,8 @@ const tr: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': 'Önce bir şey çiz.',
   'common.check': 'Kontrol et',
   'common.listenAgain': 'Tekrar dinle',
+  'speak.title': '"{romanization}" dinle',
+  'speak.ariaLabel': '{char} telaffuzunu dinle',
 
   'lessonMap.noHearts': 'Bugün için canın kalmadı — yenilenene kadar diğer sekmelerde serbestçe alıştırma yapmaya devam edebilirsin.',
   'lessonMap.completePrevious': 'Önce bir önceki dersi tamamla',

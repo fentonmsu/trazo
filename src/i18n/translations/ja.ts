@@ -35,6 +35,8 @@ const ja: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': 'まず何か描いてください。',
   'common.check': '確認',
   'common.listenAgain': 'もう一度聞く',
+  'speak.title': '「{romanization}」を聞く',
+  'speak.ariaLabel': '{char}の発音を聞く',
 
   'lessonMap.noHearts': '今日のライフがなくなりました。回復するまで他のタブで自由に練習できます。',
   'lessonMap.completePrevious': '先に前のレッスンを完了してください',

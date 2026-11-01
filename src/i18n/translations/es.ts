@@ -37,6 +37,8 @@ const es = {
   'trainer.drawSomethingFirst': 'Dibuja algo primero.',
   'common.check': 'Comprobar',
   'common.listenAgain': 'Escuchar de nuevo',
+  'speak.title': 'Escuchar "{romanization}"',
+  'speak.ariaLabel': 'Escuchar pronunciación de {char}',
 
   'lessonMap.noHearts': 'Sin corazones por hoy — podés seguir practicando libremente en las otras pestañas mientras se recargan.',
   'lessonMap.completePrevious': 'Completa la lección anterior primero',

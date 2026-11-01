@@ -56,6 +56,11 @@ export function ChoiceExercise({ mode, prompt, options, onAnswered }: ChoiceExer
               disabled={picked !== null}
             >
               {mode === 'choose-sound' ? option.romanization : <ScriptGlyph template={option} className="option-glyph" />}
+              {state && (
+                <span className={`option-feedback-icon ${state}`} aria-hidden="true">
+                  {state === 'correct' ? '✓' : '✗'}
+                </span>
+              )}
             </button>
           );
         })}

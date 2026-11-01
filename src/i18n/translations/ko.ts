@@ -35,6 +35,8 @@ const ko: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': '먼저 무언가를 그려보세요.',
   'common.check': '확인',
   'common.listenAgain': '다시 듣기',
+  'speak.title': '"{romanization}" 듣기',
+  'speak.ariaLabel': '{char} 발음 듣기',
 
   'lessonMap.noHearts': '오늘의 하트를 모두 사용했습니다 — 하트가 다시 채워지는 동안 다른 탭에서 자유롭게 연습할 수 있어요.',
   'lessonMap.completePrevious': '먼저 이전 레슨을 완료하세요',

@@ -35,6 +35,8 @@ const en: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': 'Draw something first.',
   'common.check': 'Check',
   'common.listenAgain': 'Listen again',
+  'speak.title': 'Listen to "{romanization}"',
+  'speak.ariaLabel': 'Listen to the pronunciation of {char}',
 
   'lessonMap.noHearts': 'No lives left for today — you can keep practicing freely in the other tabs while they refill.',
   'lessonMap.completePrevious': 'Complete the previous lesson first',

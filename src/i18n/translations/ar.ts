@@ -35,6 +35,8 @@ const ar: Record<TranslationKey, string> = {
   'trainer.drawSomethingFirst': 'ارسم شيئًا أولاً.',
   'common.check': 'تحقّق',
   'common.listenAgain': 'استمع مرة أخرى',
+  'speak.title': 'استماع إلى "{romanization}"',
+  'speak.ariaLabel': 'استماع إلى نطق {char}',
 
   'lessonMap.noHearts': 'لا أرواح متبقية لهذا اليوم — يمكنك الاستمرار بالتدريب الحر في علامات التبويب الأخرى بينما تتجدد.',
   'lessonMap.completePrevious': 'أكمل الدرس السابق أولاً',
