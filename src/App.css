@@ -195,11 +195,11 @@
 /* See the Noto Sans Hebrew <link> comment in index.html: needed so niqqud
    attaches correctly on every letterform, including the sofit ones. */
 .hebrew-glyph {
-  font-family: 'Noto Sans Hebrew', sans-serif;
+  font-family: 'Noto Sans Hebrew', 'Arial Hebrew', 'Segoe UI Hebrew', 'Times New Roman', sans-serif;
 }
 
 .arabic-glyph {
-  font-family: 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+  font-family: 'Noto Naskh Arabic', 'Traditional Arabic', 'Geeza Pro', 'Segoe UI', serif;
 }
 
 /* See HebrewGlyph.tsx: positions a trailing niqqud vowel point explicitly
