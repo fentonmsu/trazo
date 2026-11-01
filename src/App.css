@@ -65,10 +65,12 @@
   border-radius: 999px;
   padding: 8px 0;
   font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .auth-tabs button.active {
-  background: var(--accent);
+  background: linear-gradient(135deg, #2563eb, #4b5563);
   color: white;
 }
 
@@ -105,12 +107,18 @@
 .auth-form button.primary {
   margin-top: 4px;
   border: none;
-  background: var(--accent);
+  background: linear-gradient(135deg, #3b82f6, #6b7280);
   color: white;
   border-radius: 8px;
   padding: 11px 0;
   font-size: 15px;
   cursor: pointer;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.auth-form button.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb, #4b5563);
+  box-shadow: 0 4px 14px rgba(37, 99, 246, 0.3);
 }
 
 .auth-form button.primary:disabled {
@@ -553,13 +561,15 @@
 }
 
 .controls button.primary {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: linear-gradient(135deg, #3b82f6, #6b7280);
+  border-color: transparent;
   color: white;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
 
 .controls button.primary:hover {
-  background: var(--accent-hover);
+  background: linear-gradient(135deg, #2563eb, #4b5563);
+  box-shadow: 0 4px 14px rgba(37, 99, 246, 0.3);
 }
 
 .guide-toggle {
@@ -771,9 +781,15 @@
 }
 
 .lesson-nav-button.primary {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: linear-gradient(135deg, #3b82f6, #6b7280);
+  border-color: transparent;
   color: white;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.lesson-nav-button.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb, #4b5563);
+  box-shadow: 0 4px 14px rgba(37, 99, 246, 0.3);
 }
 
 .lesson-nav-button:disabled {
