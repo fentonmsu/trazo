@@ -68,6 +68,7 @@ const tr: Record<TranslationKey, string> = {
   'lang.hebrew': 'İbranice',
   'lang.niqqud': 'İbranice (Nikud)',
   'lang.hebrewFull': 'İbranice (tüm sesli harfler)',
+  'lang.hebrewCursive': 'İbranice (El Yazısı)',
   'lang.arabic': 'Arapça',
   'lang.chinese': 'Çince (Mandarin)',
   'lang.turkish': 'Türkçe',

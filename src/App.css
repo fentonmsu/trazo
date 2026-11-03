@@ -309,6 +309,13 @@
   font-family: 'Noto Naskh Arabic', 'Traditional Arabic', 'Geeza Pro', 'Segoe UI', serif;
 }
 
+/* Hebrew cursive (ktav yad) - a handwriting style, not a separate script,
+   so it needs its own font rather than the block-print Noto Sans Hebrew
+   the stroke guides for this variant are authored against. */
+.hebrew-cursive-glyph {
+  font-family: 'Gveret Levin', 'Noto Sans Hebrew', 'Arial Hebrew', sans-serif;
+}
+
 /* See HebrewGlyph.tsx: positions a trailing niqqud vowel point explicitly
    instead of relying on the font to attach it, since that silently fails
    on narrow sofit letters (ם/ן/ף/ץ) in several fonts. */

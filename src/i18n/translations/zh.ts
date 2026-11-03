@@ -68,6 +68,7 @@ const zh: Record<TranslationKey, string> = {
   'lang.hebrew': '希伯来语',
   'lang.niqqud': '希伯来语（元音符号）',
   'lang.hebrewFull': '希伯来语（全部元音）',
+  'lang.hebrewCursive': '希伯来语（草书）',
   'lang.arabic': '阿拉伯语',
   'lang.chinese': '中文（普通话）',
   'lang.turkish': '土耳其语',

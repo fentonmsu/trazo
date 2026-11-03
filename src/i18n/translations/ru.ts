@@ -68,6 +68,7 @@ const ru: Record<TranslationKey, string> = {
   'lang.hebrew': 'Иврит',
   'lang.niqqud': 'Иврит (огласовки)',
   'lang.hebrewFull': 'Иврит (все гласные)',
+  'lang.hebrewCursive': 'Иврит (скоропись)',
   'lang.arabic': 'Арабский',
   'lang.chinese': 'Китайский (мандарин)',
   'lang.turkish': 'Турецкий',

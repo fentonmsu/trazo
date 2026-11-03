@@ -70,6 +70,7 @@ const es = {
   'lang.hebrew': 'Hebreo',
   'lang.niqqud': 'Hebreo (Nikud)',
   'lang.hebrewFull': 'Hebreo (Todas las vocales)',
+  'lang.hebrewCursive': 'Hebreo (Cursiva)',
   'lang.arabic': 'Árabe',
   'lang.chinese': 'Chino (Mandarín)',
   'lang.turkish': 'Turco',

@@ -2,7 +2,7 @@ import type { CharacterTemplate } from '../types/character';
 import type { CharacterProgress } from '../hooks/useProfile';
 import { SpeakButton } from './SpeakButton';
 import { HebrewGlyph } from './HebrewGlyph';
-import { isHebrewScript, isRtl } from '../data/languages';
+import { isHebrewScript, isRtl, scriptFontClass } from '../data/languages';
 
 interface CharacterGridProps {
   characters: CharacterTemplate[];
@@ -33,9 +33,9 @@ export function CharacterGrid({ characters, selectedId, progress, onSelect }: Ch
               title={c.meaning ? `${c.romanization} · ${c.meaning}` : c.romanization}
             >
               {isHebrewScript(c.language) ? (
-                <HebrewGlyph char={c.char} className="glyph hebrew-glyph" />
+                <HebrewGlyph char={c.char} className={`glyph ${scriptFontClass(c.language)}`} />
               ) : (
-                <span className={`glyph ${c.language === 'arabic' ? 'arabic-glyph' : ''}`}>{c.char}</span>
+                <span className={`glyph ${scriptFontClass(c.language)}`}>{c.char}</span>
               )}
               <span className="romanization">{c.romanization}</span>
               {best !== undefined && <span className="best-score">{best}%</span>}

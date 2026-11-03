@@ -68,6 +68,7 @@ const ar: Record<TranslationKey, string> = {
   'lang.hebrew': 'العبرية',
   'lang.niqqud': 'العبرية (تشكيل)',
   'lang.hebrewFull': 'العبرية (جميع الحركات)',
+  'lang.hebrewCursive': 'العبرية (خط اليد)',
   'lang.arabic': 'العربية',
   'lang.chinese': 'الصينية (الماندرين)',
   'lang.turkish': 'التركية',

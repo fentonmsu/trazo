@@ -43,6 +43,13 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'rtl',
     description: 'Cada letra combinada con cada nikud (א אָ אַ אֵ אֶ אִ אֹ אֻ אְ, ב בָ בַ...), como en las cartillas de lectura hebrea.',
   },
+  hebrewCursive: {
+    id: 'hebrewCursive',
+    name: 'Hebreo (Cursiva)',
+    nativeName: 'כתב יד',
+    direction: 'rtl',
+    description: 'Las 22 letras hebreas en su forma cursiva manuscrita (ktav yad), más las 5 formas finales.',
+  },
   arabic: {
     id: 'arabic',
     name: 'Árabe',
@@ -122,6 +129,7 @@ export const LANGUAGE_ORDER: LanguageId[] = [
   'hebrew',
   'niqqud',
   'hebrewFull',
+  'hebrewCursive',
   'arabic',
   'chinese',
   'turkish',
@@ -136,7 +144,21 @@ export const LANGUAGE_ORDER: LanguageId[] = [
 
 /** True for any language rendered in Hebrew script (letters, niqqud, or both). */
 export function isHebrewScript(language: LanguageId): boolean {
-  return language === 'hebrew' || language === 'niqqud' || language === 'hebrewFull';
+  return language === 'hebrew' || language === 'niqqud' || language === 'hebrewFull' || language === 'hebrewCursive';
+}
+
+/**
+ * The font-family class a glyph needs for its script, if any. Centralized
+ * here so every place that renders a raw character (CharacterGrid,
+ * TrainerView, ScriptGlyph) picks the same font - the cursive Hebrew data
+ * is authored against Gveret Levin specifically, not the block-print Noto
+ * Sans Hebrew the other Hebrew variants use, and both differ from Arabic.
+ */
+export function scriptFontClass(language: LanguageId): string {
+  if (language === 'hebrewCursive') return 'hebrew-cursive-glyph';
+  if (isHebrewScript(language)) return 'hebrew-glyph';
+  if (language === 'arabic') return 'arabic-glyph';
+  return '';
 }
 
 /** True for any language that reads right-to-left, used for grid/layout direction. */

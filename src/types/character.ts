@@ -13,6 +13,7 @@ export type LanguageId =
   | 'hebrew'
   | 'niqqud'
   | 'hebrewFull'
+  | 'hebrewCursive'
   | 'arabic'
   | 'chinese'
   | 'turkish'

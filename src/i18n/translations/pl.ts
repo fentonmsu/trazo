@@ -68,6 +68,7 @@ const pl: Record<TranslationKey, string> = {
   'lang.hebrew': 'Hebrajski',
   'lang.niqqud': 'Hebrajski (nikud)',
   'lang.hebrewFull': 'Hebrajski (wszystkie samogłoski)',
+  'lang.hebrewCursive': 'Hebrajski (Kursywa)',
   'lang.arabic': 'Arabski',
   'lang.chinese': 'Chiński (mandaryński)',
   'lang.turkish': 'Turecki',

@@ -4,7 +4,7 @@ import { DrawingCanvas, type DrawingCanvasHandle } from './DrawingCanvas';
 import { SpeakButton } from './SpeakButton';
 import { HebrewGlyph } from './HebrewGlyph';
 import { scoreDrawing, recognizeCharacter, type DrawingScoreResult, type RecognitionMatch } from '../engine/recognizer';
-import { isHebrewScript, isRtl } from '../data/languages';
+import { isHebrewScript, isRtl, scriptFontClass } from '../data/languages';
 import { useI18n } from '../i18n/I18nContext';
 
 interface TrainerViewProps {
@@ -55,9 +55,9 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
       {mode === 'practice' && target && (
         <div className="target-card" dir={isRtl(target.language) ? 'rtl' : 'ltr'}>
           {isHebrewScript(target.language) ? (
-            <HebrewGlyph char={target.char} className="target-glyph hebrew-glyph" />
+            <HebrewGlyph char={target.char} className={`target-glyph ${scriptFontClass(target.language)}`} />
           ) : (
-            <div className={`target-glyph ${target.language === 'arabic' ? 'arabic-glyph' : ''}`}>{target.char}</div>
+            <div className={`target-glyph ${scriptFontClass(target.language)}`}>{target.char}</div>
           )}
           <div className="target-meta">
             <div className="romanization-row">
@@ -114,11 +114,9 @@ export function TrainerView({ mode, target, candidates, onScored }: TrainerViewP
           {matches.map((m, i) => (
             <div key={m.template.id} className={`match-row ${i === 0 ? 'top' : ''}`}>
               {isHebrewScript(m.template.language) ? (
-                <HebrewGlyph char={m.template.char} className="match-glyph hebrew-glyph" />
+                <HebrewGlyph char={m.template.char} className={`match-glyph ${scriptFontClass(m.template.language)}`} />
               ) : (
-                <span className={`match-glyph ${m.template.language === 'arabic' ? 'arabic-glyph' : ''}`}>
-                  {m.template.char}
-                </span>
+                <span className={`match-glyph ${scriptFontClass(m.template.language)}`}>{m.template.char}</span>
               )}
               <span className="match-name">{m.template.romanization}</span>
               <div className="match-bar-bg">

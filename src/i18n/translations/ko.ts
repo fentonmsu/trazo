@@ -68,6 +68,7 @@ const ko: Record<TranslationKey, string> = {
   'lang.hebrew': '히브리어',
   'lang.niqqud': '히브리어 (니쿠드)',
   'lang.hebrewFull': '히브리어 (모든 모음)',
+  'lang.hebrewCursive': '히브리어 (필기체)',
   'lang.arabic': '아랍어',
   'lang.chinese': '중국어 (표준어)',
   'lang.turkish': '터키어',

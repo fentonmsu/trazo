@@ -68,6 +68,7 @@ const uk: Record<TranslationKey, string> = {
   'lang.hebrew': 'Іврит',
   'lang.niqqud': 'Іврит (огласовки)',
   'lang.hebrewFull': 'Іврит (усі голосні)',
+  'lang.hebrewCursive': 'Іврит (скоропис)',
   'lang.arabic': 'Арабська',
   'lang.chinese': 'Китайська (мандаринська)',
   'lang.turkish': 'Турецька',

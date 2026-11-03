@@ -19,6 +19,7 @@ export const LESSON_LANGUAGES: LanguageId[] = [
   'cyrillic',
   'hebrew',
   'niqqud',
+  'hebrewCursive',
   'arabic',
   'chinese',
   'turkish',
