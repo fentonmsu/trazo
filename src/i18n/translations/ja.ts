@@ -20,6 +20,8 @@ const ja: Record<TranslationKey, string> = {
   'auth.submitting': '少々お待ちください…',
   'auth.enter': '入る',
   'auth.genericError': '問題が発生しました。もう一度お試しください。',
+  'auth.showPassword': 'パスワードを表示',
+  'auth.hidePassword': 'パスワードを隠す',
 
   'status.streakTitle': '連続練習日数',
   'status.xpTitle': '経験値',

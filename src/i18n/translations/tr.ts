@@ -20,6 +20,8 @@ const tr: Record<TranslationKey, string> = {
   'auth.submitting': 'Bir saniye…',
   'auth.enter': 'Gir',
   'auth.genericError': 'Bir şeyler yanlış gitti. Tekrar dene.',
+  'auth.showPassword': 'Şifreyi göster',
+  'auth.hidePassword': 'Şifreyi gizle',
 
   'status.streakTitle': 'Üst üste alıştırma yapılan gün serisi',
   'status.xpTitle': 'Deneyim puanı',

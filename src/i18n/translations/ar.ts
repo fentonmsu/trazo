@@ -20,6 +20,8 @@ const ar: Record<TranslationKey, string> = {
   'auth.submitting': 'لحظة من فضلك…',
   'auth.enter': 'دخول',
   'auth.genericError': 'حدث خطأ ما. حاول مرة أخرى.',
+  'auth.showPassword': 'إظهار كلمة المرور',
+  'auth.hidePassword': 'إخفاء كلمة المرور',
 
   'status.streakTitle': 'سلسلة أيام التدريب المتتالية',
   'status.xpTitle': 'نقاط الخبرة',

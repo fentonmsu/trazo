@@ -20,6 +20,8 @@ const ru: Record<TranslationKey, string> = {
   'auth.submitting': 'Один момент…',
   'auth.enter': 'Войти',
   'auth.genericError': 'Что-то пошло не так. Попробуйте ещё раз.',
+  'auth.showPassword': 'Показать пароль',
+  'auth.hidePassword': 'Скрыть пароль',
 
   'status.streakTitle': 'Серия дней подряд с практикой',
   'status.xpTitle': 'Очки опыта',

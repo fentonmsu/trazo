@@ -20,6 +20,8 @@ const he: Record<TranslationKey, string> = {
   'auth.submitting': 'רגע אחד…',
   'auth.enter': 'כניסה',
   'auth.genericError': 'משהו השתבש. נסה/י שוב.',
+  'auth.showPassword': 'הצג סיסמה',
+  'auth.hidePassword': 'הסתר סיסמה',
 
   'status.streakTitle': 'רצף ימי תרגול',
   'status.xpTitle': 'נקודות ניסיון',

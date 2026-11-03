@@ -20,6 +20,8 @@ const uk: Record<TranslationKey, string> = {
   'auth.submitting': 'Хвилинку…',
   'auth.enter': 'Увійти',
   'auth.genericError': 'Щось пішло не так. Спробуй ще раз.',
+  'auth.showPassword': 'Показати пароль',
+  'auth.hidePassword': 'Приховати пароль',
 
   'status.streakTitle': 'Серія днів поспіль із практикою',
   'status.xpTitle': 'Очки досвіду',

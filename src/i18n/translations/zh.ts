@@ -20,6 +20,8 @@ const zh: Record<TranslationKey, string> = {
   'auth.submitting': '请稍候…',
   'auth.enter': '进入',
   'auth.genericError': '出了点问题，请再试一次。',
+  'auth.showPassword': '显示密码',
+  'auth.hidePassword': '隐藏密码',
 
   'status.streakTitle': '连续练习天数',
   'status.xpTitle': '经验值',

@@ -20,6 +20,8 @@ const de: Record<TranslationKey, string> = {
   'auth.submitting': 'Einen Moment…',
   'auth.enter': 'Loslegen',
   'auth.genericError': 'Etwas ist schiefgelaufen. Bitte versuch es erneut.',
+  'auth.showPassword': 'Passwort anzeigen',
+  'auth.hidePassword': 'Passwort ausblenden',
 
   'status.streakTitle': 'Aktuelle Übungsserie in Tagen',
   'status.xpTitle': 'Erfahrungspunkte',

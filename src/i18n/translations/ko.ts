@@ -20,6 +20,8 @@ const ko: Record<TranslationKey, string> = {
   'auth.submitting': '잠시만요…',
   'auth.enter': '입장',
   'auth.genericError': '문제가 발생했습니다. 다시 시도해 주세요.',
+  'auth.showPassword': '비밀번호 표시',
+  'auth.hidePassword': '비밀번호 숨기기',
 
   'status.streakTitle': '연속 연습일',
   'status.xpTitle': '경험치',

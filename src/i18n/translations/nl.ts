@@ -20,6 +20,8 @@ const nl: Record<TranslationKey, string> = {
   'auth.submitting': 'Even geduld…',
   'auth.enter': 'Start',
   'auth.genericError': 'Er ging iets mis. Probeer het opnieuw.',
+  'auth.showPassword': 'Wachtwoord tonen',
+  'auth.hidePassword': 'Wachtwoord verbergen',
 
   'status.streakTitle': 'Huidige reeks oefendagen',
   'status.xpTitle': 'Ervaringspunten',

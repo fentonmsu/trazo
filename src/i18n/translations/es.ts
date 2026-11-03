@@ -22,6 +22,8 @@ const es = {
   'auth.submitting': 'Un momento…',
   'auth.enter': 'Entrar',
   'auth.genericError': 'Algo salió mal. Intenta de nuevo.',
+  'auth.showPassword': 'Mostrar contraseña',
+  'auth.hidePassword': 'Ocultar contraseña',
 
   'status.streakTitle': 'Racha de días seguidos practicando',
   'status.xpTitle': 'Puntos de experiencia',

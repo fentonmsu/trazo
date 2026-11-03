@@ -20,6 +20,8 @@ const en: Record<TranslationKey, string> = {
   'auth.submitting': 'One moment…',
   'auth.enter': 'Enter',
   'auth.genericError': 'Something went wrong. Please try again.',
+  'auth.showPassword': 'Show password',
+  'auth.hidePassword': 'Hide password',
 
   'status.streakTitle': 'Current practice streak',
   'status.xpTitle': 'Experience points',
