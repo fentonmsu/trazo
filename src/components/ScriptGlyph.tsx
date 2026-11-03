@@ -10,7 +10,7 @@ interface ScriptGlyphProps {
 /** Renders a character's glyph with the right script-specific handling (Hebrew niqqud positioning, Arabic font). */
 export function ScriptGlyph({ template, className }: ScriptGlyphProps) {
   if (isHebrewScript(template.language)) {
-    return <HebrewGlyph char={template.char} className={className} />;
+    return <HebrewGlyph char={template.char} className={`${className ?? ''} hebrew-glyph`} />;
   }
   return (
     <span className={`${className ?? ''} ${template.language === 'arabic' ? 'arabic-glyph' : ''}`}>

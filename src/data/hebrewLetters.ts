@@ -41,21 +41,22 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     difficulty: 5,
     // Coordinates verified against the actual rendered glyph (Noto Sans
     // Hebrew): sampled its pixel silhouette on 2.5-unit scanlines and
-    // traced the centerline of each run. In this sans-serif face aleph is
-    // a clean X - two full diagonals crossing around (50, 46) - not a
-    // spine with two short arms as earlier hand-guessed coordinates had it.
+    // traced the centerline of each run. Aleph is two diagonals crossing,
+    // but NOT symmetric - the top-left arm starts much closer to the edge
+    // than the top-right one, and the crossing point sits left of center
+    // (around x=47, not x=56), so a plain symmetric X was off-shape.
     strokes: [
       // Main spine: top-right to bottom-left.
       [
-        { x: 83, y: 13 },
-        { x: 56, y: 47 },
-        { x: 29, y: 87 },
+        { x: 81, y: 9 },
+        { x: 47, y: 47 },
+        { x: 14, y: 95 },
       ],
       // Crossing diagonal: top-left to bottom-right.
       [
-        { x: 32, y: 13 },
-        { x: 56, y: 47 },
-        { x: 84, y: 86 },
+        { x: 17, y: 9 },
+        { x: 47, y: 47 },
+        { x: 84, y: 95 },
       ],
     ],
   },
@@ -65,12 +66,17 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     consonantSound: 'b',
     difficulty: 2,
     extraMark: { codepoint: DAGESH, strokes: [dotStroke(50, 48)] },
+    // The vertical stroke curves smoothly into the bottom bar (not a sharp
+    // right angle), and the bottom bar overhangs the vertical on both
+    // ends - confirmed against the rendered glyph's pixel silhouette.
     strokes: [
       [
         { x: 25, y: 20 },
         { x: 80, y: 20 },
-        { x: 80, y: 80 },
-        { x: 15, y: 80 },
+        { x: 80, y: 68 },
+        { x: 77, y: 78 },
+        { x: 68, y: 80 },
+        { x: 10, y: 80 },
       ],
     ],
   },
@@ -79,12 +85,17 @@ export const BASE_HEBREW_LETTERS: BaseHebrewLetter[] = [
     char: 'ב',
     consonantSound: 'v',
     difficulty: 2,
+    // The vertical stroke curves smoothly into the bottom bar (not a sharp
+    // right angle), and the bottom bar overhangs the vertical on both
+    // ends - confirmed against the rendered glyph's pixel silhouette.
     strokes: [
       [
         { x: 25, y: 20 },
         { x: 80, y: 20 },
-        { x: 80, y: 80 },
-        { x: 15, y: 80 },
+        { x: 80, y: 68 },
+        { x: 77, y: 78 },
+        { x: 68, y: 80 },
+        { x: 10, y: 80 },
       ],
     ],
   },
