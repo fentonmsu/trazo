@@ -26,7 +26,7 @@ interface HistoryEntry {
 }
 
 export function LessonRunner({ lesson, languagePool, hearts: initialHearts, onExit, onLoseHeart, onComplete }: LessonRunnerProps) {
-  const { t } = useI18n();
+  const { t, dir } = useI18n();
   const exercises = useMemo(() => {
     const lessonCharacters = languagePool.filter((c) => lesson.characterIds.includes(c.id));
     return buildLessonExercises(lessonCharacters, languagePool);
@@ -171,10 +171,10 @@ export function LessonRunner({ lesson, languagePool, hearts: initialHearts, onEx
 
       <div className="lesson-nav">
         <button className="lesson-nav-button" onClick={handleAtras} disabled={!canGoBack}>
-          ← {t('lessonRunner.back')}
+          {dir === 'rtl' ? `${t('lessonRunner.back')} →` : `← ${t('lessonRunner.back')}`}
         </button>
         <button className="lesson-nav-button primary" onClick={handleSiguiente} disabled={!canGoNext}>
-          {t('lessonRunner.next')} →
+          {dir === 'rtl' ? `← ${t('lessonRunner.next')}` : `${t('lessonRunner.next')} →`}
         </button>
       </div>
     </div>
