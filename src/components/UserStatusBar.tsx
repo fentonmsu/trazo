@@ -1,6 +1,7 @@
 import { useAuth } from '../hooks/useAuth';
 import type { StreakState } from '../hooks/useProfile';
 import { useI18n } from '../i18n/I18nContext';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface UserStatusBarProps {
   streak: StreakState;
@@ -39,9 +40,12 @@ export function UserStatusBar({ streak, xp, hearts }: UserStatusBarProps) {
         </span>
       </span>
       <span className="status-username">{user?.username}</span>
-      <button className="logout-button" onClick={() => logout()}>
-        {t('status.logout')}
-      </button>
+      <span className="header-actions">
+        <button className="logout-button" onClick={() => logout()}>
+          {t('status.logout')}
+        </button>
+        <LanguageSwitcher />
+      </span>
     </div>
   );
 }

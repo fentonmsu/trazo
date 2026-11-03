@@ -75,8 +75,11 @@ function TrazoApp() {
     <div className="app">
       <header className="app-header">
         <div className="header-top-row">
-          {profile && <UserStatusBar streak={profile.streak} xp={profile.xp} hearts={profile.hearts} />}
-          <LanguageSwitcher />
+          {profile ? (
+            <UserStatusBar streak={profile.streak} xp={profile.xp} hearts={profile.hearts} />
+          ) : (
+            <LanguageSwitcher />
+          )}
         </div>
         <h1>Trazo</h1>
         <p className="subtitle">{t('app.subtitle')}</p>
