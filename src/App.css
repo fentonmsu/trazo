@@ -149,8 +149,12 @@
 }
 
 .status-username {
-  opacity: 0.7;
-  margin-left: 4px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #2563eb, #4b5563);
+  color: white;
 }
 
 .header-actions {
