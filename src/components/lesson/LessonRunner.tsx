@@ -170,11 +170,15 @@ export function LessonRunner({ lesson, languagePool, hearts: initialHearts, onEx
       )}
 
       <div className="lesson-nav">
+        {/* Unicode bidi already mirrors the arrow's screen position in an
+            RTL context, so only the glyph (which way it points) needs to
+            flip here - keeping the same word/arrow source order as LTR
+            would otherwise land the arrow on the wrong side. */}
         <button className="lesson-nav-button" onClick={handleAtras} disabled={!canGoBack}>
-          {dir === 'rtl' ? `${t('lessonRunner.back')} →` : `← ${t('lessonRunner.back')}`}
+          {dir === 'rtl' ? `→ ${t('lessonRunner.back')}` : `← ${t('lessonRunner.back')}`}
         </button>
         <button className="lesson-nav-button primary" onClick={handleSiguiente} disabled={!canGoNext}>
-          {dir === 'rtl' ? `← ${t('lessonRunner.next')}` : `${t('lessonRunner.next')} →`}
+          {dir === 'rtl' ? `${t('lessonRunner.next')} ←` : `${t('lessonRunner.next')} →`}
         </button>
       </div>
     </div>
