@@ -107,7 +107,7 @@
 .auth-form button.primary {
   margin-top: 4px;
   border: none;
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   color: white;
   border-radius: 8px;
   padding: 11px 0;
@@ -117,8 +117,8 @@
 }
 
 .auth-form button.primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, #1d4ed8, #374151);
-  box-shadow: 0 4px 14px rgba(37, 99, 246, 0.3);
+  background: linear-gradient(135deg, #1e3a8a, #1f2937);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
 }
 
 .auth-form button.primary:disabled {
@@ -140,7 +140,7 @@
   border: none;
   border-radius: 999px;
   padding: 6px 14px;
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   color: white;
 }
 
@@ -153,7 +153,7 @@
   align-items: center;
   border-radius: 999px;
   padding: 6px 14px;
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   color: white;
 }
 
@@ -166,20 +166,20 @@
 
 .logout-button {
   border: none;
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   color: white;
   border-radius: 999px;
   padding: 6px 14px;
   font-size: 13px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
   transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
 }
 
 .logout-button:hover {
-  background: linear-gradient(135deg, #1d4ed8, #374151);
+  background: linear-gradient(135deg, #1e3a8a, #1f2937);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.4);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.4);
 }
 
 .locale-menu {
@@ -192,20 +192,20 @@
   align-items: center;
   gap: 6px;
   border: none;
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   color: white;
   border-radius: 999px;
   padding: 6px 14px;
   font-size: 13px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
   transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
 }
 
 .locale-menu-button:hover {
-  background: linear-gradient(135deg, #1d4ed8, #374151);
+  background: linear-gradient(135deg, #1e3a8a, #1f2937);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.4);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.4);
 }
 
 .locale-menu-caret {
@@ -382,7 +382,7 @@
   align-items: center;
   gap: 8px;
   border: none;
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   color: white;
   border-radius: 999px;
   padding: 8px 16px;
@@ -393,9 +393,9 @@
 }
 
 .language-menu-button:hover {
-  background: linear-gradient(135deg, #1d4ed8, #374151);
+  background: linear-gradient(135deg, #1e3a8a, #1f2937);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.4);
 }
 
 .language-menu-button:active {
@@ -647,15 +647,15 @@
 }
 
 .controls button.primary {
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   border-color: transparent;
   color: white;
   transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
 
 .controls button.primary:hover {
-  background: linear-gradient(135deg, #1d4ed8, #374151);
-  box-shadow: 0 4px 14px rgba(37, 99, 246, 0.3);
+  background: linear-gradient(135deg, #1e3a8a, #1f2937);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
 }
 
 .guide-toggle {
@@ -838,7 +838,7 @@
 
 .lesson-progress-fill {
   height: 100%;
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   transition: width 0.3s ease;
 }
 
@@ -867,15 +867,15 @@
 }
 
 .lesson-nav-button.primary {
-  background: linear-gradient(135deg, #2563eb, #4b5563);
+  background: linear-gradient(135deg, #1d4ed8, #374151);
   border-color: transparent;
   color: white;
   transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
 
 .lesson-nav-button.primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, #1d4ed8, #374151);
-  box-shadow: 0 4px 14px rgba(37, 99, 246, 0.3);
+  background: linear-gradient(135deg, #1e3a8a, #1f2937);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
 }
 
 .lesson-nav-button:disabled {
