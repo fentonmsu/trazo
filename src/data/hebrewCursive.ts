@@ -24,10 +24,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'alef',
     speechOverride: 'אָלֶף',
     difficulty: 3,
-    strokes: [
-      [{ x: 30, y: 15 }, { x: 26, y: 85 }],
-      [{ x: 28, y: 50 }, { x: 58, y: 25 }, { x: 45, y: 62 }, { x: 63, y: 82 }],
-    ],
+    strokes: [[{ x: 40, y: 28 }, { x: 30, y: 50 }, { x: 23, y: 82 }], [{ x: 48, y: 46 }, { x: 60, y: 40 }, { x: 70, y: 53 }, { x: 62, y: 68 }, { x: 57, y: 80 }, { x: 62, y: 84 }]],
   },
   {
     id: 'hebrewCursive-bet',
@@ -36,12 +33,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'bet',
     speechOverride: 'בֵּית',
     difficulty: 3,
-    strokes: [
-      [
-        { x: 50, y: 30 }, { x: 68, y: 27 }, { x: 73, y: 47 }, { x: 52, y: 58 },
-        { x: 42, y: 65 }, { x: 34, y: 80 }, { x: 33, y: 85 },
-      ],
-    ],
+    strokes: [[{ x: 38, y: 48 }, { x: 55, y: 30 }, { x: 70, y: 33 }, { x: 73, y: 48 }, { x: 58, y: 58 }, { x: 45, y: 50 }, { x: 38, y: 62 }, { x: 57, y: 80 }]],
   },
   {
     id: 'hebrewCursive-gimel',
@@ -50,7 +42,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'gimel',
     speechOverride: 'גִּימֶל',
     difficulty: 2,
-    strokes: [[{ x: 68, y: 22 }, { x: 58, y: 35 }, { x: 42, y: 55 }, { x: 38, y: 72 }, { x: 50, y: 82 }, { x: 65, y: 78 }]],
+    strokes: [[{ x: 38, y: 28 }, { x: 48, y: 45 }, { x: 52, y: 50 }, { x: 68, y: 58 }, { x: 58, y: 72 }, { x: 40, y: 83 }]],
   },
   {
     id: 'hebrewCursive-dalet',
@@ -59,7 +51,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'dalet',
     speechOverride: 'דָּלֶת',
     difficulty: 3,
-    strokes: [[{ x: 48, y: 22 }, { x: 72, y: 20 }, { x: 50, y: 45 }, { x: 68, y: 50 }, { x: 45, y: 68 }, { x: 40, y: 85 }]],
+    strokes: [[{ x: 40, y: 30 }, { x: 62, y: 27 }, { x: 70, y: 40 }, { x: 45, y: 48 }, { x: 65, y: 58 }, { x: 58, y: 85 }]],
   },
   {
     id: 'hebrewCursive-he',
@@ -68,10 +60,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'he',
     speechOverride: 'הֵא',
     difficulty: 2,
-    strokes: [
-      [{ x: 42, y: 55 }, { x: 38, y: 78 }, { x: 48, y: 85 }],
-      [{ x: 85, y: 25 }, { x: 65, y: 22 }, { x: 55, y: 40 }, { x: 62, y: 65 }, { x: 82, y: 82 }],
-    ],
+    strokes: [[{ x: 30, y: 42 }, { x: 48, y: 28 }, { x: 68, y: 32 }, { x: 74, y: 50 }, { x: 62, y: 72 }], [{ x: 35, y: 55 }, { x: 28, y: 72 }]],
   },
   {
     id: 'hebrewCursive-vav',
@@ -80,7 +69,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'vav',
     speechOverride: 'וָו',
     difficulty: 1,
-    strokes: [[{ x: 62, y: 18 }, { x: 55, y: 45 }, { x: 48, y: 82 }]],
+    strokes: [[{ x: 63, y: 27 }, { x: 58, y: 50 }, { x: 55, y: 78 }]],
   },
   {
     id: 'hebrewCursive-zayin',
@@ -89,7 +78,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'zayin',
     speechOverride: 'זַיִן',
     difficulty: 2,
-    strokes: [[{ x: 62, y: 18 }, { x: 42, y: 28 }, { x: 48, y: 42 }, { x: 28, y: 58 }, { x: 33, y: 75 }, { x: 62, y: 82 }]],
+    strokes: [[{ x: 58, y: 20 }, { x: 33, y: 43 }, { x: 50, y: 55 }, { x: 32, y: 68 }, { x: 45, y: 80 }, { x: 58, y: 76 }]],
   },
   {
     id: 'hebrewCursive-het',
@@ -98,7 +87,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'het',
     speechOverride: 'חֵית',
     difficulty: 4,
-    strokes: [[{ x: 38, y: 30 }, { x: 42, y: 48 }, { x: 48, y: 25 }, { x: 72, y: 20 }, { x: 82, y: 42 }, { x: 60, y: 78 }, { x: 38, y: 85 }]],
+    strokes: [[{ x: 42, y: 45 }, { x: 36, y: 30 }, { x: 48, y: 24 }, { x: 65, y: 27 }, { x: 72, y: 45 }, { x: 68, y: 68 }, { x: 58, y: 76 }]],
   },
   {
     id: 'hebrewCursive-tet',
@@ -107,7 +96,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'tet',
     speechOverride: 'טֵית',
     difficulty: 4,
-    strokes: [[{ x: 78, y: 25 }, { x: 50, y: 22 }, { x: 32, y: 42 }, { x: 35, y: 68 }, { x: 55, y: 85 }, { x: 68, y: 70 }, { x: 55, y: 58 }]],
+    strokes: [[{ x: 78, y: 20 }, { x: 48, y: 12 }, { x: 23, y: 35 }, { x: 22, y: 58 }, { x: 46, y: 78 }, { x: 63, y: 66 }, { x: 58, y: 50 }]],
   },
   {
     id: 'hebrewCursive-yod',
@@ -116,7 +105,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'yod',
     speechOverride: 'יוֹד',
     difficulty: 1,
-    strokes: [[{ x: 58, y: 32 }, { x: 48, y: 62 }]],
+    strokes: [[{ x: 62, y: 30 }, { x: 53, y: 50 }]],
   },
   {
     id: 'hebrewCursive-kaf',
@@ -125,7 +114,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'kaf',
     speechOverride: 'כַּף',
     difficulty: 2,
-    strokes: [[{ x: 68, y: 27 }, { x: 45, y: 30 }, { x: 35, y: 50 }, { x: 42, y: 72 }, { x: 65, y: 80 }]],
+    strokes: [[{ x: 50, y: 28 }, { x: 28, y: 45 }, { x: 28, y: 65 }, { x: 50, y: 73 }, { x: 63, y: 68 }]],
   },
   {
     id: 'hebrewCursive-kaf-sofit',
@@ -134,7 +123,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'kaf sofit',
     speechOverride: 'כַּף סוֹפִית',
     difficulty: 2,
-    strokes: [[{ x: 78, y: 20 }, { x: 62, y: 32 }, { x: 55, y: 55 }, { x: 48, y: 88 }]],
+    strokes: [[{ x: 63, y: 20 }, { x: 58, y: 45 }, { x: 50, y: 70 }, { x: 42, y: 88 }]],
   },
   {
     id: 'hebrewCursive-lamed',
@@ -143,7 +132,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'lamed',
     speechOverride: 'לָמֶד',
     difficulty: 3,
-    strokes: [[{ x: 38, y: 82 }, { x: 32, y: 65 }, { x: 48, y: 58 }, { x: 58, y: 35 }, { x: 68, y: 15 }]],
+    strokes: [[{ x: 68, y: 10 }, { x: 85, y: 8 }, { x: 90, y: 15 }, { x: 78, y: 28 }, { x: 65, y: 42 }, { x: 58, y: 58 }, { x: 50, y: 68 }, { x: 62, y: 70 }]],
   },
   {
     id: 'hebrewCursive-mem',
@@ -152,7 +141,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'mem',
     speechOverride: 'מֵם',
     difficulty: 3,
-    strokes: [[{ x: 38, y: 45 }, { x: 36, y: 85 }, { x: 68, y: 28 }, { x: 62, y: 85 }]],
+    strokes: [[{ x: 62, y: 38 }, { x: 58, y: 78 }, { x: 72, y: 26 }, { x: 68, y: 78 }]],
   },
   {
     id: 'hebrewCursive-mem-sofit',
@@ -161,7 +150,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'mem sofit',
     speechOverride: 'מֵם סוֹפִית',
     difficulty: 4,
-    strokes: [[{ x: 50, y: 32 }, { x: 68, y: 28 }, { x: 72, y: 48 }, { x: 52, y: 60 }, { x: 38, y: 48 }, { x: 45, y: 33 }, { x: 35, y: 58 }, { x: 30, y: 82 }]],
+    strokes: [[{ x: 38, y: 78 }, { x: 45, y: 55 }, { x: 50, y: 38 }, { x: 64, y: 35 }, { x: 72, y: 47 }, { x: 66, y: 60 }, { x: 48, y: 56 }]],
   },
   {
     id: 'hebrewCursive-nun',
@@ -170,7 +159,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'nun',
     speechOverride: 'נוּן',
     difficulty: 2,
-    strokes: [[{ x: 82, y: 20 }, { x: 78, y: 55 }, { x: 60, y: 78 }, { x: 46, y: 85 }]],
+    strokes: [[{ x: 68, y: 27 }, { x: 64, y: 52 }, { x: 55, y: 72 }, { x: 40, y: 85 }]],
   },
   {
     id: 'hebrewCursive-nun-sofit',
@@ -179,7 +168,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'nun sofit',
     speechOverride: 'נוּן סוֹפִית',
     difficulty: 1,
-    strokes: [[{ x: 70, y: 20 }, { x: 40, y: 85 }]],
+    strokes: [[{ x: 62, y: 27 }, { x: 40, y: 90 }]],
   },
   {
     id: 'hebrewCursive-samekh',
@@ -188,11 +177,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'samekh',
     speechOverride: 'סָמֶך',
     difficulty: 3,
-    strokes: [[
-      { x: 50, y: 26 }, { x: 62, y: 29.2 }, { x: 70.8, y: 38 }, { x: 74, y: 50 },
-      { x: 70.8, y: 62 }, { x: 62, y: 70.8 }, { x: 50, y: 74 }, { x: 38, y: 70.8 },
-      { x: 29.2, y: 62 }, { x: 26, y: 50 }, { x: 29.2, y: 38 }, { x: 38, y: 29.2 }, { x: 50, y: 26 },
-    ]],
+    strokes: [[{ x: 61, y: 30 }, { x: 72.5, y: 33.1 }, { x: 80.9, y: 41.5 }, { x: 84, y: 53 }, { x: 80.9, y: 64.5 }, { x: 72.5, y: 72.9 }, { x: 61, y: 76 }, { x: 49.5, y: 72.9 }, { x: 41.1, y: 64.5 }, { x: 38, y: 53 }, { x: 41.1, y: 41.5 }, { x: 49.5, y: 33.1 }, { x: 61, y: 30 }]],
   },
   {
     id: 'hebrewCursive-ayin',
@@ -201,7 +186,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'ayin',
     speechOverride: 'עַיִן',
     difficulty: 4,
-    strokes: [[{ x: 50, y: 20 }, { x: 40, y: 55 }, { x: 24, y: 58 }, { x: 30, y: 78 }, { x: 48, y: 80 }, { x: 48, y: 55 }]],
+    strokes: [[{ x: 42, y: 18 }, { x: 40, y: 27 }, { x: 62, y: 20 }, { x: 72, y: 35 }, { x: 45, y: 42 }, { x: 27, y: 53 }, { x: 36, y: 76 }, { x: 60, y: 68 }, { x: 62, y: 48 }]],
   },
   {
     id: 'hebrewCursive-pe',
@@ -210,7 +195,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'pe',
     speechOverride: 'פֵּא',
     difficulty: 5,
-    strokes: [[{ x: 78, y: 45 }, { x: 68, y: 25 }, { x: 42, y: 25 }, { x: 28, y: 45 }, { x: 32, y: 68 }, { x: 55, y: 78 }, { x: 70, y: 65 }, { x: 62, y: 52 }, { x: 50, y: 50 }]],
+    strokes: [[{ x: 38, y: 33 }, { x: 63, y: 27 }, { x: 83, y: 45 }, { x: 72, y: 70 }, { x: 46, y: 73 }, { x: 36, y: 53 }, { x: 55, y: 42 }, { x: 63, y: 58 }]],
   },
   {
     id: 'hebrewCursive-pe-sofit',
@@ -219,7 +204,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'pe sofit',
     speechOverride: 'פֵּא סוֹפִית',
     difficulty: 4,
-    strokes: [[{ x: 62, y: 18 }, { x: 78, y: 15 }, { x: 80, y: 32 }, { x: 66, y: 30 }, { x: 62, y: 50 }, { x: 68, y: 75 }, { x: 58, y: 88 }]],
+    strokes: [[{ x: 38, y: 40 }, { x: 58, y: 18 }, { x: 72, y: 8 }, { x: 90, y: 15 }, { x: 80, y: 33 }, { x: 66, y: 38 }, { x: 62, y: 55 }, { x: 55, y: 70 }, { x: 65, y: 78 }, { x: 68, y: 62 }]],
   },
   {
     id: 'hebrewCursive-tsadi',
@@ -228,7 +213,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'tsadi',
     speechOverride: 'צָדִי',
     difficulty: 4,
-    strokes: [[{ x: 45, y: 22 }, { x: 68, y: 18 }, { x: 48, y: 40 }, { x: 68, y: 45 }, { x: 48, y: 65 }, { x: 62, y: 82 }]],
+    strokes: [[{ x: 63, y: 18 }, { x: 35, y: 30 }, { x: 63, y: 48 }, { x: 37, y: 63 }, { x: 60, y: 80 }]],
   },
   {
     id: 'hebrewCursive-tsadi-sofit',
@@ -237,7 +222,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'tsadi sofit',
     speechOverride: 'צָדִי סוֹפִית',
     difficulty: 4,
-    strokes: [[{ x: 58, y: 18 }, { x: 75, y: 15 }, { x: 78, y: 30 }, { x: 62, y: 28 }, { x: 55, y: 45 }, { x: 62, y: 70 }, { x: 42, y: 85 }]],
+    strokes: [[{ x: 40, y: 42 }, { x: 50, y: 16 }, { x: 65, y: 2 }, { x: 85, y: 6 }, { x: 88, y: 18 }, { x: 68, y: 22 }, { x: 48, y: 30 }, { x: 45, y: 55 }, { x: 42, y: 75 }]],
   },
   {
     id: 'hebrewCursive-qof',
@@ -246,7 +231,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'qof',
     speechOverride: 'קוֹף',
     difficulty: 3,
-    strokes: [[{ x: 75, y: 25 }, { x: 58, y: 20 }, { x: 68, y: 38 }, { x: 50, y: 55 }, { x: 35, y: 88 }]],
+    strokes: [[{ x: 38, y: 32 }, { x: 45, y: 20 }, { x: 60, y: 18 }, { x: 70, y: 32 }, { x: 50, y: 48 }, { x: 42, y: 52 }, { x: 35, y: 90 }]],
   },
   {
     id: 'hebrewCursive-resh',
@@ -255,7 +240,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'resh',
     speechOverride: 'רֵישׁ',
     difficulty: 2,
-    strokes: [[{ x: 42, y: 22 }, { x: 25, y: 25 }, { x: 22, y: 42 }, { x: 32, y: 62 }, { x: 30, y: 82 }]],
+    strokes: [[{ x: 35, y: 33 }, { x: 62, y: 28 }, { x: 73, y: 42 }, { x: 60, y: 62 }, { x: 48, y: 78 }]],
   },
   {
     id: 'hebrewCursive-shin',
@@ -264,7 +249,7 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'shin',
     speechOverride: 'שִׁין',
     difficulty: 5,
-    strokes: [[{ x: 62, y: 12 }, { x: 80, y: 12 }, { x: 82, y: 28 }, { x: 55, y: 25 }, { x: 35, y: 45 }, { x: 38, y: 68 }, { x: 62, y: 75 }, { x: 68, y: 55 }]],
+    strokes: [[{ x: 28, y: 62 }, { x: 42, y: 45 }, { x: 55, y: 20 }, { x: 70, y: 12 }, { x: 80, y: 22 }, { x: 68, y: 35 }, { x: 42, y: 40 }, { x: 35, y: 55 }, { x: 45, y: 72 }, { x: 62, y: 65 }, { x: 55, y: 48 }]],
   },
   {
     id: 'hebrewCursive-tav',
@@ -273,6 +258,6 @@ export const hebrewCursiveCharacters: CharacterTemplate[] = [
     romanization: 'tav',
     speechOverride: 'תָּו',
     difficulty: 4,
-    strokes: [[{ x: 78, y: 18 }, { x: 86, y: 15 }, { x: 82, y: 30 }, { x: 68, y: 58 }, { x: 62, y: 80 }, { x: 42, y: 88 }]],
+    strokes: [[{ x: 45, y: 28 }, { x: 50, y: 48 }, { x: 62, y: 45 }, { x: 68, y: 60 }, { x: 55, y: 78 }, { x: 20, y: 88 }]],
   },
 ];
