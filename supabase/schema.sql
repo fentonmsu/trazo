@@ -34,6 +34,12 @@ create table if not exists user_state (
   hearts integer not null default 5
 );
 
+create table if not exists character_overrides (
+  character_id text primary key,
+  strokes jsonb not null,
+  updated_at timestamptz not null default now()
+);
+
 -- This backend uses its own JWT auth (not Supabase Auth) and only ever
 -- talks to Postgres through the secret/service_role key, which bypasses
 -- Row Level Security entirely. RLS is intentionally left off here since

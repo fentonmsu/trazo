@@ -12,6 +12,8 @@ import { LessonMap } from './components/lesson/LessonMap';
 import { LessonRunner } from './components/lesson/LessonRunner';
 import { AuthProvider, useAuth } from './hooks/useAuth';
 import { useProfile } from './hooks/useProfile';
+import { useStrokeOverrides, applyOverrides } from './hooks/useStrokeOverrides';
+import { AdminGate } from './components/admin/AdminGate';
 import { I18nProvider, useI18n } from './i18n/I18nContext';
 import type { TranslationKey } from './i18n/translations';
 import './App.css';
@@ -45,8 +47,13 @@ function TrazoApp() {
   const [selected, setSelected] = useState<CharacterTemplate | null>(null);
   const [activeLesson, setActiveLesson] = useState<Lesson | null>(null);
   const { profile, recordCharacterScore, recordLessonResult, loseHeart } = useProfile();
+  const overridesHook = useStrokeOverrides();
+  const [showAdmin, setShowAdmin] = useState(false);
 
-  const characters = useMemo(() => getCharactersForLanguage(language), [language]);
+  const characters = useMemo(
+    () => applyOverrides(getCharactersForLanguage(language), overridesHook.overrides),
+    [language, overridesHook.overrides],
+  );
   const lessons = useMemo(
     () => (LESSON_LANGUAGES.includes(language) ? getLessonsForLanguage(language) : []),
     [language],
@@ -88,7 +95,12 @@ function TrazoApp() {
 
       <div className="language-menu-row">
         <LanguageMenu language={language} onSelect={setLanguage} nameKeys={LANGUAGE_NAME_KEYS} />
+        <button className="admin-trigger" onClick={() => setShowAdmin(true)} aria-label="Editor de trazos" title="Editor de trazos">
+          ⚙
+        </button>
       </div>
+
+      {showAdmin && <AdminGate onClose={() => setShowAdmin(false)} overridesHook={overridesHook} />}
 
       <nav className="mode-tabs">
         <button className={mode === 'lesson' ? 'active' : ''} onClick={() => setMode('lesson')}>

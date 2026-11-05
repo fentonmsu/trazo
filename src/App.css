@@ -408,7 +408,222 @@
 .language-menu-row {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 12px;
+}
+
+.admin-trigger {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 15px;
+  opacity: 0.45;
+  cursor: pointer;
+}
+
+.admin-trigger:hover {
+  opacity: 1;
+}
+
+.admin-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 30, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.admin-unlock-box {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 320px;
+  max-width: 100%;
+}
+
+.admin-unlock-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-unlock-box input {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.admin-unlock-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 980px;
+  width: 100%;
+  max-height: 95vh;
+  overflow-y: auto;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.admin-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-controls-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.admin-char-list {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  flex: 1;
+  padding: 4px;
+}
+
+.admin-char-chip {
+  min-width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.admin-char-chip.active {
+  border-color: #0d7de8;
+  background: #eaf4ff;
+}
+
+.admin-char-chip.overridden {
+  box-shadow: inset 0 -3px 0 #1a9850;
+}
+
+.admin-main-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.admin-edit-box {
+  position: relative;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background: white;
+  max-width: 100%;
+}
+
+.admin-edit-glyph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: min(80vw, 340px);
+  color: rgba(0, 0, 0, 0.3);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.admin-edit-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.admin-side-panel {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-hint {
+  font-size: 13px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.admin-stroke-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.admin-stroke-tabs button {
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.admin-stroke-tabs button.active {
+  background: #f0f6ff;
+}
+
+.admin-stroke-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.admin-smooth-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.admin-preview-label {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+.admin-save-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.admin-status {
+  font-size: 13px;
+  margin: 0;
+}
+
+.admin-override-flag {
+  font-size: 12px;
+  color: #1a9850;
+  margin: 0;
 }
 
 .language-menu {

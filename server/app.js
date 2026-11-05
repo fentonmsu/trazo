@@ -3,6 +3,8 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import authRoutes from './routes/auth.js';
 import profileRoutes from './routes/profile.js';
+import adminRoutes from './routes/admin.js';
+import overridesRoutes from './routes/overrides.js';
 
 const app = express();
 
@@ -18,5 +20,7 @@ app.get('/api/health', (_req, res) => res.json({ ok: true }));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/profile', profileRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/overrides', overridesRoutes);
 
 export default app;
