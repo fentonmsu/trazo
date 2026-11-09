@@ -70,6 +70,8 @@ const pt: Record<TranslationKey, string> = {
   'lang.hebrewFull': 'Hebraico (todas as vogais)',
   'lang.hebrewCursive': 'Hebraico (Cursivo)',
   'lang.arabic': 'Árabe',
+  'lang.arabicNumbers': 'Árabe (Números)',
+  'lang.arabicHarakat': 'Árabe (Tashkil)',
   'lang.chinese': 'Chinês (Mandarim)',
   'lang.turkish': 'Turco',
   'lang.korean': 'Coreano (Hangul)',

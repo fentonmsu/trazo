@@ -70,6 +70,8 @@ const ja: Record<TranslationKey, string> = {
   'lang.hebrewFull': 'ヘブライ語（全母音）',
   'lang.hebrewCursive': 'ヘブライ語（筆記体）',
   'lang.arabic': 'アラビア語',
+  'lang.arabicNumbers': 'アラビア語（数字）',
+  'lang.arabicHarakat': 'アラビア語（タシュキール）',
   'lang.chinese': '中国語（北京語）',
   'lang.turkish': 'トルコ語',
   'lang.korean': '韓国語（ハングル）',

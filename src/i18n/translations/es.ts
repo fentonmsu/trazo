@@ -72,6 +72,8 @@ const es = {
   'lang.hebrewFull': 'Hebreo (Todas las vocales)',
   'lang.hebrewCursive': 'Hebreo (Cursiva)',
   'lang.arabic': 'Árabe',
+  'lang.arabicNumbers': 'Árabe (Números)',
+  'lang.arabicHarakat': 'Árabe (Tashkil)',
   'lang.chinese': 'Chino (Mandarín)',
   'lang.turkish': 'Turco',
   'lang.korean': 'Coreano (Hangul)',

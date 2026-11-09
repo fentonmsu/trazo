@@ -24,6 +24,8 @@ VOICE_BY_LANGUAGE = {
     'hebrewFull': 'he-IL-HilaNeural',
     'hebrewCursive': 'he-IL-HilaNeural',
     'arabic': 'ar-SA-ZariyahNeural',
+    'arabicNumbers': 'ar-SA-ZariyahNeural',
+    'arabicHarakat': 'ar-SA-ZariyahNeural',
     'chinese': 'zh-CN-XiaoxiaoNeural',
     'turkish': 'tr-TR-EmelNeural',
     'korean': 'ko-KR-SunHiNeural',

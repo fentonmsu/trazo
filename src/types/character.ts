@@ -15,6 +15,8 @@ export type LanguageId =
   | 'hebrewFull'
   | 'hebrewCursive'
   | 'arabic'
+  | 'arabicNumbers'
+  | 'arabicHarakat'
   | 'chinese'
   | 'turkish'
   | 'korean'

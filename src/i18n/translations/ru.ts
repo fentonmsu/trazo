@@ -70,6 +70,8 @@ const ru: Record<TranslationKey, string> = {
   'lang.hebrewFull': 'Иврит (все гласные)',
   'lang.hebrewCursive': 'Иврит (скоропись)',
   'lang.arabic': 'Арабский',
+  'lang.arabicNumbers': 'Арабский (Цифры)',
+  'lang.arabicHarakat': 'Арабский (Ташкиль)',
   'lang.chinese': 'Китайский (мандарин)',
   'lang.turkish': 'Турецкий',
   'lang.korean': 'Корейский (хангыль)',

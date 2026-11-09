@@ -70,6 +70,8 @@ const nl: Record<TranslationKey, string> = {
   'lang.hebrewFull': 'Hebreeuws (alle klinkers)',
   'lang.hebrewCursive': 'Hebreeuws (Cursief)',
   'lang.arabic': 'Arabisch',
+  'lang.arabicNumbers': 'Arabisch (Cijfers)',
+  'lang.arabicHarakat': 'Arabisch (Tashkil)',
   'lang.chinese': 'Chinees (Mandarijn)',
   'lang.turkish': 'Turks',
   'lang.korean': 'Koreaans (Hangeul)',

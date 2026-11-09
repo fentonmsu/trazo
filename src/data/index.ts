@@ -7,6 +7,8 @@ import { niqqudCharacters } from './niqqud';
 import { hebrewFullCharacters } from './hebrewFull';
 import { hebrewCursiveCharacters } from './hebrewCursive';
 import { arabicCharacters } from './arabic';
+import { arabicNumberCharacters } from './arabicNumbers';
+import { arabicHarakatCharacters } from './arabicHarakat';
 import { chineseCharacters } from './chinese';
 import { turkishCharacters } from './turkish';
 import { koreanCharacters } from './korean';
@@ -26,6 +28,8 @@ export const CHARACTERS_BY_LANGUAGE: Record<LanguageId, CharacterTemplate[]> = {
   hebrewFull: hebrewFullCharacters,
   hebrewCursive: hebrewCursiveCharacters,
   arabic: arabicCharacters,
+  arabicNumbers: arabicNumberCharacters,
+  arabicHarakat: arabicHarakatCharacters,
   chinese: chineseCharacters,
   turkish: turkishCharacters,
   korean: koreanCharacters,

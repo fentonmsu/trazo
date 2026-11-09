@@ -29,6 +29,8 @@ const LANGUAGE_NAME_KEYS: Record<LanguageId, TranslationKey> = {
   hebrewFull: 'lang.hebrewFull',
   hebrewCursive: 'lang.hebrewCursive',
   arabic: 'lang.arabic',
+  arabicNumbers: 'lang.arabicNumbers',
+  arabicHarakat: 'lang.arabicHarakat',
   chinese: 'lang.chinese',
   turkish: 'lang.turkish',
   korean: 'lang.korean',

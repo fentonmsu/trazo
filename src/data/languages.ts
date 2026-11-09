@@ -57,6 +57,20 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'rtl',
     description: 'Las 28 letras del alfabeto árabe en su forma aislada.',
   },
+  arabicNumbers: {
+    id: 'arabicNumbers',
+    name: 'Árabe (Números)',
+    nativeName: 'الأرقام',
+    direction: 'ltr',
+    description: 'Los 10 dígitos arábigo-índicos (٠-٩) usados al escribir árabe a mano.',
+  },
+  arabicHarakat: {
+    id: 'arabicHarakat',
+    name: 'Árabe (Tashkil)',
+    nativeName: 'التشكيل',
+    direction: 'rtl',
+    description: 'Los signos de vocales breves y duplicación (tashkil/harakat): fatha, damma, kasra, sukun, shadda y tanwin.',
+  },
   chinese: {
     id: 'chinese',
     name: 'Chino (Mandarín)',
@@ -131,6 +145,8 @@ export const LANGUAGE_ORDER: LanguageId[] = [
   'hebrewFull',
   'hebrewCursive',
   'arabic',
+  'arabicNumbers',
+  'arabicHarakat',
   'chinese',
   'turkish',
   'korean',
@@ -157,7 +173,7 @@ export function isHebrewScript(language: LanguageId): boolean {
 export function scriptFontClass(language: LanguageId): string {
   if (language === 'hebrewCursive') return 'hebrew-cursive-glyph';
   if (isHebrewScript(language)) return 'hebrew-glyph';
-  if (language === 'arabic') return 'arabic-glyph';
+  if (language === 'arabic' || language === 'arabicNumbers' || language === 'arabicHarakat') return 'arabic-glyph';
   return '';
 }
 
