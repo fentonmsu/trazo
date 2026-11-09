@@ -25,9 +25,11 @@ router.use(requireAdmin);
 function isValidStrokes(strokes) {
   return (
     Array.isArray(strokes) &&
+    strokes.length > 0 &&
     strokes.every(
       (stroke) =>
         Array.isArray(stroke) &&
+        stroke.length > 0 &&
         stroke.every((p) => p && typeof p.x === 'number' && typeof p.y === 'number'),
     )
   );

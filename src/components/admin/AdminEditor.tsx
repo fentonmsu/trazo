@@ -50,17 +50,23 @@ export function AdminEditor({ overrides, onOverridesChanged, onClose, onLock }: 
     // (30-50+ points) for smooth rendering - editing that directly would
     // mean dragging dozens of overlapping handles. Simplify down to a few
     // key points here; smoothStroke() re-expands them again on save.
-    setStrokes(source.map((s) => simplifyStroke(s, SIMPLIFY_TOLERANCE)));
+    // Also drop any stray empty stroke a past save left behind, so loading
+    // a corrupted override doesn't re-propagate it.
+    setStrokes(
+      source.filter((s) => s.length > 0).map((s) => simplifyStroke(s, SIMPLIFY_TOLERANCE)),
+    );
     setHasOverride(Boolean(override));
     setActiveStroke(0);
     setStatus('');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [target?.id]);
 
-  const previewStrokes = useMemo(
-    () => (smoothOnSave ? strokes.map((s) => (s.length >= 3 ? smoothStroke(s) : s)) : strokes),
-    [strokes, smoothOnSave],
-  );
+  const previewStrokes = useMemo(() => {
+    // Never let an empty stroke (e.g. from "+ Nuevo trazo" left untouched)
+    // reach the preview or get saved - it crashes the scorer at draw time.
+    const nonEmpty = strokes.filter((s) => s.length > 0);
+    return smoothOnSave ? nonEmpty.map((s) => (s.length >= 3 ? smoothStroke(s) : s)) : nonEmpty;
+  }, [strokes, smoothOnSave]);
 
   function toGridPoint(clientX: number, clientY: number) {
     const svg = svgRef.current;
@@ -153,7 +159,9 @@ export function AdminEditor({ overrides, onOverridesChanged, onClose, onLock }: 
     setSaving(true);
     try {
       await api.delete(`/admin/overrides/${target.id}`);
-      setStrokes(target.strokes.map((s) => simplifyStroke(s, SIMPLIFY_TOLERANCE)));
+      setStrokes(
+        target.strokes.filter((s) => s.length > 0).map((s) => simplifyStroke(s, SIMPLIFY_TOLERANCE)),
+      );
       setHasOverride(false);
       setStatus('Restaurado al original');
       onOverridesChanged();

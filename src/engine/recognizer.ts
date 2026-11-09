@@ -11,7 +11,9 @@ const GAP_PENALTY = 30;
 type PreparedStroke = { raw: Stroke; resampled: Stroke; vector: { x: number; y: number } };
 
 function prepareStrokes(strokes: Stroke[]): PreparedStroke[] {
-  const normalized = normalizeStrokes(strokes);
+  // Stray empty strokes (e.g. a saved admin override with an unfinished
+  // stroke) have no points, so strokeStartEndVector below would crash.
+  const normalized = normalizeStrokes(strokes.filter((s) => s.length > 0));
   return normalized.map((s) => ({
     raw: s,
     resampled: resampleStroke(s, RESAMPLE_POINTS),
