@@ -72,6 +72,7 @@ const ja: Record<TranslationKey, string> = {
   'lang.arabic': 'アラビア語',
   'lang.arabicNumbers': 'アラビア語（数字）',
   'lang.arabicHarakat': 'アラビア語（タシュキール）',
+  'lang.arabicForms': 'アラビア語（位置による字形）',
   'lang.chinese': '中国語（北京語）',
   'lang.turkish': 'トルコ語',
   'lang.korean': '韓国語（ハングル）',

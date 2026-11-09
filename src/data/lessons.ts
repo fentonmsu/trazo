@@ -23,6 +23,7 @@ export const LESSON_LANGUAGES: LanguageId[] = [
   'arabic',
   'arabicNumbers',
   'arabicHarakat',
+  'arabicForms',
   'chinese',
   'turkish',
   'korean',

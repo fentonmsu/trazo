@@ -17,6 +17,7 @@ export type LanguageId =
   | 'arabic'
   | 'arabicNumbers'
   | 'arabicHarakat'
+  | 'arabicForms'
   | 'chinese'
   | 'turkish'
   | 'korean'

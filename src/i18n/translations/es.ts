@@ -74,6 +74,7 @@ const es = {
   'lang.arabic': 'Árabe',
   'lang.arabicNumbers': 'Árabe (Números)',
   'lang.arabicHarakat': 'Árabe (Tashkil)',
+  'lang.arabicForms': 'Árabe (Formas por posición)',
   'lang.chinese': 'Chino (Mandarín)',
   'lang.turkish': 'Turco',
   'lang.korean': 'Coreano (Hangul)',

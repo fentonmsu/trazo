@@ -72,6 +72,7 @@ const nl: Record<TranslationKey, string> = {
   'lang.arabic': 'Arabisch',
   'lang.arabicNumbers': 'Arabisch (Cijfers)',
   'lang.arabicHarakat': 'Arabisch (Tashkil)',
+  'lang.arabicForms': 'Arabisch (Positievormen)',
   'lang.chinese': 'Chinees (Mandarijn)',
   'lang.turkish': 'Turks',
   'lang.korean': 'Koreaans (Hangeul)',

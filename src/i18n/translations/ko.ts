@@ -72,6 +72,7 @@ const ko: Record<TranslationKey, string> = {
   'lang.arabic': '아랍어',
   'lang.arabicNumbers': '아랍어 (숫자)',
   'lang.arabicHarakat': '아랍어 (타쉬킬)',
+  'lang.arabicForms': '아랍어 (위치별 자형)',
   'lang.chinese': '중국어 (표준어)',
   'lang.turkish': '터키어',
   'lang.korean': '한국어 (한글)',

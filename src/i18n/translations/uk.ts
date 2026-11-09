@@ -72,6 +72,7 @@ const uk: Record<TranslationKey, string> = {
   'lang.arabic': 'Арабська',
   'lang.arabicNumbers': 'Арабська (Цифри)',
   'lang.arabicHarakat': 'Арабська (Ташкіль)',
+  'lang.arabicForms': 'Арабська (Позиційні форми)',
   'lang.chinese': 'Китайська (мандаринська)',
   'lang.turkish': 'Турецька',
   'lang.korean': 'Корейська (хангиль)',

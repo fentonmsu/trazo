@@ -72,6 +72,7 @@ const pt: Record<TranslationKey, string> = {
   'lang.arabic': 'Árabe',
   'lang.arabicNumbers': 'Árabe (Números)',
   'lang.arabicHarakat': 'Árabe (Tashkil)',
+  'lang.arabicForms': 'Árabe (Formas por posição)',
   'lang.chinese': 'Chinês (Mandarim)',
   'lang.turkish': 'Turco',
   'lang.korean': 'Coreano (Hangul)',

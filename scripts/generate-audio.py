@@ -26,6 +26,7 @@ VOICE_BY_LANGUAGE = {
     'arabic': 'ar-SA-ZariyahNeural',
     'arabicNumbers': 'ar-SA-ZariyahNeural',
     'arabicHarakat': 'ar-SA-ZariyahNeural',
+    'arabicForms': 'ar-SA-ZariyahNeural',
     'chinese': 'zh-CN-XiaoxiaoNeural',
     'turkish': 'tr-TR-EmelNeural',
     'korean': 'ko-KR-SunHiNeural',

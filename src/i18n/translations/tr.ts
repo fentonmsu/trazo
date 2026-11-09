@@ -72,6 +72,7 @@ const tr: Record<TranslationKey, string> = {
   'lang.arabic': 'Arapça',
   'lang.arabicNumbers': 'Arapça (Rakamlar)',
   'lang.arabicHarakat': 'Arapça (Teşkil)',
+  'lang.arabicForms': 'Arapça (Konumsal Şekiller)',
   'lang.chinese': 'Çince (Mandarin)',
   'lang.turkish': 'Türkçe',
   'lang.korean': 'Korece (Hangul)',

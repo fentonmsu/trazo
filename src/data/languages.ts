@@ -71,6 +71,13 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'rtl',
     description: 'Los signos de vocales breves y duplicación (tashkil/harakat): fatha, damma, kasra, sukun, shadda y tanwin.',
   },
+  arabicForms: {
+    id: 'arabicForms',
+    name: 'Árabe (Formas por posición)',
+    nativeName: 'أشكال الحروف',
+    direction: 'rtl',
+    description: 'Las formas inicial, medial y final de cada letra árabe conectora, más la forma final de las letras que no se conectan a la izquierda.',
+  },
   chinese: {
     id: 'chinese',
     name: 'Chino (Mandarín)',
@@ -147,6 +154,7 @@ export const LANGUAGE_ORDER: LanguageId[] = [
   'arabic',
   'arabicNumbers',
   'arabicHarakat',
+  'arabicForms',
   'chinese',
   'turkish',
   'korean',
@@ -173,7 +181,13 @@ export function isHebrewScript(language: LanguageId): boolean {
 export function scriptFontClass(language: LanguageId): string {
   if (language === 'hebrewCursive') return 'hebrew-cursive-glyph';
   if (isHebrewScript(language)) return 'hebrew-glyph';
-  if (language === 'arabic' || language === 'arabicNumbers' || language === 'arabicHarakat') return 'arabic-glyph';
+  if (
+    language === 'arabic' ||
+    language === 'arabicNumbers' ||
+    language === 'arabicHarakat' ||
+    language === 'arabicForms'
+  )
+    return 'arabic-glyph';
   return '';
 }
 

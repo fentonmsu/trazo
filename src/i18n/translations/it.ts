@@ -72,6 +72,7 @@ const it: Record<TranslationKey, string> = {
   'lang.arabic': 'Arabo',
   'lang.arabicNumbers': 'Arabo (Numeri)',
   'lang.arabicHarakat': 'Arabo (Tashkil)',
+  'lang.arabicForms': 'Arabo (Forme posizionali)',
   'lang.chinese': 'Cinese (Mandarino)',
   'lang.turkish': 'Turco',
   'lang.korean': 'Coreano (Hangul)',

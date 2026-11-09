@@ -9,6 +9,7 @@ import { hebrewCursiveCharacters } from './hebrewCursive';
 import { arabicCharacters } from './arabic';
 import { arabicNumberCharacters } from './arabicNumbers';
 import { arabicHarakatCharacters } from './arabicHarakat';
+import { arabicFormsCharacters } from './arabicForms';
 import { chineseCharacters } from './chinese';
 import { turkishCharacters } from './turkish';
 import { koreanCharacters } from './korean';
@@ -30,6 +31,7 @@ export const CHARACTERS_BY_LANGUAGE: Record<LanguageId, CharacterTemplate[]> = {
   arabic: arabicCharacters,
   arabicNumbers: arabicNumberCharacters,
   arabicHarakat: arabicHarakatCharacters,
+  arabicForms: arabicFormsCharacters,
   chinese: chineseCharacters,
   turkish: turkishCharacters,
   korean: koreanCharacters,

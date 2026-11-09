@@ -72,6 +72,7 @@ const ru: Record<TranslationKey, string> = {
   'lang.arabic': 'Арабский',
   'lang.arabicNumbers': 'Арабский (Цифры)',
   'lang.arabicHarakat': 'Арабский (Ташкиль)',
+  'lang.arabicForms': 'Арабский (Позиционные формы)',
   'lang.chinese': 'Китайский (мандарин)',
   'lang.turkish': 'Турецкий',
   'lang.korean': 'Корейский (хангыль)',

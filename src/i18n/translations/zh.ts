@@ -72,6 +72,7 @@ const zh: Record<TranslationKey, string> = {
   'lang.arabic': '阿拉伯语',
   'lang.arabicNumbers': '阿拉伯语（数字）',
   'lang.arabicHarakat': '阿拉伯语（符号标注）',
+  'lang.arabicForms': '阿拉伯语（位置字形）',
   'lang.chinese': '中文（普通话）',
   'lang.turkish': '土耳其语',
   'lang.korean': '韩语（谚文）',
