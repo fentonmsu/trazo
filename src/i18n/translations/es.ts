@@ -67,6 +67,7 @@ const es = {
   'lang.kana': 'Japonés (Kana)',
   'lang.kanji': 'Japonés (Kanji)',
   'lang.cyrillic': 'Ruso (Cirílico)',
+  'lang.cyrillicCursive': 'Ruso (Cursiva)',
   'lang.hebrew': 'Hebreo',
   'lang.niqqud': 'Hebreo (Nikud)',
   'lang.hebrewFull': 'Hebreo (Todas las vocales)',

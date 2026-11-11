@@ -65,6 +65,7 @@ const ko: Record<TranslationKey, string> = {
   'lang.kana': '일본어 (가나)',
   'lang.kanji': '일본어 (한자)',
   'lang.cyrillic': '러시아어 (키릴 문자)',
+  'lang.cyrillicCursive': '러시아어 (필기체)',
   'lang.hebrew': '히브리어',
   'lang.niqqud': '히브리어 (니쿠드)',
   'lang.hebrewFull': '히브리어 (모든 모음)',

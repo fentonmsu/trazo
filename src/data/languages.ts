@@ -22,6 +22,13 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     direction: 'ltr',
     description: 'Alfabeto cirílico usado para escribir ruso.',
   },
+  cyrillicCursive: {
+    id: 'cyrillicCursive',
+    name: 'Ruso (Cursiva)',
+    nativeName: 'Рукописный',
+    direction: 'ltr',
+    description: 'Las 33 letras del alfabeto ruso en su forma cursiva manuscrita (прописью), tal como se enseña en la escuela.',
+  },
   hebrew: {
     id: 'hebrew',
     name: 'Hebreo',
@@ -147,6 +154,7 @@ export const LANGUAGE_ORDER: LanguageId[] = [
   'kana',
   'kanji',
   'cyrillic',
+  'cyrillicCursive',
   'hebrew',
   'niqqud',
   'hebrewFull',
@@ -179,6 +187,7 @@ export function isHebrewScript(language: LanguageId): boolean {
  * Sans Hebrew the other Hebrew variants use, and both differ from Arabic.
  */
 export function scriptFontClass(language: LanguageId): string {
+  if (language === 'cyrillicCursive') return 'cyrillic-cursive-glyph';
   if (language === 'hebrewCursive') return 'hebrew-cursive-glyph';
   if (isHebrewScript(language)) return 'hebrew-glyph';
   if (

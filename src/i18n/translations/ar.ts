@@ -65,6 +65,7 @@ const ar: Record<TranslationKey, string> = {
   'lang.kana': 'اليابانية (كانا)',
   'lang.kanji': 'اليابانية (كانجي)',
   'lang.cyrillic': 'الروسية (سيريلية)',
+  'lang.cyrillicCursive': 'الروسية (مخطوطة)',
   'lang.hebrew': 'العبرية',
   'lang.niqqud': 'العبرية (تشكيل)',
   'lang.hebrewFull': 'العبرية (جميع الحركات)',

@@ -65,6 +65,7 @@ const nl: Record<TranslationKey, string> = {
   'lang.kana': 'Japans (Kana)',
   'lang.kanji': 'Japans (Kanji)',
   'lang.cyrillic': 'Russisch (Cyrillisch)',
+  'lang.cyrillicCursive': 'Russisch (Cursief)',
   'lang.hebrew': 'Hebreeuws',
   'lang.niqqud': 'Hebreeuws (Niqqoed)',
   'lang.hebrewFull': 'Hebreeuws (alle klinkers)',

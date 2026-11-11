@@ -17,6 +17,7 @@ export const LESSON_LANGUAGES: LanguageId[] = [
   'kana',
   'kanji',
   'cyrillic',
+  'cyrillicCursive',
   'hebrew',
   'niqqud',
   'hebrewCursive',

@@ -65,6 +65,7 @@ const zh: Record<TranslationKey, string> = {
   'lang.kana': '日语（假名）',
   'lang.kanji': '日语（汉字）',
   'lang.cyrillic': '俄语（西里尔字母）',
+  'lang.cyrillicCursive': '俄语（手写体）',
   'lang.hebrew': '希伯来语',
   'lang.niqqud': '希伯来语（元音符号）',
   'lang.hebrewFull': '希伯来语（全部元音）',

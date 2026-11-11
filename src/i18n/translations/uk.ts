@@ -65,6 +65,7 @@ const uk: Record<TranslationKey, string> = {
   'lang.kana': 'Японська (кана)',
   'lang.kanji': 'Японська (кандзі)',
   'lang.cyrillic': 'Російська (кирилиця)',
+  'lang.cyrillicCursive': 'Російська (прописом)',
   'lang.hebrew': 'Іврит',
   'lang.niqqud': 'Іврит (огласовки)',
   'lang.hebrewFull': 'Іврит (усі голосні)',

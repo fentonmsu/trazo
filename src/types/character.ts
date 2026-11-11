@@ -10,6 +10,7 @@ export type LanguageId =
   | 'kana'
   | 'kanji'
   | 'cyrillic'
+  | 'cyrillicCursive'
   | 'hebrew'
   | 'niqqud'
   | 'hebrewFull'

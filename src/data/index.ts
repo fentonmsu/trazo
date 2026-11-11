@@ -2,6 +2,7 @@ import type { CharacterTemplate, LanguageId } from '../types/character';
 import { kanaCharacters } from './kana';
 import { kanjiCharacters } from './kanji';
 import { cyrillicCharacters } from './cyrillic';
+import { cyrillicCursiveCharacters } from './cyrillicCursive';
 import { hebrewCharacters } from './hebrew';
 import { niqqudCharacters } from './niqqud';
 import { hebrewFullCharacters } from './hebrewFull';
@@ -24,6 +25,7 @@ export const CHARACTERS_BY_LANGUAGE: Record<LanguageId, CharacterTemplate[]> = {
   kana: kanaCharacters,
   kanji: kanjiCharacters,
   cyrillic: cyrillicCharacters,
+  cyrillicCursive: cyrillicCursiveCharacters,
   hebrew: hebrewCharacters,
   niqqud: niqqudCharacters,
   hebrewFull: hebrewFullCharacters,

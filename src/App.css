@@ -316,6 +316,13 @@
   font-family: 'Gveret Levin', 'Noto Sans Hebrew', 'Arial Hebrew', sans-serif;
 }
 
+/* Russian cursive (прописью) - a handwriting style, not a separate script,
+   so it needs its own font rather than the block-print letterforms the
+   regular cyrillic set's stroke guides are authored against. */
+.cyrillic-cursive-glyph {
+  font-family: 'Marck Script', cursive;
+}
+
 /* See HebrewGlyph.tsx: positions a trailing niqqud vowel point explicitly
    instead of relying on the font to attach it, since that silently fails
    on narrow sofit letters (ם/ן/ף/ץ) in several fonts. */

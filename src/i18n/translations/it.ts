@@ -65,6 +65,7 @@ const it: Record<TranslationKey, string> = {
   'lang.kana': 'Giapponese (Kana)',
   'lang.kanji': 'Giapponese (Kanji)',
   'lang.cyrillic': 'Russo (Cirillico)',
+  'lang.cyrillicCursive': 'Russo (Corsivo)',
   'lang.hebrew': 'Ebraico',
   'lang.niqqud': 'Ebraico (Niqqud)',
   'lang.hebrewFull': 'Ebraico (tutte le vocali)',

@@ -19,6 +19,7 @@ VOICE_BY_LANGUAGE = {
     'kana': 'ja-JP-NanamiNeural',
     'kanji': 'ja-JP-NanamiNeural',
     'cyrillic': 'ru-RU-SvetlanaNeural',
+    'cyrillicCursive': 'ru-RU-SvetlanaNeural',
     'hebrew': 'he-IL-HilaNeural',
     'niqqud': 'he-IL-HilaNeural',
     'hebrewFull': 'he-IL-HilaNeural',
