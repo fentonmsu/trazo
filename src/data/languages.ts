@@ -27,7 +27,7 @@ export const LANGUAGES: Record<LanguageId, LanguageInfo> = {
     name: 'Ruso (Cursiva)',
     nativeName: 'Рукописный',
     direction: 'ltr',
-    description: 'Las 33 letras del alfabeto ruso en su forma cursiva manuscrita (прописью), tal como se enseña en la escuela.',
+    description: 'Las 33 letras del alfabeto ruso, mayúsculas y minúsculas, en su forma cursiva manuscrita (прописью), tal como se enseña en la escuela.',
   },
   hebrew: {
     id: 'hebrew',

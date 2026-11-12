@@ -1,9 +1,9 @@
 import type { CharacterTemplate } from '../types/character';
 
 /**
- * Hand-authored stroke-path data for the 33 uppercase Russian Cyrillic
- * letters in their cursive (прописью) form. Coordinates are on a normalized
- * 0-100 grid (origin top-left, x grows right, y grows down), traced against
+ * Hand-authored stroke-path data for the 33 Russian Cyrillic letters in
+ * their cursive (прописью) form, uppercase and lowercase (66 templates).
+ * Coordinates are on a normalized 0-100 grid (origin top-left, x grows right, y grows down), traced against
  * the rendered shape of the Marck Script font (see .cyrillic-cursive-glyph
  * in App.css), which renders authentic Russian school-cursive letterforms
  * rather than a generic Latin script face.
@@ -419,6 +419,507 @@ export const cyrillicCursiveCharacters: CharacterTemplate[] = [
         { x: 68, y: 18 }, { x: 50, y: 22 }, { x: 42, y: 38 }, { x: 55, y: 48 },
         { x: 68, y: 40 }, { x: 60, y: 60 }, { x: 25, y: 75 }, { x: 18, y: 68 },
       ],
+    ],
+    difficulty: 5,
+  },
+  // Lowercase (строчные) letters, same order as the uppercase set above;
+  // each id adds a -lower suffix to its uppercase counterpart's id.
+  {
+    id: 'cyrillicCursive-a-lower',
+    language: 'cyrillicCursive',
+    char: 'а',
+    romanization: 'a',
+    strokes: [
+      [
+        { x: 70, y: 23 }, { x: 50, y: 26 }, { x: 32, y: 36 }, { x: 20, y: 52 },
+        { x: 19, y: 68 }, { x: 27, y: 76 }, { x: 38, y: 72 }, { x: 52, y: 60 },
+        { x: 65, y: 45 }, { x: 72, y: 36 }, { x: 66, y: 50 }, { x: 61, y: 63 },
+        { x: 63, y: 72 }, { x: 70, y: 72 }, { x: 82, y: 65 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-be-lower',
+    language: 'cyrillicCursive',
+    char: 'б',
+    romanization: 'b',
+    strokes: [
+      [
+        { x: 49, y: 49 }, { x: 40, y: 54 }, { x: 32, y: 64 }, { x: 32, y: 77 },
+        { x: 40, y: 85 }, { x: 50, y: 85 }, { x: 59, y: 75 }, { x: 61, y: 62 },
+        { x: 56, y: 47 }, { x: 50, y: 35 }, { x: 45, y: 22 }, { x: 48, y: 14 },
+        { x: 58, y: 12 }, { x: 70, y: 13 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-ve-lower',
+    language: 'cyrillicCursive',
+    char: 'в',
+    romanization: 'v',
+    strokes: [
+      [
+        { x: 26, y: 58 }, { x: 40, y: 53 }, { x: 52, y: 47 }, { x: 66, y: 38 },
+        { x: 74, y: 24 }, { x: 70, y: 14 }, { x: 60, y: 13 }, { x: 52, y: 22 },
+        { x: 46, y: 38 }, { x: 41, y: 55 }, { x: 39, y: 72 }, { x: 43, y: 83 },
+        { x: 51, y: 84 }, { x: 60, y: 77 }, { x: 65, y: 66 }, { x: 64, y: 56 },
+        { x: 57, y: 52 }, { x: 50, y: 55 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-ge-lower',
+    language: 'cyrillicCursive',
+    char: 'г',
+    romanization: 'g',
+    strokes: [
+      [
+        { x: 30, y: 28 }, { x: 42, y: 20 }, { x: 55, y: 14 }, { x: 65, y: 14 },
+        { x: 68, y: 20 }, { x: 62, y: 32 }, { x: 50, y: 46 }, { x: 36, y: 62 },
+        { x: 27, y: 76 }, { x: 32, y: 82 }, { x: 42, y: 80 }, { x: 55, y: 72 },
+        { x: 68, y: 64 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-de-lower',
+    language: 'cyrillicCursive',
+    char: 'д',
+    romanization: 'd',
+    strokes: [
+      [
+        { x: 57, y: 13 }, { x: 46, y: 15 }, { x: 38, y: 25 }, { x: 38, y: 35 },
+        { x: 44, y: 40 }, { x: 54, y: 35 }, { x: 62, y: 27 }, { x: 68, y: 22 },
+        { x: 63, y: 40 }, { x: 58, y: 58 }, { x: 54, y: 72 }, { x: 47, y: 83 },
+        { x: 39, y: 85 }, { x: 34, y: 78 }, { x: 37, y: 67 }, { x: 48, y: 58 },
+        { x: 68, y: 47 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-ye-lower',
+    language: 'cyrillicCursive',
+    char: 'е',
+    romanization: 'e',
+    strokes: [
+      [
+        { x: 33, y: 58 }, { x: 50, y: 52 }, { x: 68, y: 43 }, { x: 78, y: 33 },
+        { x: 78, y: 20 }, { x: 68, y: 13 }, { x: 55, y: 16 }, { x: 40, y: 28 },
+        { x: 28, y: 45 }, { x: 25, y: 62 }, { x: 32, y: 75 }, { x: 45, y: 80 },
+        { x: 60, y: 76 }, { x: 75, y: 66 },
+      ],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillicCursive-yo-lower',
+    language: 'cyrillicCursive',
+    char: 'ё',
+    romanization: 'yo',
+    strokes: [
+      [
+        { x: 35, y: 63 }, { x: 50, y: 57 }, { x: 65, y: 48 }, { x: 72, y: 40 },
+        { x: 72, y: 32 }, { x: 64, y: 28 }, { x: 50, y: 32 }, { x: 37, y: 45 },
+        { x: 28, y: 60 }, { x: 27, y: 75 }, { x: 35, y: 82 }, { x: 48, y: 84 },
+        { x: 60, y: 80 }, { x: 68, y: 72 },
+      ],
+      [{ x: 54, y: 16 }, { x: 57, y: 19 }],
+      [{ x: 72, y: 16 }, { x: 75, y: 19 }],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-zhe-lower',
+    language: 'cyrillicCursive',
+    char: 'ж',
+    romanization: 'zh',
+    strokes: [
+      [{ x: 24, y: 22 }, { x: 37, y: 37 }, { x: 50, y: 48 }, { x: 64, y: 58 }, { x: 80, y: 73 }],
+      [{ x: 50, y: 20 }, { x: 49, y: 45 }, { x: 46, y: 65 }, { x: 43, y: 78 }],
+      [{ x: 79, y: 26 }, { x: 64, y: 35 }, { x: 50, y: 47 }, { x: 34, y: 62 }, { x: 17, y: 77 }],
+    ],
+    difficulty: 5,
+  },
+  {
+    id: 'cyrillicCursive-ze-lower',
+    language: 'cyrillicCursive',
+    char: 'з',
+    romanization: 'z',
+    strokes: [
+      [
+        { x: 33, y: 33 }, { x: 48, y: 23 }, { x: 65, y: 17 }, { x: 77, y: 20 },
+        { x: 80, y: 30 }, { x: 72, y: 40 }, { x: 57, y: 45 }, { x: 45, y: 47 },
+        { x: 60, y: 52 }, { x: 70, y: 60 }, { x: 70, y: 72 }, { x: 60, y: 82 },
+        { x: 45, y: 86 }, { x: 30, y: 85 }, { x: 18, y: 80 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-i-lower',
+    language: 'cyrillicCursive',
+    char: 'и',
+    romanization: 'i',
+    strokes: [
+      [
+        { x: 38, y: 22 }, { x: 31, y: 38 }, { x: 25, y: 55 }, { x: 24, y: 68 },
+        { x: 30, y: 73 }, { x: 40, y: 68 }, { x: 52, y: 55 }, { x: 63, y: 40 },
+        { x: 73, y: 23 }, { x: 66, y: 40 }, { x: 60, y: 58 }, { x: 58, y: 68 },
+        { x: 62, y: 74 }, { x: 70, y: 72 }, { x: 78, y: 63 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-i-kratkoye-lower',
+    language: 'cyrillicCursive',
+    char: 'й',
+    romanization: 'y',
+    strokes: [
+      [
+        { x: 35, y: 30 }, { x: 28, y: 45 }, { x: 23, y: 60 }, { x: 24, y: 74 },
+        { x: 30, y: 82 }, { x: 40, y: 77 }, { x: 52, y: 62 }, { x: 62, y: 45 },
+        { x: 70, y: 30 }, { x: 65, y: 47 }, { x: 60, y: 63 }, { x: 59, y: 75 },
+        { x: 64, y: 82 }, { x: 71, y: 79 }, { x: 77, y: 72 },
+      ],
+      [{ x: 38, y: 15 }, { x: 45, y: 22 }, { x: 55, y: 23 }, { x: 64, y: 15 }],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-ka-lower',
+    language: 'cyrillicCursive',
+    char: 'к',
+    romanization: 'k',
+    strokes: [
+      [{ x: 38, y: 15 }, { x: 33, y: 38 }, { x: 28, y: 62 }, { x: 24, y: 80 }],
+      [
+        { x: 73, y: 20 }, { x: 62, y: 24 }, { x: 52, y: 33 }, { x: 46, y: 45 },
+        { x: 47, y: 58 }, { x: 53, y: 70 }, { x: 62, y: 77 }, { x: 70, y: 73 },
+        { x: 78, y: 66 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-el-lower',
+    language: 'cyrillicCursive',
+    char: 'л',
+    romanization: 'l',
+    strokes: [
+      [
+        { x: 20, y: 62 }, { x: 22, y: 70 }, { x: 30, y: 72 }, { x: 40, y: 65 },
+        { x: 50, y: 50 }, { x: 58, y: 35 }, { x: 65, y: 25 }, { x: 68, y: 30 },
+        { x: 65, y: 45 }, { x: 61, y: 58 }, { x: 62, y: 72 }, { x: 68, y: 75 },
+        { x: 77, y: 63 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-em-lower',
+    language: 'cyrillicCursive',
+    char: 'м',
+    romanization: 'm',
+    strokes: [
+      [
+        { x: 14, y: 62 }, { x: 18, y: 70 }, { x: 27, y: 68 }, { x: 37, y: 55 },
+        { x: 46, y: 40 }, { x: 51, y: 33 }, { x: 52, y: 40 }, { x: 47, y: 55 },
+        { x: 45, y: 65 }, { x: 50, y: 71 }, { x: 58, y: 65 }, { x: 67, y: 50 },
+        { x: 77, y: 33 }, { x: 74, y: 45 }, { x: 69, y: 58 }, { x: 70, y: 70 },
+        { x: 75, y: 72 }, { x: 82, y: 63 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-en-lower',
+    language: 'cyrillicCursive',
+    char: 'н',
+    romanization: 'n',
+    strokes: [
+      [{ x: 55, y: 16 }, { x: 47, y: 32 }, { x: 37, y: 52 }, { x: 30, y: 68 }, { x: 27, y: 82 }],
+      [{ x: 12, y: 55 }, { x: 30, y: 52 }, { x: 50, y: 49 }, { x: 65, y: 47 }],
+      [{ x: 85, y: 17 }, { x: 75, y: 38 }, { x: 67, y: 55 }, { x: 63, y: 75 }],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-o-lower',
+    language: 'cyrillicCursive',
+    char: 'о',
+    romanization: 'o',
+    strokes: [
+      [
+        { x: 70, y: 14 }, { x: 55, y: 14 }, { x: 40, y: 22 }, { x: 28, y: 38 },
+        { x: 23, y: 55 }, { x: 26, y: 72 }, { x: 36, y: 82 }, { x: 50, y: 84 },
+        { x: 62, y: 78 }, { x: 71, y: 64 }, { x: 74, y: 48 }, { x: 72, y: 35 },
+        { x: 66, y: 28 },
+      ],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillicCursive-pe-lower',
+    language: 'cyrillicCursive',
+    char: 'п',
+    romanization: 'p',
+    strokes: [
+      [
+        { x: 33, y: 18 }, { x: 26, y: 45 }, { x: 20, y: 65 }, { x: 17, y: 79 },
+        { x: 22, y: 62 }, { x: 32, y: 43 }, { x: 42, y: 30 }, { x: 52, y: 25 },
+        { x: 60, y: 30 }, { x: 60, y: 42 }, { x: 56, y: 57 }, { x: 56, y: 70 },
+        { x: 62, y: 75 }, { x: 70, y: 71 }, { x: 78, y: 62 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-er-lower',
+    language: 'cyrillicCursive',
+    char: 'р',
+    romanization: 'r',
+    strokes: [
+      [
+        { x: 38, y: 12 }, { x: 42, y: 17 }, { x: 42, y: 28 }, { x: 36, y: 48 },
+        { x: 28, y: 70 }, { x: 21, y: 88 },
+      ],
+      [
+        { x: 40, y: 40 }, { x: 50, y: 22 }, { x: 62, y: 15 }, { x: 72, y: 17 },
+        { x: 75, y: 27 }, { x: 70, y: 40 }, { x: 60, y: 47 }, { x: 46, y: 48 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-es-lower',
+    language: 'cyrillicCursive',
+    char: 'с',
+    romanization: 's',
+    strokes: [
+      [
+        { x: 82, y: 13 }, { x: 65, y: 13 }, { x: 45, y: 22 }, { x: 28, y: 38 },
+        { x: 18, y: 55 }, { x: 17, y: 70 }, { x: 25, y: 80 }, { x: 40, y: 82 },
+        { x: 55, y: 76 }, { x: 69, y: 64 },
+      ],
+    ],
+    difficulty: 2,
+  },
+  {
+    id: 'cyrillicCursive-te-lower',
+    language: 'cyrillicCursive',
+    char: 'т',
+    romanization: 't',
+    strokes: [
+      [
+        { x: 28, y: 28 }, { x: 22, y: 48 }, { x: 16, y: 67 }, { x: 21, y: 52 },
+        { x: 30, y: 38 }, { x: 40, y: 31 }, { x: 47, y: 33 }, { x: 46, y: 45 },
+        { x: 44, y: 57 }, { x: 42, y: 67 }, { x: 45, y: 55 }, { x: 52, y: 40 },
+        { x: 60, y: 33 }, { x: 70, y: 31 }, { x: 76, y: 37 }, { x: 72, y: 48 },
+        { x: 69, y: 59 }, { x: 73, y: 66 }, { x: 82, y: 58 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-u-lower',
+    language: 'cyrillicCursive',
+    char: 'у',
+    romanization: 'u',
+    strokes: [
+      [
+        { x: 44, y: 12 }, { x: 39, y: 25 }, { x: 39, y: 37 }, { x: 45, y: 43 },
+        { x: 53, y: 40 }, { x: 60, y: 32 }, { x: 66, y: 22 }, { x: 61, y: 42 },
+        { x: 57, y: 60 }, { x: 52, y: 76 }, { x: 44, y: 85 }, { x: 36, y: 85 },
+        { x: 32, y: 77 }, { x: 38, y: 67 }, { x: 52, y: 57 }, { x: 67, y: 47 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-ef-lower',
+    language: 'cyrillicCursive',
+    char: 'ф',
+    romanization: 'f',
+    strokes: [
+      [
+        { x: 48, y: 62 }, { x: 38, y: 61 }, { x: 30, y: 55 }, { x: 29, y: 45 },
+        { x: 36, y: 38 }, { x: 45, y: 36 },
+      ],
+      [{ x: 58, y: 12 }, { x: 55, y: 35 }, { x: 52, y: 58 }, { x: 49, y: 85 }],
+      [{ x: 48, y: 62 }, { x: 58, y: 62 }, { x: 65, y: 55 }, { x: 68, y: 45 }, { x: 65, y: 38 }],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-kha-lower',
+    language: 'cyrillicCursive',
+    char: 'х',
+    romanization: 'kh',
+    strokes: [
+      [{ x: 37, y: 18 }, { x: 42, y: 35 }, { x: 48, y: 52 }, { x: 58, y: 70 }, { x: 72, y: 82 }],
+      [{ x: 82, y: 20 }, { x: 65, y: 32 }, { x: 50, y: 45 }, { x: 35, y: 62 }, { x: 18, y: 80 }],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-tse-lower',
+    language: 'cyrillicCursive',
+    char: 'ц',
+    romanization: 'ts',
+    strokes: [
+      [
+        { x: 40, y: 20 }, { x: 32, y: 38 }, { x: 25, y: 55 }, { x: 23, y: 65 },
+        { x: 28, y: 70 }, { x: 38, y: 66 }, { x: 50, y: 52 }, { x: 60, y: 35 },
+        { x: 66, y: 20 }, { x: 60, y: 40 }, { x: 55, y: 57 }, { x: 55, y: 66 },
+        { x: 62, y: 70 }, { x: 72, y: 62 }, { x: 80, y: 55 }, { x: 84, y: 60 },
+        { x: 80, y: 72 }, { x: 76, y: 82 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-che-lower',
+    language: 'cyrillicCursive',
+    char: 'ч',
+    romanization: 'ch',
+    strokes: [
+      [
+        { x: 36, y: 14 }, { x: 27, y: 30 }, { x: 22, y: 45 }, { x: 27, y: 52 },
+        { x: 38, y: 51 }, { x: 52, y: 42 }, { x: 66, y: 28 }, { x: 77, y: 16 },
+        { x: 70, y: 32 }, { x: 62, y: 50 }, { x: 56, y: 68 }, { x: 58, y: 79 },
+        { x: 66, y: 80 }, { x: 77, y: 70 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-sha-lower',
+    language: 'cyrillicCursive',
+    char: 'ш',
+    romanization: 'sh',
+    strokes: [
+      [
+        { x: 30, y: 28 }, { x: 24, y: 45 }, { x: 20, y: 62 }, { x: 24, y: 68 },
+        { x: 32, y: 64 }, { x: 43, y: 48 }, { x: 52, y: 28 }, { x: 49, y: 45 },
+        { x: 46, y: 58 }, { x: 48, y: 67 }, { x: 56, y: 64 }, { x: 68, y: 50 },
+        { x: 82, y: 28 }, { x: 76, y: 45 }, { x: 71, y: 58 }, { x: 73, y: 67 },
+        { x: 80, y: 64 }, { x: 87, y: 56 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-shcha-lower',
+    language: 'cyrillicCursive',
+    char: 'щ',
+    romanization: 'shch',
+    strokes: [
+      [
+        { x: 25, y: 29 }, { x: 20, y: 45 }, { x: 18, y: 58 }, { x: 23, y: 63 },
+        { x: 32, y: 57 }, { x: 40, y: 43 }, { x: 46, y: 30 }, { x: 43, y: 45 },
+        { x: 41, y: 57 }, { x: 45, y: 63 }, { x: 53, y: 58 }, { x: 62, y: 45 },
+        { x: 68, y: 32 }, { x: 64, y: 45 }, { x: 61, y: 56 }, { x: 64, y: 62 },
+        { x: 72, y: 57 }, { x: 80, y: 50 }, { x: 84, y: 55 }, { x: 82, y: 65 },
+        { x: 78, y: 74 },
+      ],
+    ],
+    difficulty: 5,
+  },
+  {
+    id: 'cyrillicCursive-hard-sign-lower',
+    language: 'cyrillicCursive',
+    char: 'ъ',
+    romanization: '"',
+    strokes: [
+      [
+        { x: 18, y: 32 }, { x: 27, y: 25 }, { x: 38, y: 18 }, { x: 47, y: 17 },
+        { x: 52, y: 22 }, { x: 50, y: 30 }, { x: 42, y: 52 }, { x: 34, y: 72 },
+        { x: 33, y: 82 }, { x: 40, y: 87 }, { x: 52, y: 84 }, { x: 65, y: 74 },
+        { x: 74, y: 60 }, { x: 72, y: 50 }, { x: 63, y: 47 }, { x: 50, y: 50 },
+        { x: 42, y: 55 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-yery-lower',
+    language: 'cyrillicCursive',
+    char: 'ы',
+    romanization: 'y',
+    strokes: [
+      [
+        { x: 37, y: 18 }, { x: 32, y: 38 }, { x: 26, y: 60 }, { x: 25, y: 75 },
+        { x: 30, y: 83 }, { x: 39, y: 80 }, { x: 47, y: 70 }, { x: 50, y: 58 },
+        { x: 44, y: 50 }, { x: 33, y: 53 },
+      ],
+      [{ x: 85, y: 18 }, { x: 78, y: 45 }, { x: 72, y: 68 }, { x: 68, y: 82 }],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-soft-sign-lower',
+    language: 'cyrillicCursive',
+    char: 'ь',
+    romanization: "'",
+    strokes: [
+      [
+        { x: 50, y: 13 }, { x: 43, y: 35 }, { x: 35, y: 60 }, { x: 33, y: 78 },
+        { x: 40, y: 86 }, { x: 52, y: 82 }, { x: 65, y: 70 }, { x: 73, y: 57 },
+        { x: 70, y: 48 }, { x: 60, y: 47 }, { x: 48, y: 50 }, { x: 40, y: 55 },
+      ],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-e-lower',
+    language: 'cyrillicCursive',
+    char: 'э',
+    romanization: 'e',
+    strokes: [
+      [
+        { x: 27, y: 28 }, { x: 38, y: 20 }, { x: 52, y: 15 }, { x: 65, y: 15 },
+        { x: 72, y: 25 }, { x: 72, y: 40 }, { x: 66, y: 55 }, { x: 55, y: 68 },
+        { x: 40, y: 78 }, { x: 25, y: 87 },
+      ],
+      [{ x: 35, y: 46 }, { x: 50, y: 47 }, { x: 65, y: 48 }, { x: 78, y: 47 }],
+    ],
+    difficulty: 3,
+  },
+  {
+    id: 'cyrillicCursive-yu-lower',
+    language: 'cyrillicCursive',
+    char: 'ю',
+    romanization: 'yu',
+    strokes: [
+      [{ x: 42, y: 13 }, { x: 37, y: 25 }, { x: 30, y: 42 }, { x: 25, y: 58 }, { x: 22, y: 77 }],
+      [{ x: 12, y: 56 }, { x: 28, y: 53 }, { x: 45, y: 50 }, { x: 55, y: 49 }],
+      [
+        { x: 80, y: 20 }, { x: 68, y: 24 }, { x: 57, y: 38 }, { x: 52, y: 55 },
+        { x: 55, y: 70 }, { x: 65, y: 76 }, { x: 76, y: 70 }, { x: 84, y: 55 },
+        { x: 84, y: 40 }, { x: 80, y: 32 },
+      ],
+    ],
+    difficulty: 4,
+  },
+  {
+    id: 'cyrillicCursive-ya-lower',
+    language: 'cyrillicCursive',
+    char: 'я',
+    romanization: 'ya',
+    strokes: [
+      [
+        { x: 14, y: 66 }, { x: 18, y: 76 }, { x: 27, y: 78 }, { x: 38, y: 70 },
+        { x: 48, y: 58 }, { x: 52, y: 48 }, { x: 40, y: 48 }, { x: 27, y: 44 },
+        { x: 22, y: 33 }, { x: 28, y: 20 }, { x: 42, y: 13 }, { x: 55, y: 15 },
+        { x: 60, y: 25 }, { x: 60, y: 40 },
+      ],
+      [{ x: 85, y: 17 }, { x: 78, y: 40 }, { x: 72, y: 62 }, { x: 67, y: 82 }],
     ],
     difficulty: 5,
   },
